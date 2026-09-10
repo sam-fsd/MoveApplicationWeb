@@ -16,10 +16,23 @@ Requires Node 18.18+ (tested on 18.19).
 npm install
 cp .env.example .env
 npm run db:migrate     # creates prisma/dev.db and applies migrations
+npm run db:seed        # fills it with the demo data
 npm run dev            # http://localhost:3000
 ```
 
-Seed data and demo logins arrive in Phase 1 (`npm run db:seed`).
+## Demo logins
+
+All three use the password `moveapp123`.
+
+| Role | Email | Who |
+|---|---|---|
+| Tenant | `tenant@moveapp.ke` | Wanjiku Mwangi |
+| Owner | `owner@moveapp.ke` | Samuel Njoroge, Kamau Properties Ltd — verified, 6 listings |
+| Admin | `admin@moveapp.ke` | Aisha Karanja |
+
+The seed is deterministic: rerunning it produces identical data, so screenshots
+and the demo script stay valid. `/dev` is a development-only console with a role
+switcher and a panel per query module.
 
 ## Scripts
 

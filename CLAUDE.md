@@ -124,3 +124,32 @@ Appended as they are taken, so they survive into the next session.
 - **`cn()` registers the custom font sizes with tailwind-merge.** Without it,
   `cn("text-white", "text-label-md")` silently drops the colour, because
   tailwind-merge cannot tell a custom text size from a text colour.
+
+### Phase 1
+
+- **Passwords use scrypt from `node:crypto`**, not bcrypt or argon2 — no auth
+  library is pre-approved and the built-in is sufficient for a demo. Stored as
+  `scrypt$<salt>$<hash>`.
+- **The session is a signed cookie**, `<userId>:<role>` plus an HMAC, so the
+  role cannot be edited client-side. Not encrypted — nothing secret goes in it.
+  `SESSION_SECRET` falls back to a dev constant.
+- **Ten owners, not eight.** `docs/DATA_MODEL.md` asks for 8 (6 approved / 2
+  pending), but screen 20 shows four rows in its pending-verifications panel.
+  Six approved plus four pending satisfies both.
+- **Screen 20 lists Samuel Njoroge as a pending verification, but screen 15 is
+  his dashboard and shows him approved with certificate #MP-NBI-2025-084.** The
+  designs contradict each other. Approved wins, since his dashboard depends on
+  it; Peter Kariuki takes the fourth pending slot.
+- **Report queue ordering is done in JS, not SQL.** SQLite stores enums as text,
+  so Prisma's `orderBy` sorts them alphabetically — DISMISSED would outrank
+  OPEN and MODERATE would outrank CRITICAL. `src/lib/queries/reports.ts` ranks
+  explicitly. Watch for this anywhere else an enum needs meaningful order.
+- **`PlatformWeekly` is seeded, not derived.** Screen 20's chart peaks at 186
+  listings a week against a seed of 35 listings total. Everything a demo action
+  changes — pending verifications, open reports, listing statuses — is still
+  counted from real rows.
+- **The seed is deterministic** (mulberry32, fixed seed), so reruns produce
+  identical data and screenshots stay valid.
+- **`/login` and `/dev` are Phase 1 scaffolding.** The login page is a plain
+  working form to be replaced wholesale by screen 02 in Phase 2, not restyled.
+  `/dev` is a smoke-test console and 404s in production.
