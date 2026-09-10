@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoveApp Kenya — Tenant Account Settings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            ink: '#12151C',
+            'ink-muted': '#64748B',
+            'ink-subtle': '#94A3B8',
+            surface: {
+              DEFAULT: '#FFFFFF',
+              dim: '#DBD0C2',
+              bright: '#FAF9F6',
+              low: '#F4F3F1',
+              container: '#EFECE6',
+              border: '#E2DFD8'
+            },
+            primary: {
+              DEFAULT: '#FFC93C',
+              hover: '#F2BD2B',
+              subtle: '#FFF7DB'
+            },
+            emerald: {
+              trust: '#10B981',
+              subtle: '#ECFDF5',
+              border: '#A7F3D0'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF9F6;
+      color: #12151C;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      pointer-events: all;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: #12151C;
+      border: 2px solid #FFC93C;
+      cursor: pointer;
+      -webkit-appearance: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-primary selection:text-ink">
+
+  <!-- Persistent MoveApp Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-surface-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between py-3.5">
+      <!-- Left: Logo & Core Nav -->
+      <div class="flex items-center gap-8">
+        <a href="#" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 rounded-xl bg-ink flex items-center justify-center text-primary font-black text-xl shadow-sm transition-transform group-hover:scale-105">
+            M<span class="text-white text-xs">▲</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-lg font-extrabold tracking-tight text-ink leading-tight flex items-center gap-1">
+              MoveApp<span class="text-xs font-semibold text-ink-muted bg-surface-low px-1.5 py-0.5 rounded border border-surface-border">.ke</span>
+            </span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+          <a href="#" class="text-ink-muted hover:text-ink transition-colors">Browse Rentals</a>
+          <a href="#" class="text-ink-muted hover:text-ink transition-colors flex items-center gap-1.5">
+            Saved Homes
+            <span class="px-1.5 py-0.5 text-[11px] font-bold bg-surface-low text-ink rounded-full border border-surface-border">4</span>
+          </a>
+          <a href="#" class="text-ink-muted hover:text-ink transition-colors">Why MoveApp</a>
+        </nav>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="hidden lg:flex items-center w-72 relative">
+        <svg class="w-4 h-4 text-ink-subtle absolute left-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input 
+          type="text" 
+          placeholder="Search Kilimani, Westlands..." 
+          class="w-full pl-9.5 pr-4 py-2 text-xs rounded-xl bg-surface-low border border-surface-border text-ink placeholder:text-ink-subtle focus:outline-none focus:border-ink transition-colors"
+          readonly
+        />
+        <span class="absolute right-2.5 px-1.5 py-0.5 text-[10px] font-mono text-ink-subtle bg-white rounded border border-surface-border">⌘K</span>
+      </div>
+
+      <!-- Right: User Avatar & Actions -->
+      <div class="flex items-center gap-3.5">
+        <a href="#" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold rounded-xl bg-primary text-ink hover:bg-primary-hover transition-colors shadow-xs">
+          <span>List a House</span>
+        </a>
+
+        <!-- Notification Bell with Ping -->
+        <button class="relative p-2 rounded-xl text-ink-muted hover:text-ink hover:bg-surface-low transition-colors" aria-label="Notifications">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+          </svg>
+          <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full ring-2 ring-white"></span>
+        </button>
+
+        <!-- Active Tenant Avatar Profile Menu Trigger -->
+        <div class="flex items-center gap-2 pl-1 border-l border-surface-border">
+          <button class="flex items-center gap-2.5 p-1 rounded-full ring-2 ring-primary bg-surface-low hover:ring-ink transition-all">
+            <img 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ_KZEuKr5TfmvBIbSTW8NKcbF53CCKYFlPOZaY8cNfLYjaAGMPDWA2DTyrzfJZIQeoUPojQ0H7N5TgqTkE_RZEXLxDD6wiMhtfe_YxdnApsCMYh9LYvfETCDy3VfgNwX0Cs86-8rxSZdAY5q1926Ga9M41OmOr5_gQHo_sP2SSNXLPfI7xd_cARbIndj07Hq-zPLMk9f8nbbp_KTl2bDLtI_2ZcXcZi7YWllGdkRRvLO2kaGPa5Hjlw" 
+              alt="Tenant Brian Otieno avatar" 
+              class="w-8 h-8 rounded-full object-cover"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs & Title Sub-header -->
+  <div class="bg-white border-b border-surface-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+      <nav class="flex items-center gap-2 text-xs text-ink-muted mb-2 font-medium">
+        <a href="#" class="hover:text-ink transition-colors">Home</a>
+        <span>/</span>
+        <a href="#" class="hover:text-ink transition-colors">Tenant Dashboard</a>
+        <span>/</span>
+        <span class="text-ink font-semibold">Account Settings</span>
+      </nav>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-ink tracking-tight flex items-center gap-3">
+            Account Settings
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-subtle text-emerald-trust border border-emerald-border">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              Verified Tenant (Cap 296 Protected)
+            </span>
+          </h1>
+          <p class="text-sm text-ink-muted mt-1">Manage your personal details, rental search criteria, and alert preferences across Nairobi.</p>
+        </div>
+
+        <div class="text-xs text-ink-muted bg-surface-low px-3 py-1.5 rounded-xl border border-surface-border inline-flex items-center gap-2 self-start sm:self-auto">
+          <span class="w-2 h-2 rounded-full bg-emerald-trust"></span>
+          <span>Tenant ID: <strong class="text-ink font-mono font-bold">#NAI-82914</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Work Area with Two-Column Settings Layout -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Sub-Navigation (4 Cols) -->
+      <aside class="md:col-span-4 lg:col-span-3">
+        <nav class="bg-white rounded-2xl border border-surface-border p-2 sm:p-2.5 shadow-sm space-y-1">
+          <!-- Profile (Active) -->
+          <a href="#profile" class="flex items-center justify-between px-3.5 py-3 rounded-xl bg-surface-low text-ink font-bold text-sm border-l-4 border-primary transition-all shadow-xs">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+              <span>Profile</span>
+            </div>
+            <span class="w-2 h-2 rounded-full bg-primary"></span>
+          </a>
+
+          <!-- Preferences -->
+          <a href="#preferences" class="flex items-center justify-between px-3.5 py-3 rounded-xl text-ink-muted hover:text-ink hover:bg-surface-bright font-semibold text-sm transition-colors group">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-ink-subtle group-hover:text-ink transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+              </svg>
+              <span>Preferences</span>
+            </div>
+            <span class="text-[11px] font-medium text-ink-subtle bg-surface-low px-2 py-0.5 rounded-full">3 active</span>
+          </a>
+
+          <!-- Notifications -->
+          <a href="#notifications" class="flex items-center justify-between px-3.5 py-3 rounded-xl text-ink-muted hover:text-ink hover:bg-surface-bright font-semibold text-sm transition-colors group">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-ink-subtle group-hover:text-ink transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+              </svg>
+              <span>Notifications</span>
+            </div>
+            <span class="w-2 h-2 rounded-full bg-emerald-trust" title="WhatsApp Alerts Active"></span>
+          </a>
+
+          <!-- Security -->
+          <a href="#security" class="flex items-center justify-between px-3.5 py-3 rounded-xl text-ink-muted hover:text-ink hover:bg-surface-bright font-semibold text-sm transition-colors group">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-ink-subtle group-hover:text-ink transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              <span>Security</span>
+            </div>
+            <span class="text-[11px] font-medium text-emerald-trust">2FA on</span>
+          </a>
+        </nav>
+
+        <!-- Help & Anti-Scam Callout in Sidebar -->
+        <div class="mt-5 p-4 rounded-2xl bg-surface-bright border border-surface-border text-xs space-y-2">
+          <div class="flex items-center gap-2 font-bold text-ink">
+            <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Tenant Rights Guarantee</span>
+          </div>
+          <p class="text-ink-muted leading-relaxed">
+            MoveApp accounts are protected under the <strong>Kenyan Rent Restriction Act (Cap 296)</strong>. Never send gate pass fees via M-Pesa to unverified contacts.
+          </p>
+          <a href="#" class="inline-block text-ink font-semibold underline hover:text-primary transition-colors">Read Tenant Safety Guide →</a>
+        </div>
+      </aside>
+
+      <!-- Right Form Card (8 Cols) -->
+      <section class="md:col-span-8 lg:col-span-9">
+        <div class="bg-white rounded-2xl border border-surface-border shadow-xs overflow-hidden">
+          
+          <!-- Card Header -->
+          <div class="px-6 sm:px-8 py-6 border-b border-surface-border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h2 class="text-lg font-bold text-ink tracking-tight">Public &amp; Tenancy Profile</h2>
+              <p class="text-xs sm:text-sm text-ink-muted mt-0.5">This information helps verified landlords prepare accurate tenancy agreements and schedule scam-free viewings.</p>
+            </div>
+            <span class="text-[11px] font-semibold text-emerald-trust bg-emerald-subtle px-3 py-1 rounded-full border border-emerald-border self-start sm:self-auto">
+              ID Document: Vetted ✓
+            </span>
+          </div>
+
+          <form class="p-6 sm:p-8 space-y-8" onsubmit="event.preventDefault();">
+            
+            <!-- 1. Avatar Upload Section -->
+            <div class="space-y-3">
+              <label class="block text-xs font-bold uppercase tracking-wider text-ink">Profile Photo</label>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-6 p-4 rounded-2xl bg-surface-bright border border-surface-border">
+                <div class="relative group">
+                  <img 
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ_KZEuKr5TfmvBIbSTW8NKcbF53CCKYFlPOZaY8cNfLYjaAGMPDWA2DTyrzfJZIQeoUPojQ0H7N5TgqTkE_RZEXLxDD6wiMhtfe_YxdnApsCMYh9LYvfETCDy3VfgNwX0Cs86-8rxSZdAY5q1926Ga9M41OmOr5_gQHo_sP2SSNXLPfI7xd_cARbIndj07Hq-zPLMk9f8nbbp_KTl2bDLtI_2ZcXcZi7YWllGdkRRvLO2kaGPa5Hjlw" 
+                    alt="Brian Otieno Profile Picture" 
+                    class="w-20 h-20 sm:w-22 sm:h-22 rounded-full object-cover ring-4 ring-white shadow-md"
+                  />
+                  <span class="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-emerald-trust text-white flex items-center justify-center text-xs shadow" title="Identity Verified">
+                    ✓
+                  </span>
+                </div>
+
+                <div class="flex-1 space-y-2">
+                  <div class="flex flex-wrap items-center gap-2.5">
+                    <!-- Change Photo Button -->
+                    <label class="cursor-pointer inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-ink text-white hover:bg-black font-semibold text-xs transition-colors shadow-xs">
+                      <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <span>Change avatar</span>
+                      <input type="file" class="hidden" accept="image/png, image/jpeg">
+                    </label>
+
+                    <!-- Remove Button -->
+                    <button type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-surface-border bg-white text-ink-muted hover:text-red-600 hover:border-red-200 font-semibold text-xs transition-colors">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                      </svg>
+                      <span>Remove</span>
+                    </button>
+                  </div>
+                  <p class="text-[11px] text-ink-subtle">
+                    Recommended: Square JPG or PNG, at least 400×400px. Used when submitting viewing requests to landlords.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Personal Contact Information Form Fields -->
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <label class="block text-xs font-bold uppercase tracking-wider text-ink">Personal &amp; Contact Details</label>
+                <span class="text-[11px] text-ink-subtle">All fields required for verified leases</span>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Full Name -->
+                <div class="space-y-1.5 sm:col-span-2">
+                  <label class="block text-xs font-semibold text-ink">Full Legal Name</label>
+                  <div class="relative">
+                    <input 
+                      type="text" 
+                      value="Brian Otieno Omondi" 
+                      class="w-full px-3.5 py-2.5 rounded-xl border border-surface-border bg-white text-ink text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:border-ink transition-all"
+                    />
+                    <div class="absolute right-3 top-2.5 flex items-center text-xs text-emerald-trust font-medium">
+                      <span>✓ Matches ID</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Email Address -->
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-semibold text-ink">Email Address</label>
+                  <div class="relative">
+                    <input 
+                      type="email" 
+                      value="brian.otieno@gmail.com" 
+                      class="w-full px-3.5 py-2.5 rounded-xl border border-surface-border bg-white text-ink text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:border-ink transition-all"
+                    />
+                    <div class="absolute right-3 top-2.5 text-xs text-ink-subtle">Primary</div>
+                  </div>
+                  <p class="text-[11px] text-ink-subtle">Used for rental agreements and formal payment receipts.</p>
+                </div>
+
+                <!-- Phone Number / WhatsApp -->
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-semibold text-ink">Phone Number (M-Pesa / WhatsApp)</label>
+                  <div class="relative flex">
+                    <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-surface-border bg-surface-low text-ink font-semibold text-xs">
+                      🇰🇪 +254
+                    </span>
+                    <input 
+                      type="tel" 
+                      value="722 458 912" 
+                      class="w-full px-3.5 py-2.5 rounded-r-xl border border-surface-border bg-white text-ink text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:border-ink transition-all"
+                    />
+                  </div>
+                  <p class="text-[11px] text-ink-subtle">Landlords contact you here after you confirm viewing times.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-surface-border pt-2"></div>
+
+            <!-- 3. Rental Preferences Block -->
+            <div class="space-y-6">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+                  <h3 class="text-base font-bold text-ink tracking-tight">Rental Housing Search Preferences</h3>
+                </div>
+                <p class="text-xs text-ink-muted mt-1">MoveApp tailors your home alerts, WhatsApp match notifications, and custom search filters using these settings.</p>
+              </div>
+
+              <!-- Preferred Areas with Removable Chips -->
+              <div class="space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <label class="block text-xs font-bold uppercase tracking-wider text-ink">Preferred Nairobi Neighborhoods</label>
+                  <span class="text-[11px] text-ink-muted">Tap ✕ to remove • 4 selected</span>
+                </div>
+
+                <div class="p-3 rounded-2xl bg-surface-bright border border-surface-border flex flex-wrap items-center gap-2">
+                  <!-- Chip 1: Westlands -->
+                  <span class="inline-flex items-center gap-1.5 pl-3 pr-2 py-1.5 rounded-xl bg-white border border-surface-border text-xs font-semibold text-ink shadow-2xs hover:border-ink transition-colors group">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    <span>Westlands</span>
+                    <button type="button" class="text-ink-subtle hover:text-ink hover:bg-surface-low p-0.5 rounded-md transition-colors" aria-label="Remove Westlands">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </span>
+
+                  <!-- Chip 2: Kilimani -->
+                  <span class="inline-flex items-center gap-1.5 pl-3 pr-2 py-1.5 rounded-xl bg-white border border-surface-border text-xs font-semibold text-ink shadow-2xs hover:border-ink transition-colors group">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    <span>Kilimani / Woodley</span>
+                    <button type="button" class="text-ink-subtle hover:text-ink hover:bg-surface-low p-0.5 rounded-md transition-colors" aria-label="Remove Kilimani">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </span>
+
+                  <!-- Chip 3: Parklands -->
+                  <span class="inline-flex items-center gap-1.5 pl-3 pr-2 py-1.5 rounded-xl bg-white border border-surface-border text-xs font-semibold text-ink shadow-2xs hover:border-ink transition-colors group">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    <span>Parklands 3rd / 4th Ave</span>
+                    <button type="button" class="text-ink-subtle hover:text-ink hover:bg-surface-low p-0.5 rounded-md transition-colors" aria-label="Remove Parklands">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </span>
+
+                  <!-- Chip 4: Kileleshwa -->
+                  <span class="inline-flex items-center gap-1.5 pl-3 pr-2 py-1.5 rounded-xl bg-white border border-surface-border text-xs font-semibold text-ink shadow-2xs hover:border-ink transition-colors group">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    <span>Kileleshwa</span>
+                    <button type="button" class="text-ink-subtle hover:text-ink hover:bg-surface-low p-0.5 rounded-md transition-colors" aria-label="Remove Kileleshwa">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </span>
+
+                  <!-- Add Area Quick Input Trigger -->
+                  <div class="inline-flex items-center">
+                    <button type="button" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-dashed border-ink-subtle text-xs font-semibold text-ink hover:border-ink hover:bg-white transition-all">
+                      <svg class="w-3.5 h-3.5 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                      </svg>
+                      <span>Add neighborhood</span>
+                    </button>
+                  </div>
+                </div>
+                <p class="text-[11px] text-ink-subtle">Suggestions: Lavington, South C, Roysambu, Pangani, Ngong Road corridor.</p>
+              </div>
+
+              <!-- Budget Range Slider / Input Pair -->
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <label class="block text-xs font-bold uppercase tracking-wider text-ink">Target Monthly Budget Range</label>
+                  <span class="text-xs font-bold text-ink bg-surface-low px-2.5 py-1 rounded-lg border border-surface-border">
+                    Ksh 30,000 — Ksh 60,000 <span class="text-ink-muted font-normal">/ month</span>
+                  </span>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-surface-bright border border-surface-border space-y-4">
+                  <!-- Range Track Simulation -->
+                  <div class="relative pt-2 pb-1">
+                    <div class="h-2 bg-surface-border rounded-full relative">
+                      <!-- Active range span from 25% (30k) to 65% (60k) -->
+                      <div class="absolute left-[25%] right-[35%] h-full bg-primary rounded-full"></div>
+                      <!-- Left Thumb -->
+                      <div class="absolute left-[25%] -top-1.5 w-5 h-5 rounded-full bg-ink border-2 border-primary shadow-sm cursor-pointer -translate-x-1/2"></div>
+                      <!-- Right Thumb -->
+                      <div class="absolute right-[35%] -top-1.5 w-5 h-5 rounded-full bg-ink border-2 border-primary shadow-sm cursor-pointer translate-x-1/2"></div>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-4 pt-1">
+                    <div class="space-y-1">
+                      <span class="text-[11px] font-semibold text-ink-muted">Minimum Budget</span>
+                      <div class="relative">
+                        <span class="absolute left-3 top-2.5 text-xs font-bold text-ink-subtle">Ksh</span>
+                        <input 
+                          type="text" 
+                          value="30,000" 
+                          class="w-full pl-10 pr-3 py-2 rounded-xl border border-surface-border bg-white text-ink text-xs font-bold focus:outline-none focus:border-ink"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="space-y-1">
+                      <span class="text-[11px] font-semibold text-ink-muted">Maximum Budget</span>
+                      <div class="relative">
+                        <span class="absolute left-3 top-2.5 text-xs font-bold text-ink-subtle">Ksh</span>
+                        <input 
+                          type="text" 
+                          value="60,000" 
+                          class="w-full pl-10 pr-3 py-2 rounded-xl border border-surface-border bg-white text-ink text-xs font-bold focus:outline-none focus:border-ink"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between text-[11px] text-ink-subtle pt-1 border-t border-surface-border">
+                    <span>Market note: 2-Beds in Westlands &amp; Kilimani average Ksh 40k–55k.</span>
+                    <span class="text-ink font-medium">Service charge inclusive</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Preferred House Types Selection -->
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <label class="block text-xs font-bold uppercase tracking-wider text-ink">Preferred House Types</label>
+                  <span class="text-[11px] text-ink-muted">Select all applicable types</span>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <!-- Option 1: 1 Bedroom -->
+                  <label class="cursor-pointer relative flex flex-col p-3 rounded-xl border border-surface-border bg-white hover:border-ink transition-all">
+                    <div class="flex items-center justify-between mb-1.5">
+                      <span class="text-xs font-bold text-ink">1 Bedroom</span>
+                      <input type="checkbox" class="w-4 h-4 rounded text-ink accent-ink focus:ring-0">
+                    </div>
+                    <span class="text-[11px] text-ink-muted">Modern flat / Ensuite</span>
+                  </label>
+
+                  <!-- Option 2: 2 Bedroom (Selected) -->
+                  <label class="cursor-pointer relative flex flex-col p-3 rounded-xl border-2 border-ink bg-surface-bright shadow-xs transition-all">
+                    <div class="flex items-center justify-between mb-1.5">
+                      <span class="text-xs font-extrabold text-ink">2 Bedrooms</span>
+                      <input type="checkbox" checked class="w-4 h-4 rounded text-ink accent-ink focus:ring-0">
+                    </div>
+                    <span class="text-[11px] text-ink font-medium">Master Ensuite / DSQ</span>
+                    <span class="absolute top-1.5 right-8 w-2 h-2 rounded-full bg-primary"></span>
+                  </label>
+
+                  <!-- Option 3: Studio / Bedsitter (Selected) -->
+                  <label class="cursor-pointer relative flex flex-col p-3 rounded-xl border-2 border-ink bg-surface-bright shadow-xs transition-all">
+                    <div class="flex items-center justify-between mb-1.5">
+                      <span class="text-xs font-extrabold text-ink">Studio Flat</span>
+                      <input type="checkbox" checked class="w-4 h-4 rounded text-ink accent-ink focus:ring-0">
+                    </div>
+                    <span class="text-[11px] text-ink font-medium">Executive / Biometric</span>
+                    <span class="absolute top-1.5 right-8 w-2 h-2 rounded-full bg-primary"></span>
+                  </label>
+
+                  <!-- Option 4: Maisonette / Townhouse -->
+                  <label class="cursor-pointer relative flex flex-col p-3 rounded-xl border border-surface-border bg-white hover:border-ink transition-all">
+                    <div class="flex items-center justify-between mb-1.5">
+                      <span class="text-xs font-bold text-ink">Maisonette</span>
+                      <input type="checkbox" class="w-4 h-4 rounded text-ink accent-ink focus:ring-0">
+                    </div>
+                    <span class="text-[11px] text-ink-muted">Gated compound</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Must-Have Kenyan Utility Amenities (Micro-preferences) -->
+              <div class="p-4 rounded-2xl bg-surface-low border border-surface-border space-y-2.5">
+                <span class="block text-xs font-bold text-ink">Key Nairobi Tenancy Priorities</span>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <label class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-surface-border text-ink cursor-pointer hover:border-ink">
+                    <input type="checkbox" checked class="w-3.5 h-3.5 accent-ink rounded">
+                    <span class="font-medium">24/7 Borehole Backup</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-surface-border text-ink cursor-pointer hover:border-ink">
+                    <input type="checkbox" checked class="w-3.5 h-3.5 accent-ink rounded">
+                    <span class="font-medium">Prepaid KPLC Token Meter</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-surface-border text-ink cursor-pointer hover:border-ink">
+                    <input type="checkbox" checked class="w-3.5 h-3.5 accent-ink rounded">
+                    <span class="font-medium">Safaricom / Zuku Fiber</span>
+                  </label>
+                  <label class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-surface-border text-ink cursor-pointer hover:border-ink">
+                    <input type="checkbox" class="w-3.5 h-3.5 accent-ink rounded">
+                    <span class="font-medium">Dedicated Car Parking</span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Card Footer: Status Note & Anchored Save Button -->
+            <div class="pt-6 border-t border-surface-border flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="flex items-center gap-2 text-xs text-ink-muted">
+                <svg class="w-4 h-4 text-emerald-trust" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Changes auto-sync with your instant WhatsApp rental alerts</span>
+              </div>
+
+              <!-- Primary Action Anchored Bottom Right -->
+              <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+                <button type="button" class="px-5 py-2.5 rounded-xl border border-surface-border bg-white text-ink font-bold text-xs hover:bg-surface-low transition-colors">
+                  Cancel
+                </button>
+                <button type="submit" class="w-full sm:w-auto px-7 py-2.5 rounded-xl bg-primary text-ink hover:bg-primary-hover font-extrabold text-sm tracking-tight transition-all shadow-sm flex items-center justify-center gap-2">
+                  <span>Save Changes</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Global Footer Compliance & Links -->
+  <footer class="mt-16 bg-white border-t border-surface-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div class="col-span-2 md:col-span-1 space-y-3">
+          <div class="flex items-center gap-2 font-extrabold text-base tracking-tight text-ink">
+            <div class="w-6 h-6 rounded-lg bg-ink flex items-center justify-center text-primary font-black text-xs">
+              M
+            </div>
+            <span>MoveApp Kenya</span>
+          </div>
+          <p class="text-xs text-ink-muted leading-relaxed">
+            Authentic, street-level rental housing platform engineered for urban Kenyan tenants, certified landlords, and verified caretakers across Nairobi.
+          </p>
+          <div class="inline-flex items-center gap-1.5 text-xs text-emerald-trust font-medium">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>100% Anti-fraud vetted properties</span>
+          </div>
+        </div>
+
+        <div class="space-y-2.5">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-ink">Renters</h4>
+          <ul class="text-xs text-ink-muted space-y-2">
+            <li><a href="#" class="hover:text-ink">Search Rentals</a></li>
+            <li><a href="#" class="hover:text-ink">Saved Homes</a></li>
+            <li><a href="#" class="hover:text-ink">Verified Estates</a></li>
+            <li><a href="#" class="hover:text-ink">Tenant Rights Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-2.5">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-ink">Property Owners</h4>
+          <ul class="text-xs text-ink-muted space-y-2">
+            <li><a href="#" class="hover:text-ink">List a House</a></li>
+            <li><a href="#" class="hover:text-ink">Get Verified</a></li>
+            <li><a href="#" class="hover:text-ink">Caretaker Portal</a></li>
+            <li><a href="#" class="hover:text-ink">Listing Packages</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-2.5">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-ink">Trust &amp; Compliance</h4>
+          <ul class="text-xs text-ink-muted space-y-2">
+            <li><a href="#" class="hover:text-ink">Report Scam / Dispute</a></li>
+            <li><a href="#" class="hover:text-ink">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-ink">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-ink">Rent Restriction Act Advisory</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-surface-border flex flex-col sm:flex-row items-center justify-between text-[11px] text-ink-subtle gap-2">
+        <p>© 2025 MoveApp Kenya Technologies Ltd. All rights reserved.</p>
+        <p>Compliant with the Rent Restriction Act (Cap 296) and Landlord and Tenant Act of the Laws of Kenya.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

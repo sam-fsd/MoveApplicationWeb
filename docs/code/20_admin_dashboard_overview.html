@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-container":"#c7d1e1","on-secondary-fixed":"#191c23","secondary-fixed":"#e0e2ec","on-surface":"#1a1c1a","surface-tint":"#775a00","secondary-container":"#e0e2ec","inverse-primary":"#f4bf32","primary-fixed-dim":"#f4bf32","surface-bright":"#faf9f6","tertiary":"#555f6d","on-tertiary-container":"#505a67","on-primary":"#ffffff","inverse-surface":"#2f312f","on-primary-fixed-variant":"#5a4300","on-primary-fixed":"#251a00","surface-container-high":"#e9e8e5","background":"#faf9f6","on-tertiary":"#ffffff","primary-fixed":"#ffdf9a","surface-container-highest":"#e3e2e0","tertiary-fixed":"#d9e3f4","on-surface-variant":"#4f4634","primary":"#775a00","surface":"#FFFFFF","error-container":"#ffdad6","inverse-on-surface":"#f2f1ee","on-secondary-fixed-variant":"#44474f","outline":"#817661","outline-variant":"#d2c5ad","surface-variant":"#e3e2e0","on-primary-container":"#715500","tertiary-fixed-dim":"#bdc7d7","border":"#E6E3DC","on-tertiary-fixed-variant":"#3e4855","primary-container":"#ffc93c","on-secondary-container":"#62646d","on-tertiary-fixed":"#121c28","pending-amber":"#E08700","danger-red":"#D93025","surface-container-low":"#f4f3f1","on-secondary":"#ffffff","verified-green":"#1F9D55","on-error":"#ffffff","secondary":"#5c5e67","pending-amber-bg":"#FEF3E2","surface-container-lowest":"#ffffff","on-background":"#1a1c1a","on-error-container":"#93000a","secondary-fixed-dim":"#c4c6d0","verified-green-bg":"#E8F8EE","surface-dim":"#dbdad7","surface-container":"#efeeeb","danger-red-bg":"#FCE8E6","error":"#ba1a1a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"container-max":"1280px","space-xs":"0.5rem","gutter-mobile":"1rem","space-2xs":"0.25rem","space-md":"1rem","space-2xl":"2.5rem","space-xl":"2rem","space-3xl":"3rem","space-lg":"1.5rem","space-sm":"0.75rem","gutter-desktop":"1.5rem","section-gap":"2rem"},"fontFamily":{"caption":["Inter"],"price-hero":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Inter"],"label-sm":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"label-md":["Inter"],"price-listing":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"]},"fontSize":{"caption":["11px",{"lineHeight":"14px","fontWeight":"500"}],"price-hero":["28px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"600"}],"price-listing":["20px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-on-surface z-50 flex flex-col justify-between select-none shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between border-b border-inverse-surface"><div class="flex items-center gap-space-xs"><div class="w-7 h-7 rounded bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-fixed text-[18px]">home_work</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-surface tracking-tight leading-none">MoveApp<span class="text-primary-container">.ke</span></span><span class="font-caption text-caption text-secondary-fixed-dim uppercase tracking-wider mt-0.5">Admin</span></div></div><span class="px-space-xs py-0.5 rounded-full bg-primary-container text-on-primary-fixed font-caption text-caption font-semibold uppercase tracking-wider">Ops Console</span></div><div class="px-space-md py-space-sm"><p class="font-caption text-caption uppercase text-secondary-fixed-dim tracking-wider">Operational Units</p></div><nav class="flex flex-col gap-1 px-space-xs" data-active-classes="bg-inverse-surface text-surface font-semibold border-l-4 border-primary-container pl-space-sm"><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 rounded-lg transition-colors bg-inverse-surface text-surface font-semibold border-l-4 border-primary-container pl-space-sm" data-path="overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-md text-label-md">Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-secondary-fixed hover:bg-inverse-surface hover:text-surface transition-colors" data-path="owner-verifications" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-md text-label-md">Owner Verifications</span></div><span class="px-1.5 py-0.5 rounded-full bg-pending-amber text-surface font-caption text-caption font-bold leading-none">7</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-secondary-fixed hover:bg-inverse-surface hover:text-surface transition-colors" data-path="listings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">apartment</span><span class="font-label-md text-label-md">Listings</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-secondary-fixed hover:bg-inverse-surface hover:text-surface transition-colors" data-path="reports" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">flag</span><span class="font-label-md text-label-md">Reports</span></div><span class="px-1.5 py-0.5 rounded-full bg-danger-red text-surface font-caption text-caption font-bold leading-none">4</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-secondary-fixed hover:bg-inverse-surface hover:text-surface transition-colors" data-path="users" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md">Users</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-secondary-fixed hover:bg-inverse-surface hover:text-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Settings</span></div></a></nav></div><div class="p-space-sm flex flex-col gap-space-xs border-t border-inverse-surface bg-inverse-surface/30"><div class="px-space-xs py-1.5 flex items-center justify-between bg-inverse-surface/60 rounded-lg"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-verified-green animate-pulse"></span><span class="font-caption text-caption text-secondary-fixed">All Services Operational</span></div><span class="font-caption text-caption text-secondary-fixed-dim">99.9%</span></div><div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-inverse-surface transition-colors"><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-surface leading-tight">Admin User</span><span class="font-caption text-caption text-secondary-fixed-dim leading-none mt-0.5">Admin - Nairobi Ops</span></div></div><a class="text-secondary-fixed-dim hover:text-primary-container transition-colors flex items-center justify-center p-1 rounded" data-path="logout" href="#" title="Log out"><span class="material-symbols-outlined text-[20px]">logout</span></a></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-sm"><span class="font-body-sm text-body-sm text-secondary">MoveApp Operations</span><span class="text-secondary-fixed-dim">/</span><span class="font-label-md text-label-md text-on-surface font-semibold">Overview</span></div><div class="flex-1 max-w-md mx-space-lg"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-3 text-secondary text-[20px] pointer-events-none">search</span><input class="w-full h-10 pl-10 pr-space-md rounded-lg bg-surface-container-low border border-border text-on-surface placeholder:text-secondary font-body-sm text-body-sm focus:outline-none focus:border-on-surface focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search tenants, owners, listings, reports..." type="text"/></div></div><div class="flex items-center gap-space-sm"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-secondary text-[18px] pointer-events-none">location_on</span><select class="h-10 pl-8 pr-7 rounded-lg bg-surface-container-low border border-border text-on-surface font-label-sm text-label-sm appearance-none focus:outline-none focus:border-on-surface focus:ring-2 focus:ring-primary-container cursor-pointer"><option>All Nairobi Counties</option><option>Westlands Sub-County</option><option>Kilimani &amp; Dagoretti</option><option>Lang'ata &amp; Karen</option><option>Kasarani Sub-County</option><option>Embakasi Region</option></select><span class="material-symbols-outlined absolute right-2 text-secondary text-[18px] pointer-events-none">arrow_drop_down</span></div><button class="relative w-10 h-10 rounded-lg flex items-center justify-center bg-surface-container-low hover:bg-surface-container-high text-on-surface transition-colors border border-border" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-pending-amber ring-2 ring-surface"></span></button><button class="h-10 px-space-md rounded-lg bg-primary-container text-on-primary-fixed hover:bg-inverse-primary transition-colors flex items-center gap-space-xs font-label-md text-label-md font-semibold" type="button"><span class="material-symbols-outlined text-[18px]">download</span><span>+ Export Audit Log</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-background min-h-screen px-gutter-desktop py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Operational Header -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col gap-space-2xs max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Operations Overview</h1>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-verified-green-bg text-verified-green font-caption text-caption font-semibold">
+<span class="w-2 h-2 rounded-full bg-verified-green animate-pulse"></span>
+<span>System Live • Cap 296 Vetting Desk Active</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+        Real-time tenancy compliance, landlord credentials audit, listing verifications, and tenant fraud protection across Nairobi metro.
+      </p>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<div class="relative">
+<select class="h-10 pl-3 pr-8 rounded-lg bg-surface text-on-surface font-label-sm text-label-sm shadow-sm hover:bg-surface-container-low transition-colors appearance-none cursor-pointer focus:outline-none">
+<option>Last 30 Days</option>
+<option>Last 7 Days</option>
+<option>This Quarter (Q2)</option>
+<option>Year to Date (2025)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-secondary text-[18px] pointer-events-none">expand_more</span>
+</div>
+<button class="h-10 px-space-sm rounded-lg bg-surface text-on-surface shadow-sm hover:bg-surface-container-low transition-colors flex items-center gap-1.5 font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">table_view</span>
+<span>Download CSV</span>
+</button>
+<button class="h-10 px-space-md rounded-lg bg-primary-container text-on-primary-fixed hover:bg-inverse-primary shadow-sm transition-colors flex items-center gap-1.5 font-label-md text-label-md font-bold" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Run Batch Audit</span>
+</button>
+</div>
+</div>
+<!-- Key Performance Stat Grid (6 Metric Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-space-sm mb-space-xl">
+<!-- Stat 1: Total Tenants -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-secondary font-semibold tracking-wider">Total Tenants</span>
+<div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="font-price-hero text-price-hero text-on-surface leading-none">18,420</div>
+</div>
+<div class="flex items-center gap-1 text-verified-green font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+12.4% this month</span>
+</div>
+</div>
+<!-- Stat 2: Total Owners -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-secondary font-semibold tracking-wider">Total Owners</span>
+<div class="w-7 h-7 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[16px]">real_estate_agent</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="font-price-hero text-price-hero text-on-surface leading-none">1,248</div>
+</div>
+<div class="flex items-center justify-between font-caption text-caption">
+<span class="text-secondary">942 verified (75.5%)</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-semibold text-[10px]">Active</span>
+</div>
+</div>
+<!-- Stat 3: Pending Verifications -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-secondary font-semibold tracking-wider">Pending Audit</span>
+<div class="w-7 h-7 rounded-full bg-pending-amber-bg text-pending-amber flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+</div>
+</div>
+<div class="my-space-xs flex items-baseline gap-2">
+<span class="font-price-hero text-price-hero text-on-surface leading-none">27</span>
+<span class="px-2 py-0.5 rounded-full bg-pending-amber-bg text-pending-amber font-caption text-caption font-bold">Needs Action</span>
+</div>
+<div class="font-caption text-caption text-pending-amber font-medium">
+        7 urgent (&lt;24h SLA target)
+      </div>
+</div>
+<!-- Stat 4: Active Listings -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-secondary font-semibold tracking-wider">Active Listings</span>
+<div class="w-7 h-7 rounded-full bg-verified-green-bg text-verified-green flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="font-price-hero text-price-hero text-on-surface leading-none">3,814</div>
+</div>
+<div class="font-caption text-caption text-secondary truncate">
+<span class="text-verified-green font-semibold">98.2%</span> zero viewing fee
+      </div>
+</div>
+<!-- Stat 5: Open Reports -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-secondary font-semibold tracking-wider">Open Reports</span>
+<div class="w-7 h-7 rounded-full bg-danger-red-bg text-danger-red flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+</div>
+</div>
+<div class="my-space-xs flex items-baseline gap-2">
+<span class="font-price-hero text-price-hero text-danger-red leading-none">14</span>
+<span class="px-1.5 py-0.5 rounded bg-danger-red-bg text-danger-red font-caption text-caption font-bold">Escalated</span>
+</div>
+<div class="font-caption text-caption text-secondary">
+<span class="text-danger-red font-semibold">4</span> high severity priority
+      </div>
+</div>
+<!-- Stat 6: Weekly Intake -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden bg-gradient-to-br from-surface via-surface to-primary-container/10">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption uppercase text-secondary font-semibold tracking-wider">This Week</span>
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">add_business</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="font-price-hero text-price-hero text-on-surface leading-none">186</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px] text-primary">north_east</span>
+<span>+18% vs previous week</span>
+</div>
+</div>
+</div>
+<!-- Main Asymmetric Split: Owner Verifications (55%) & Flagged Reports (45%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Left Column: Pending Owner Verifications (7 cols) -->
+<div class="lg:col-span-7 bg-surface rounded-xl shadow-sm flex flex-col justify-between overflow-hidden">
+<div>
+<div class="p-space-md flex items-center justify-between bg-surface">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Pending Owner Verifications</h2>
+<span class="px-2 py-0.5 rounded-full bg-pending-amber-bg text-pending-amber font-caption text-caption font-bold">27 Pending</span>
+</div>
+<a class="text-secondary hover:text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors" href="#">
+<span>View all 27</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Verification Table / List -->
+<div class="flex flex-col">
+<!-- Row 1 -->
+<div class="p-space-md hover:bg-surface-container-low transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-start sm:items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center font-headline-sm text-headline-sm font-bold shrink-0">
+                SN
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Samuel Njoroge</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-caption text-caption">Landlord</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary truncate">
+                  Kamau Properties Ltd • <span class="text-on-surface">Westlands</span> • Submitted Today, 10:45 AM
+                </div>
+<div class="flex flex-wrap items-center gap-1.5 mt-1">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-[11px] font-caption text-on-surface">
+<span class="material-symbols-outlined text-[12px] text-verified-green">badge</span> National ID
+                  </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-[11px] font-caption text-on-surface">
+<span class="material-symbols-outlined text-[12px] text-verified-green">description</span> Title Deed
+                  </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-[11px] font-caption text-on-surface">
+<span class="material-symbols-outlined text-[12px] text-verified-green">pin</span> KRA PIN
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+<button class="h-9 px-4 rounded-lg bg-primary-container text-on-primary-fixed hover:bg-inverse-primary font-label-sm text-label-sm font-bold transition-colors" type="button">
+                Review
+              </button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="p-space-md hover:bg-surface-container-low transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-start sm:items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-headline-sm font-bold shrink-0">
+                GW
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Grace Muthoni Wambui</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-caption text-caption">Agency</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary truncate">
+                  Kilimani Heights Ltd • <span class="text-on-surface">Kilimani</span> • Yesterday, 16:20 PM
+                </div>
+<div class="flex flex-wrap items-center gap-1.5 mt-1">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-[11px] font-caption text-on-surface">
+<span class="material-symbols-outlined text-[12px] text-verified-green">description</span> Title Deed
+                  </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-[11px] font-caption text-on-surface">
+<span class="material-symbols-outlined text-[12px] text-verified-green">handshake</span> Mandate
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+<button class="h-9 px-4 rounded-lg bg-primary-container text-on-primary-fixed hover:bg-inverse-primary font-label-sm text-label-sm font-bold transition-colors" type="button">
+                Review
+              </button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="p-space-md hover:bg-surface-container-low transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-start sm:items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-headline-sm font-bold shrink-0">
+                PL
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Peter Kiprono Langat</span>
+<span class="px-1.5 py-0.5 rounded bg-pending-amber-bg text-pending-amber font-caption text-caption font-semibold">24h SLA Warning</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary truncate">
+                  South B Residentials • <span class="text-on-surface">Nairobi South</span> • 2 days ago
+                </div>
+<div class="flex flex-wrap items-center gap-1.5 mt-1">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-[11px] font-caption text-on-surface">
+<span class="material-symbols-outlined text-[12px] text-verified-green">badge</span> National ID
+                  </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-[11px] font-caption text-on-surface">
+<span class="material-symbols-outlined text-[12px] text-verified-green">receipt_long</span> KPLC Meter Bill
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+<button class="h-9 px-4 rounded-lg bg-primary-container text-on-primary-fixed hover:bg-inverse-primary font-label-sm text-label-sm font-bold transition-colors" type="button">
+                Review
+              </button>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="p-space-md hover:bg-surface-container-low transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-start sm:items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-headline-sm text-headline-sm font-bold shrink-0">
+                AN
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Amina Hassan Noor</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-secondary font-caption text-caption">Landlord</span>
+</div>
+<div class="font-body-sm text-body-sm text-secondary truncate">
+                  Parklands Executive Suites • <span class="text-on-surface">Parklands</span> • 3 days ago
+                </div>
+<div class="flex flex-wrap items-center gap-1.5 mt-1">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-[11px] font-caption text-on-surface">
+<span class="material-symbols-outlined text-[12px] text-verified-green">history_edu</span> Cert of Lease
+                  </span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-[11px] font-caption text-on-surface">
+<span class="material-symbols-outlined text-[12px] text-verified-green">travel_explore</span> Passport
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+<button class="h-9 px-4 rounded-lg bg-primary-container text-on-primary-fixed hover:bg-inverse-primary font-label-sm text-label-sm font-bold transition-colors" type="button">
+                Review
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer SLA info -->
+<div class="p-space-sm px-space-md bg-surface-container-low flex items-center justify-between text-secondary">
+<div class="flex items-center gap-2 font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-verified-green">timer</span>
+<span>Average verification turnaround: <strong class="text-on-surface">4.2 hours</strong> (Target SLA: 24h)</span>
+</div>
+<span class="font-caption text-caption font-semibold text-verified-green">96.8% In SLA</span>
+</div>
+</div>
+<!-- Right Column: Recent Reports & Flagged Listings (5 cols) -->
+<div class="lg:col-span-5 bg-surface rounded-xl shadow-sm flex flex-col justify-between overflow-hidden">
+<div>
+<div class="p-space-md flex flex-col gap-space-xs bg-surface">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Recent Reports</h2>
+<span class="w-2 h-2 rounded-full bg-danger-red"></span>
+</div>
+<a class="text-secondary hover:text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors" href="#">
+<span>Reports Queue</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center gap-1 mt-1">
+<button class="px-2.5 py-1 rounded-full bg-on-surface text-surface font-caption text-caption font-semibold" type="button">
+              All (14)
+            </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-caption text-caption font-semibold transition-colors" type="button">
+              High Severity (4)
+            </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-caption text-caption font-semibold transition-colors" type="button">
+              Pending Review (10)
+            </button>
+</div>
+</div>
+<!-- Reports Feed -->
+<div class="flex flex-col">
+<!-- Report Item 1 -->
+<div class="p-space-md hover:bg-surface-container-low transition-colors flex items-start gap-space-sm">
+<img class="w-14 h-14 rounded-lg object-cover shrink-0" data-alt="Contemporary two bedroom apartment interior in Westlands Nairobi featuring polished wooden floors, large window admitting warm afternoon sunlight, clean minimal decor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQomWl-1pCgdNUktwtW8479R4TCulYXxuebkd-lD0p-FLm2zR6wMlhaNbKznGIGFqowyxVSVoFK9etfYNH7JgO9bMve2qbx_sTFwBiMEODTC8C5J1d1OnsmBfpZeSFNWnXswD-fSYWJR9BX9NsA3IAZwd4d-OUchcKm4cjLrTp-_KylBGG_ePtropMTG4Gx2iOj2iUqw7_FT1MTvBWULKvxcgOb2oASqmW6UqmUBubLfll5XOTnBbinA"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-danger-red-bg text-danger-red font-caption text-caption font-bold truncate">
+                  Illegal Viewing Fee Demanded
+                </span>
+<span class="font-caption text-caption text-secondary shrink-0">25m ago</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold truncate mt-1">
+                2 Bed Modern Flat with Balcony (Rhapta Rd)
+              </h3>
+<div class="flex items-center justify-between mt-1 text-secondary font-caption text-caption">
+<span class="truncate">Reported by: <span class="text-on-surface">Brian Otieno</span></span>
+<span class="flex items-center gap-1 text-danger-red font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-danger-red"></span> Critical
+                </span>
+</div>
+</div>
+</div>
+<!-- Report Item 2 -->
+<div class="p-space-md hover:bg-surface-container-low transition-colors flex items-start gap-space-sm">
+<img class="w-14 h-14 rounded-lg object-cover shrink-0" data-alt="Modern studio apartment in Parklands Nairobi with tiled floor, kitchenette counter, recessed ceiling lights, and minimalist urban balcony view." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBasyS3UnLuFJMoYXn3dWDQx6FXgSS6W-WBtqbxvw-_d0G8qu5kR1fdJerVRS9gst2WjjnhH0I48n3pmz-dImJ9qNVFzV84-xMa22f1LHxKr40nVPgRmILx2p5PmanFDxlsZOp6Fx1UbfVdaZ3wt-fbHaR0iJXGBCtUGv2RRk3dyz-7psF7YhWG5miRyUbr7Le3d9fAilJCQv-9L6EwyxsnfJLn6sMbvwkJor_XPBO-ALg_UcV6OJeQg"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-pending-amber-bg text-pending-amber font-caption text-caption font-bold truncate">
+                  Fake Photos / Middleman Broker
+                </span>
+<span class="font-caption text-caption text-secondary shrink-0">2h ago</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold truncate mt-1">
+                Executive Studio 4th Ave Parklands
+              </h3>
+<div class="flex items-center justify-between mt-1 text-secondary font-caption text-caption">
+<span class="truncate">Reported by: <span class="text-on-surface">Mercy Achieng</span></span>
+<span class="flex items-center gap-1 text-pending-amber font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-pending-amber"></span> Moderate
+                </span>
+</div>
+</div>
+</div>
+<!-- Report Item 3 -->
+<div class="p-space-md hover:bg-surface-container-low transition-colors flex items-start gap-space-sm">
+<img class="w-14 h-14 rounded-lg object-cover shrink-0" data-alt="Spacious town house lounge in Kileleshwa Nairobi with white walls, stone fireplace, large sliding doors leading to a lush private garden hedge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsgJXMYSapVtSzH0cfJMClc_3Cw246L_2Xg_Ac68nTIo3lmPmxLI_RNeAi2XnK7jQkEy52TvmOQtk0gwB1L_ULT-ekqQT-cOAW8vtTjHhh8kGUKEId5VNv5KUp8EZcznNbFIhd7UK4ZNDVGpcG-vcqe1f91DgkQTJ9iDK49hAjqyO-PKBIgk5uQthoVGkF5AM7vfuJlQCdTlvzOunF_kxN6UvuHV9os6XqGSobJqpgOLxB4TMMYzpqjg"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-caption text-caption font-bold truncate">
+                  Unresponsive Landlord
+                </span>
+<span class="font-caption text-caption text-secondary shrink-0">5h ago</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold truncate mt-1">
+                3 Bed Townhouse Kileleshwa
+              </h3>
+<div class="flex items-center justify-between mt-1 text-secondary font-caption text-caption">
+<span class="truncate">Reported by: <span class="text-on-surface">David Kariuki</span></span>
+<span class="flex items-center gap-1 text-secondary font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Low
+                </span>
+</div>
+</div>
+</div>
+<!-- Report Item 4 -->
+<div class="p-space-md hover:bg-surface-container-low transition-colors flex items-start gap-space-sm">
+<img class="w-14 h-14 rounded-lg object-cover shrink-0" data-alt="Bright furnished one bedroom apartment in Kilimani with grey sofa, wooden dining table, open plan kitchen, and city skyline view through sheer curtains." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALEqSuvoObyJwz26_O3WI9CN10TxfD_RTTaGdTZmwruF731mZVfNrrBEaWT-UfzT_sSXG0DJZ-VK2iQZ9Fw3pJPkqVq2Po8nwdKdKwj-_5kbZkp26diglGCT0IU0h2-0lO2UCt-moYZo30tjgibm9gQSQlOblkI4OLnT5uQ-aySUccTErBjIt97794pQLs3sMzSsWZUmfBvd4MYw-l-qFBWi4hTQXEACBdLWhZSqiy8GsutMUce224lA"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1">
+<span class="px-2 py-0.5 rounded-full bg-danger-red-bg text-danger-red font-caption text-caption font-bold truncate">
+                  Rent Price Misrepresentation
+                </span>
+<span class="font-caption text-caption text-secondary shrink-0">1d ago</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold truncate mt-1">
+                1 Bed Furnished Kilimani
+              </h3>
+<div class="flex items-center justify-between mt-1 text-secondary font-caption text-caption">
+<span class="truncate">Reported by: <span class="text-on-surface">Faith Chebet</span></span>
+<span class="flex items-center gap-1 text-danger-red font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-danger-red"></span> Critical
+                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-space-sm px-space-md bg-surface-container-low flex items-center justify-between text-secondary">
+<span class="font-caption text-caption">Tenancy Tribunal Flag Count: <strong>0 active today</strong></span>
+<button class="font-label-sm text-label-sm text-on-surface hover:underline font-semibold" type="button">Manage Filters</button>
+</div>
+</div>
+</div>
+<!-- Bottom Visual Analytics: Weekly Intake & Approvals Bar Chart -->
+<div class="bg-surface rounded-xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Weekly New Listings &amp; Approvals</h2>
+<p class="font-body-sm text-body-sm text-secondary">Intake trends and vetting throughput over the preceding 12 operational cycles</p>
+</div>
+<!-- Time Selector & Legend -->
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-xs font-caption text-caption">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-on-surface"></span>
+<span class="text-on-surface">Published</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary-container"></span>
+<span class="text-on-surface">Pending / Review</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-danger-red opacity-60"></span>
+<span class="text-on-surface">Rejected</span>
+</div>
+</div>
+<div class="flex items-center p-0.5 rounded-lg bg-surface-container">
+<button class="px-2.5 py-1 rounded-md bg-surface text-on-surface font-caption text-caption font-semibold shadow-xs" type="button">Last 12 Weeks</button>
+<button class="px-2.5 py-1 rounded-md text-secondary hover:text-on-surface font-caption text-caption font-medium transition-colors" type="button">Last 6 Months</button>
+<button class="px-2.5 py-1 rounded-md text-secondary hover:text-on-surface font-caption text-caption font-medium transition-colors" type="button">Year to Date</button>
+</div>
+</div>
+</div>
+<!-- Interactive SVG Visual Chart -->
+<div class="w-full overflow-x-auto py-2">
+<div class="min-w-[720px] h-64 flex flex-col justify-end relative">
+<!-- Horizontal Gridlines & Y-Axis -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none text-secondary font-caption text-caption">
+<div class="flex items-center w-full">
+<span class="w-8 shrink-0">200</span>
+<div class="w-full h-px bg-surface-container-high"></div>
+</div>
+<div class="flex items-center w-full">
+<span class="w-8 shrink-0">150</span>
+<div class="w-full h-px bg-surface-container-high"></div>
+</div>
+<div class="flex items-center w-full">
+<span class="w-8 shrink-0">100</span>
+<div class="w-full h-px bg-surface-container-high"></div>
+</div>
+<div class="flex items-center w-full">
+<span class="w-8 shrink-0">50</span>
+<div class="w-full h-px bg-surface-container-high"></div>
+</div>
+<div class="flex items-center w-full">
+<span class="w-8 shrink-0">0</span>
+<div class="w-full h-px bg-surface-container-high"></div>
+</div>
+</div>
+<!-- 12 Stacked Bars Container -->
+<div class="relative pl-8 pr-2 h-[200px] flex items-end justify-between gap-2 z-10">
+<!-- W1: 95 -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom" style="height: 47.5%;">
+<div class="h-[4%] bg-danger-red opacity-60"></div>
+<div class="h-[12%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption text-secondary group-hover:text-on-surface">W1</span>
+</div>
+<!-- W2: 104 -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom" style="height: 52%;">
+<div class="h-[3%] bg-danger-red opacity-60"></div>
+<div class="h-[10%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption text-secondary group-hover:text-on-surface">W2</span>
+</div>
+<!-- W3: 110 -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom" style="height: 55%;">
+<div class="h-[5%] bg-danger-red opacity-60"></div>
+<div class="h-[10%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption text-secondary group-hover:text-on-surface">W3</span>
+</div>
+<!-- W4: 122 -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom" style="height: 61%;">
+<div class="h-[4%] bg-danger-red opacity-60"></div>
+<div class="h-[9%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption text-secondary group-hover:text-on-surface">W4</span>
+</div>
+<!-- W5: 118 -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom" style="height: 59%;">
+<div class="h-[6%] bg-danger-red opacity-60"></div>
+<div class="h-[11%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption text-secondary group-hover:text-on-surface">W5</span>
+</div>
+<!-- W6: 135 -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom" style="height: 67.5%;">
+<div class="h-[3%] bg-danger-red opacity-60"></div>
+<div class="h-[10%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption text-secondary group-hover:text-on-surface">W6</span>
+</div>
+<!-- W7: 140 -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom" style="height: 70%;">
+<div class="h-[4%] bg-danger-red opacity-60"></div>
+<div class="h-[8%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption text-secondary group-hover:text-on-surface">W7</span>
+</div>
+<!-- W8: 152 -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom" style="height: 76%;">
+<div class="h-[3%] bg-danger-red opacity-60"></div>
+<div class="h-[9%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption text-secondary group-hover:text-on-surface">W8</span>
+</div>
+<!-- W9: 148 -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom" style="height: 74%;">
+<div class="h-[5%] bg-danger-red opacity-60"></div>
+<div class="h-[11%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption text-secondary group-hover:text-on-surface">W9</span>
+</div>
+<!-- W10: 165 -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom" style="height: 82.5%;">
+<div class="h-[3%] bg-danger-red opacity-60"></div>
+<div class="h-[8%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption text-secondary group-hover:text-on-surface">W10</span>
+</div>
+<!-- W11: 172 -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom" style="height: 86%;">
+<div class="h-[2%] bg-danger-red opacity-60"></div>
+<div class="h-[10%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption text-secondary group-hover:text-on-surface">W11</span>
+</div>
+<!-- W12: 186 (Active / Highlighted Bar with visible status popover) -->
+<div class="group relative flex-1 flex flex-col justify-end items-center h-full cursor-pointer">
+<!-- Popover Tooltip -->
+<div class="absolute -top-14 right-0 z-30 bg-on-surface text-surface px-2.5 py-1.5 rounded-lg shadow-lg text-[11px] font-caption whitespace-nowrap pointer-events-none">
+<span class="font-bold text-primary-container">W12: 186 Listings</span> • 164 Published • 18 Review • 4 Rejected
+            </div>
+<div class="w-full max-w-[36px] flex flex-col rounded-t overflow-hidden transition-transform group-hover:scale-y-105 origin-bottom ring-2 ring-primary-container/80" style="height: 93%;">
+<div class="h-[2.5%] bg-danger-red opacity-60"></div>
+<div class="h-[9.5%] bg-primary-container"></div>
+<div class="flex-1 bg-on-surface"></div>
+</div>
+<span class="mt-2 font-caption text-caption font-bold text-on-surface">W12</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Metrics Summary Under Chart -->
+<div class="pt-space-sm border-t border-surface-container-high grid grid-cols-1 sm:grid-cols-3 gap-space-sm text-center sm:text-left">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">analytics</span>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-secondary">Weekly Intake Average</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">142 Listings / Week</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">workspace_premium</span>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-secondary">Peak Volume</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">W12 (186 Listings)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-verified-green text-[20px]">task_alt</span>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-secondary">Verification Pass Rate</span>
+<span class="font-label-md text-label-md text-verified-green font-semibold">91.4% Direct Approval</span>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>MoveApp Kenya - Landlord Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-variant": "#e3e2e0",
+          "on-surface-variant": "#4f4634",
+          "on-surface": "#1a1c1a",
+          "inverse-on-surface": "#f2f1ee",
+          "surface-container-low": "#f4f3f1",
+          "surface-container-highest": "#e3e2e0",
+          "tertiary-fixed": "#d9e3f4",
+          "pending-amber": "#E08700",
+          "surface-bright": "#faf9f6",
+          "primary-fixed-dim": "#f4bf32",
+          "tertiary": "#555f6d",
+          "on-primary-fixed": "#251a00",
+          "primary-container": "#ffc93c",
+          "outline": "#817661",
+          "error-container": "#ffdad6",
+          "error": "#ba1a1a",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-container": "#715500",
+          "on-secondary": "#ffffff",
+          "on-primary": "#ffffff",
+          "on-tertiary-fixed": "#121c28",
+          "primary": "#775a00",
+          "primary-fixed": "#ffdf9a",
+          "surface-container-high": "#e9e8e5",
+          "verified-green": "#1F9D55",
+          "on-secondary-fixed": "#191c23",
+          "pending-amber-bg": "#FEF3E2",
+          "on-tertiary": "#ffffff",
+          "verified-green-bg": "#E8F8EE",
+          "danger-red-bg": "#FCE8E6",
+          "tertiary-fixed-dim": "#bdc7d7",
+          "surface-tint": "#775a00",
+          "on-secondary-container": "#62646d",
+          "surface-container": "#efeeeb",
+          "on-background": "#1a1c1a",
+          "on-primary-fixed-variant": "#5a4300",
+          "surface-dim": "#dbdad7",
+          "secondary-container": "#e0e2ec",
+          "secondary-fixed-dim": "#c4c6d0",
+          "surface": "#FFFFFF",
+          "inverse-primary": "#f4bf32",
+          "danger-red": "#D93025",
+          "on-tertiary-fixed-variant": "#3e4855",
+          "outline-variant": "#d2c5ad",
+          "on-error": "#ffffff",
+          "secondary-fixed": "#e0e2ec",
+          "on-error-container": "#93000a",
+          "border": "#E6E3DC",
+          "on-secondary-fixed-variant": "#44474f",
+          "secondary": "#5c5e67",
+          "on-tertiary-container": "#505a67",
+          "background": "#faf9f6",
+          "inverse-surface": "#2f312f",
+          "tertiary-container": "#c7d1e1"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-3xl": "3rem",
+          "gutter-mobile": "1rem",
+          "space-2xl": "2.5rem",
+          "space-xl": "2rem",
+          "space-xs": "0.5rem",
+          "space-sm": "0.75rem",
+          "gutter-desktop": "1.5rem",
+          "container-max": "1280px",
+          "section-gap": "2rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "space-2xs": "0.25rem"
+        },
+        "fontFamily": {
+          "body-sm": ["Inter"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "body-lg": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-md": ["Inter"],
+          "caption": ["Inter"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "headline-xl": ["Plus Jakarta Sans"],
+          "label-sm": ["Inter"],
+          "headline-xl-mobile": ["Plus Jakarta Sans"],
+          "label-md": ["Inter"],
+          "price-hero": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "price-listing": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "caption": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+          "price-hero": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "price-listing": ["20px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-inverse-surface z-50 flex flex-col justify-between select-none shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-xs bg-inverse-surface"><img alt="Modern clean geometric house icon logo mark for MoveApp Kenya, signal yellow house roof line accent and bold ink black geometric frame, minimalist real estate logo on transparent background. Design context: - Primary color: #ffc93c
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WNUVKKf1BLkyNXrBOm1QMipYZmOjYCfT-6ZMEfh0nFJt71kZZ15eIGmsmfSeFNfzYzMoJXIWVud_sZLQv8EaYgWna1WRQzK1RvNbvyjNl7x_E0bxx8neQLcBcKlGxK1v2dVXwU_EsppSLU4tSTFMKRZWnVORcsFyUHW7PxQozLL7p7fFx-gRQU2LnzA3z4CuKcSt-GSuFrsYi6hOvctW263tyEH_qceUdcpwsf6MkLXzc1bJfA3vT7pajU"/><div class="flex flex-col"><div class="flex items-center gap-space-2xs"><span class="font-headline-sm text-headline-sm text-inverse-on-surface tracking-tight font-bold">MoveApp<span class="text-primary-container">.ke</span></span></div><span class="font-caption text-caption text-primary-container tracking-wider uppercase font-semibold">Landlord Portal</span></div></div><div class="px-space-md pt-space-md pb-space-xs"><a class="w-full flex items-center justify-center gap-space-xs bg-primary-container text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors py-space-xs px-space-md rounded-lg font-label-md text-label-md shadow-[0_2px_8px_-2px_rgba(18,21,28,0.05)]" data-path="add-listing" href="#"><span class="material-symbols-outlined text-[20px]">add_circle</span><span>Add Listing</span></a></div><nav class="mt-space-sm flex flex-col px-space-xs space-y-1" data-active-classes="bg-surface/10 text-primary-container border-l-[3px] border-primary-container font-semibold"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded transition-colors bg-surface/10 text-primary-container border-l-[3px] border-primary-container font-semibold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="my-listings" href="#"><span class="material-symbols-outlined text-[20px]">real_estate_agent</span><span>My Listings</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="enquiries" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">chat</span><span>Enquiries</span></div><span class="bg-primary-container text-on-primary-fixed font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold">3</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">account_box</span><span>Profile</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="p-space-md bg-inverse-surface"><div class="flex flex-col space-y-1"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="landlord-support" href="#"><span class="material-symbols-outlined text-[20px]">help</span><span>Landlord Support</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-danger-red transition-colors font-label-md text-label-md" data-path="logout" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span>Logout</span></a></div><div class="mt-space-md pt-space-sm bg-surface/5 rounded p-space-xs flex items-center justify-between text-inverse-on-surface/60 font-caption text-caption"><span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-verified-green"></span> Nairobi Central MLLS</span><span>v2.4</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface z-40 flex items-center justify-between px-gutter-desktop shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex-1 max-w-lg"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-sm text-secondary pointer-events-none text-[20px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-container-low text-on-surface placeholder:text-secondary rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-surface transition-all" placeholder="Search listings by estate, tenant name, or unit ID..." type="search"/></div></div><div class="flex items-center gap-space-md ml-space-md"><a class="hidden sm:flex items-center gap-space-xs bg-primary-container text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors h-10 px-space-md rounded-lg font-label-md text-label-md font-semibold" data-path="add-listing" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>Add New Listing</span></a><button aria-label="Notifications" class="relative p-space-xs rounded-full hover:bg-surface-container-high transition-colors text-secondary hover:text-on-surface focus:outline-none" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-primary-container rounded-full ring-2 ring-surface"></span></button><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-space-sm cursor-pointer py-1 px-space-2xs rounded-lg hover:bg-surface-container-low transition-colors"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbszAyKocpqykkMADj0WR4E62vs0FRNVwQKoauNCSXVIAqwVO9nCYxvNkLHO2QJsRWReMRFPnt-YiZQULwInmzcXvTfqcmLvn4mTN-OyT9da0mxdvQeJayuZ1t_LLCSVr7ipNNWAqht6oo_eMAMIbC34H3wbOa01MX5QrHolybF5FlkuijvGPOIgKgdlgOMud_E6hgoC84vcSSKSbSlZLCWf3aIpvU48r50Yc-2SS_jOi7oRm7WV6KlQ"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-verified-green rounded-full ring-2 ring-surface"></span></div><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-1"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Samuel Njoroge</span><span class="material-symbols-outlined text-verified-green text-[14px]">verified</span></div><span class="font-caption text-caption text-secondary leading-none">Kamau Properties</span></div><span class="material-symbols-outlined text-secondary text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-background w-full min-h-screen px-gutter-desktop py-space-xl"><div class="flex flex-col w-full">
+<!-- Breadcrumbs & Meta Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-lg">
+<nav aria-label="Breadcrumbs" class="flex items-center gap-space-xs font-caption text-caption text-secondary">
+<a class="hover:text-on-surface transition-colors" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-on-surface transition-colors" href="#">My Listings</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-label-sm text-label-sm text-on-surface">Create New Listing</span>
+</nav>
+<div class="inline-flex items-center gap-space-xs self-start sm:self-auto bg-verified-green-bg px-space-sm py-1 rounded-full text-verified-green font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Verified Landlord Portal • Cap 296 Compliant</span>
+</div>
+</div>
+<!-- Page Header -->
+<div class="flex flex-col mb-space-xl">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">List a New Property</h1>
+<p class="font-body-lg text-body-lg text-secondary mt-1 max-w-3xl">
+      Provide accurate property specifications to ensure tenant match accuracy, reduce viewing drop-offs, and accelerate tenancy vetting under Kenyan housing statutes.
+    </p>
+</div>
+<!-- Main Multi-Step Form Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg lg:p-space-xl flex flex-col gap-space-xl">
+<!-- Multi-step Wizard Indicator -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md sm:p-space-lg">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-y-space-md gap-x-space-sm relative">
+<!-- Step 1: Active -->
+<div class="flex items-center gap-space-sm relative z-10">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center font-headline-sm text-headline-sm font-bold shadow-sm">
+            1
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Details</span>
+<span class="font-caption text-caption text-secondary truncate">Basic property specs</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center gap-space-sm opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-secondary flex items-center justify-center font-headline-sm text-headline-sm font-semibold">
+            2
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Photos</span>
+<span class="font-caption text-caption text-secondary truncate">High-res gallery</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-center gap-space-sm opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-secondary flex items-center justify-center font-headline-sm text-headline-sm font-semibold">
+            3
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Location</span>
+<span class="font-caption text-caption text-secondary truncate">Nairobi zone &amp; pin</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-center gap-space-sm opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-secondary flex items-center justify-center font-headline-sm text-headline-sm font-semibold">
+            4
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Price &amp; Terms</span>
+<span class="font-caption text-caption text-secondary truncate">Rent &amp; deposits</span>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex items-center gap-space-sm opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-secondary flex items-center justify-center font-headline-sm text-headline-sm font-semibold">
+            5
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Review</span>
+<span class="font-caption text-caption text-secondary truncate">Publish listing</span>
+</div>
+</div>
+</div>
+<!-- Linear progress bar -->
+<div class="w-full bg-surface-variant h-1.5 rounded-full mt-space-md overflow-hidden">
+<div class="bg-primary-container h-full w-1/5 rounded-full transition-all duration-300"></div>
+</div>
+</div>
+<!-- Form Section -->
+<form class="flex flex-col gap-space-xl" id="listing-details-form" onsubmit="event.preventDefault();">
+<!-- Section: Core Identifiers -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg">
+<!-- Listing Title -->
+<div class="md:col-span-8 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between" for="listing-title">
+<span>Listing Title <span class="text-danger-red">*</span></span>
+<span class="font-caption text-caption text-secondary">Max 80 chars</span>
+</label>
+<div class="relative flex items-center">
+<input class="w-full h-11 px-space-md bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:bg-surface focus:outline-none focus:ring-2 focus:ring-primary-container transition-all shadow-sm" id="listing-title" name="title" required="" type="text" value="Spacious 2 Bedroom Master Ensuite with Balcony"/>
+</div>
+<p class="font-caption text-caption text-secondary">
+            Keep it descriptive (e.g., "Modern 1 Bed near Sarit Centre" or "Executive Studio on 4th Ave"). Avoid vague buzzwords.
+          </p>
+</div>
+<!-- House Type -->
+<div class="md:col-span-4 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="house-type">
+            House Type <span class="text-danger-red">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 pl-space-md pr-10 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md appearance-none focus:bg-surface focus:outline-none focus:ring-2 focus:ring-primary-container transition-all cursor-pointer shadow-sm" id="house-type" name="house_type">
+<option selected="" value="apartment">Apartment / Flat</option>
+<option value="studio">Studio / Bedsitter</option>
+<option value="maisonette">Maisonette / Townhouse</option>
+<option value="penthouse">Penthouse</option>
+<option value="villa">Gated Compound Villa</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-secondary text-[20px]">
+              expand_more
+            </span>
+</div>
+<p class="font-caption text-caption text-secondary">Establishes categorization in discovery filters.</p>
+</div>
+</div>
+<!-- Section: Specs & Furnishing -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg items-start">
+<!-- Stepper: Bedrooms -->
+<div class="md:col-span-3 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">Bedrooms <span class="text-danger-red">*</span></label>
+<div class="h-11 px-space-xs bg-surface-container-low rounded-lg flex items-center justify-between shadow-sm">
+<button aria-label="Decrease bedrooms" class="w-8 h-8 rounded-md bg-surface text-on-surface flex items-center justify-center hover:bg-surface-variant transition-colors active:scale-95" id="btn-beds-minus" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="display-beds">2</span>
+<span class="font-caption text-caption text-secondary">Beds</span>
+</div>
+<button aria-label="Increase bedrooms" class="w-8 h-8 rounded-md bg-surface text-on-surface flex items-center justify-center hover:bg-surface-variant transition-colors active:scale-95" id="btn-beds-plus" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<span class="font-caption text-caption text-secondary">Self-contained suites count as 1.</span>
+</div>
+<!-- Stepper: Bathrooms -->
+<div class="md:col-span-3 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">Bathrooms <span class="text-danger-red">*</span></label>
+<div class="h-11 px-space-xs bg-surface-container-low rounded-lg flex items-center justify-between shadow-sm">
+<button aria-label="Decrease bathrooms" class="w-8 h-8 rounded-md bg-surface text-on-surface flex items-center justify-center hover:bg-surface-variant transition-colors active:scale-95" id="btn-baths-minus" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="display-baths">2</span>
+<span class="font-caption text-caption text-secondary">Baths</span>
+</div>
+<button aria-label="Increase bathrooms" class="w-8 h-8 rounded-md bg-surface text-on-surface flex items-center justify-center hover:bg-surface-variant transition-colors active:scale-95" id="btn-baths-plus" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<span class="font-caption text-caption text-secondary">Includes visitor cloakrooms.</span>
+</div>
+<!-- Segmented Control: Furnishing Status -->
+<div class="md:col-span-6 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">Furnishing Status <span class="text-danger-red">*</span></label>
+<div class="h-11 p-1 bg-surface-container-low rounded-lg grid grid-cols-3 gap-1 shadow-sm" id="furnishing-selector">
+<button class="furnish-tab rounded-md text-on-primary-fixed bg-primary-container font-label-sm text-label-sm font-bold flex items-center justify-center transition-all" data-furnish="unfurnished" type="button">
+              Unfurnished
+            </button>
+<button class="furnish-tab rounded-md text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium flex items-center justify-center transition-all" data-furnish="semi" type="button">
+              Semi-Furnished
+            </button>
+<button class="furnish-tab rounded-md text-secondary hover:text-on-surface font-label-sm text-label-sm font-medium flex items-center justify-center transition-all" data-furnish="fully" type="button">
+              Fully Furnished
+            </button>
+</div>
+<span class="font-caption text-caption text-secondary">Specify appliance inclusions in the summary below.</span>
+</div>
+</div>
+<!-- Section: Property Description -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface" for="property-description">
+            Property Description <span class="text-danger-red">*</span>
+</label>
+<span class="font-caption text-caption text-secondary font-medium" id="char-counter">284 / 1,000 characters</span>
+</div>
+<textarea class="w-full p-space-md bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:bg-surface focus:outline-none focus:ring-2 focus:ring-primary-container transition-all shadow-sm resize-y" id="property-description" maxlength="1000" name="description" required="" rows="5">Well-lit 2 bedroom apartment situated in a secure quiet compound. Features an open-plan kitchen with granite worktops, pantry, dedicated laundry area with dhobi sink, ceramic tile flooring throughout, and large aluminum sliding windows leading to a private balcony.</textarea>
+<div class="flex items-center gap-space-xs font-caption text-caption text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-pending-amber">lightbulb</span>
+<span>Tip: Mention road access (e.g., tarmac proximity), water pressure, and noise level for faster verified approvals.</span>
+</div>
+</div>
+<!-- Section: Utilities & Amenities Checkbox Matrix -->
+<div class="flex flex-col gap-space-md pt-space-xs">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Key Utilities &amp; Amenities</h2>
+<p class="font-body-sm text-body-sm text-secondary">Accurately declare compound installations. MoveApp audits utility claims during physical verification.</p>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline" id="select-all-amenities" type="button">
+            Toggle All Standard
+          </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Column 1: Utilities -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-xs pb-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[20px] text-primary">water_drop</span>
+<span class="font-label-md text-label-md font-bold">Utilities &amp; Power</span>
+</div>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_borehole" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">24/7 Borehole Water</span>
+<span class="font-caption text-caption text-secondary">Reliable supplementary supply</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_kplc" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Prepaid KPLC Token Meter</span>
+<span class="font-caption text-caption text-secondary">Individual unit meter box</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_generator" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Backup Generator</span>
+<span class="font-caption text-caption text-secondary">Common areas &amp; elevator</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_solar" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Solar Water Heating</span>
+<span class="font-caption text-caption text-secondary">Rooftop panel integration</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_council_water" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Nairobi City Council Water</span>
+<span class="font-caption text-caption text-secondary">Direct piped connection</span>
+</div>
+</label>
+</div>
+<!-- Column 2: Connectivity & Security -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-xs pb-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[20px] text-primary">security</span>
+<span class="font-label-md text-label-md font-bold">Connectivity &amp; Security</span>
+</div>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_fiber" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Safaricom / Zuku Fiber Ready</span>
+<span class="font-caption text-caption text-secondary">Pre-wired conduit ports</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_guards" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">24/7 Guards &amp; Perimeter Fence</span>
+<span class="font-caption text-caption text-secondary">Razor wire + electric zoning</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_cctv" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">CCTV Surveillance</span>
+<span class="font-caption text-caption text-secondary">Perimeter &amp; parking coverage</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_biometric" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Biometric / Access Card Gate</span>
+<span class="font-caption text-caption text-secondary">Controlled tenant access</span>
+</div>
+</label>
+</div>
+<!-- Column 3: Facilities & Living -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-xs pb-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[20px] text-primary">apartment</span>
+<span class="font-label-md text-label-md font-bold">Facilities &amp; Living</span>
+</div>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_parking" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Dedicated Parking Bay (1 Slot)</span>
+<span class="font-caption text-caption text-secondary">Allocated &amp; numbered</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_lift" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">High-Speed Elevator / Lift</span>
+<span class="font-caption text-caption text-secondary">Dual Schindler systems</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_ensuite" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Master Bedroom Ensuite</span>
+<span class="font-caption text-caption text-secondary">Fitted glass shower cubicle</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_dsq" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">DSQ (Servant Quarter)</span>
+<span class="font-caption text-caption text-secondary">Self-contained unit</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm p-space-xs rounded-lg hover:bg-surface transition-colors cursor-pointer select-none">
+<input class="mt-0.5 w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-on-surface" name="amenity_gym" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Swimming Pool / Gym</span>
+<span class="font-caption text-caption text-secondary">Resident clubhouse access</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Regulatory Compliance Advisory (Cap 296) -->
+<div class="bg-pending-amber-bg rounded-xl p-space-md flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-pending-amber text-[24px] shrink-0 mt-0.5">policy</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">
+            Shield Notice: Rent Restriction Act (Cap 296) Compliance
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            MoveApp enforces accurate declaration of borehole tariffs and individual sub-meters. Overbilling or undisclosed common utility markups may lead to tenancy dispute adjudication under Kenyan rental tribunal policies.
+          </p>
+</div>
+</div>
+<!-- Actions Bar -->
+<div class="flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-space-md pt-space-md">
+<button class="flex items-center justify-center sm:justify-start gap-space-xs text-secondary hover:text-on-surface transition-colors font-label-md text-label-md py-2.5 px-space-xs" id="btn-save-draft" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Save as Draft</span>
+</button>
+<div class="flex items-center gap-space-sm">
+<button class="h-11 px-space-md rounded-lg font-label-md text-label-md text-on-surface bg-surface-container-high hover:bg-surface-variant transition-colors active:scale-95" id="btn-cancel" type="button">
+            Cancel
+          </button>
+<button class="h-11 px-space-lg rounded-lg font-label-md text-label-md bg-primary-container text-on-primary-fixed hover:bg-primary-fixed-dim font-bold transition-all shadow-sm flex items-center gap-space-xs active:scale-95" id="btn-continue" type="button">
+<span>Continue to Photos</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<script>
+  // Client-side interactions for Step 1
+  (function() {
+    // Numeric stepper for Bedrooms
+    let bedCount = 2;
+    const displayBeds = document.getElementById('display-beds');
+    document.getElementById('btn-beds-minus')?.addEventListener('click', () => {
+      if (bedCount > 0) {
+        bedCount--;
+        displayBeds.textContent = bedCount;
+      }
+    });
+    document.getElementById('btn-beds-plus')?.addEventListener('click', () => {
+      if (bedCount < 10) {
+        bedCount++;
+        displayBeds.textContent = bedCount;
+      }
+    });
+
+    // Numeric stepper for Bathrooms
+    let bathCount = 2;
+    const displayBaths = document.getElementById('display-baths');
+    document.getElementById('btn-baths-minus')?.addEventListener('click', () => {
+      if (bathCount > 1) {
+        bathCount--;
+        displayBaths.textContent = bathCount;
+      }
+    });
+    document.getElementById('btn-baths-plus')?.addEventListener('click', () => {
+      if (bathCount < 10) {
+        bathCount++;
+        displayBaths.textContent = bathCount;
+      }
+    });
+
+    // Segmented control toggle for furnishing
+    const furnishTabs = document.querySelectorAll('.furnish-tab');
+    furnishTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        furnishTabs.forEach(t => {
+          t.classList.remove('bg-primary-container', 'text-on-primary-fixed', 'font-bold');
+          t.classList.add('text-secondary', 'font-medium');
+        });
+        tab.classList.add('bg-primary-container', 'text-on-primary-fixed', 'font-bold');
+        tab.classList.remove('text-secondary', 'font-medium');
+      });
+    });
+
+    // Character counter for description textarea
+    const descInput = document.getElementById('property-description');
+    const counterDisplay = document.getElementById('char-counter');
+    if (descInput && counterDisplay) {
+      descInput.addEventListener('input', (e) => {
+        const currentLength = e.target.value.length;
+        counterDisplay.textContent = `${currentLength.toLocaleString()} / 1,000 characters`;
+      });
+    }
+
+    // Toggle select all amenities
+    const toggleAmenitiesBtn = document.getElementById('select-all-amenities');
+    if (toggleAmenitiesBtn) {
+      toggleAmenitiesBtn.addEventListener('click', () => {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"][name^="amenity_"]');
+        const anyUnchecked = Array.from(checkboxes).some(cb => !cb.checked);
+        checkboxes.forEach(cb => cb.checked = anyUnchecked);
+      });
+    }
+
+    // Save as draft micro-feedback
+    const draftBtn = document.getElementById('btn-save-draft');
+    if (draftBtn) {
+      draftBtn.addEventListener('click', () => {
+        const originalText = draftBtn.innerHTML;
+        draftBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-verified-green">check_circle</span><span class="text-verified-green">Draft Saved</span>';
+        setTimeout(() => {
+          draftBtn.innerHTML = originalText;
+        }, 2200);
+      });
+    }
+  })();
+</script></main></div></body></html>

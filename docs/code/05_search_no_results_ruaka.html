@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "primary": "#775a00", "surface-dim": "#dbdad7", "on-secondary-container": "#62646d", "primary-container": "#ffc93c", "secondary-fixed-dim": "#c4c6d0", "outline": "#817661", "inverse-surface": "#2f312f", "on-background": "#1a1c1a", "tertiary-fixed-dim": "#bdc7d7", "surface-container-low": "#f4f3f1", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-tertiary": "#ffffff", "surface-container-high": "#e9e8e5", "surface-container-lowest": "#ffffff", "surface-container-highest": "#e3e2e0", "surface-variant": "#e3e2e0", "on-secondary-fixed-variant": "#44474f", "danger-red-bg": "#FCE8E6", "secondary-container": "#e0e2ec", "border": "#E6E3DC", "secondary-fixed": "#e0e2ec", "primary-fixed-dim": "#f4bf32", "surface": "#FFFFFF", "surface-container": "#efeeeb", "on-tertiary-container": "#505a67", "on-primary": "#ffffff", "danger-red": "#D93025", "verified-green": "#1F9D55", "outline-variant": "#d2c5ad", "on-primary-fixed": "#251a00", "on-surface-variant": "#4f4634", "verified-green-bg": "#E8F8EE", "pending-amber": "#E08700", "tertiary-container": "#c7d1e1", "on-secondary-fixed": "#191c23", "on-tertiary-fixed-variant": "#3e4855", "error-container": "#ffdad6", "on-primary-fixed-variant": "#5a4300", "primary-fixed": "#ffdf9a", "on-tertiary-fixed": "#121c28", "pending-amber-bg": "#FEF3E2", "surface-bright": "#faf9f6", "surface-tint": "#775a00", "on-surface": "#1a1c1a", "on-primary-container": "#715500", "background": "#faf9f6", "on-error-container": "#93000a", "inverse-primary": "#f4bf32", "secondary": "#5c5e67", "tertiary": "#555f6d", "inverse-on-surface": "#f2f1ee", "tertiary-fixed": "#d9e3f4" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.75rem", "gutter-mobile": "1rem", "space-xs": "0.5rem", "space-lg": "1.5rem", "space-2xs": "0.25rem", "gutter-desktop": "1.5rem", "space-3xl": "3rem", "space-2xl": "2.5rem", "section-gap": "2rem", "space-xl": "2rem", "space-md": "1rem", "container-max": "1280px" }, "fontFamily": { "body-md": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "caption": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "price-hero": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "price-listing": ["Plus Jakarta Sans"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "price-hero": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "price-listing": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } }</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-[#12151C] shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-xs" data-path="browse-houses" href="#"><img alt="Modern clean geometric house icon logo mark for MoveApp Kenya, signal yellow house roof line accent and bold ink black geometric frame, minimalist real estate logo on transparent background. Design context: - Primary color: #ffc93c
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WNUVKKf1BLkyNXrBOm1QMipYZmOjYCfT-6ZMEfh0nFJt71kZZ15eIGmsmfSeFNfzYzMoJXIWVud_sZLQv8EaYgWna1WRQzK1RvNbvyjNl7x_E0bxx8neQLcBcKlGxK1v2dVXwU_EsppSLU4tSTFMKRZWnVORcsFyUHW7PxQozLL7p7fFx-gRQU2LnzA3z4CuKcSt-GSuFrsYi6hOvctW263tyEH_qceUdcpwsf6MkLXzc1bJfA3vT7pajU"/><span class="font-headline-sm text-headline-sm text-surface tracking-tight">MoveApp<span class="text-primary-container font-bold">.ke</span></span></a><div class="hidden xl:flex items-center bg-surface rounded-lg px-space-sm py-space-2xs w-72"><span class="material-symbols-outlined text-secondary text-sm mr-space-xs">search</span><input class="bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface placeholder:text-secondary w-full" placeholder="Search Kilimani, Westlands, Rongai..." type="text"/></div></div><nav class="hidden md:flex items-center gap-space-md lg:gap-space-lg" data-active-classes="bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg px-space-sm py-space-xs"><a aria-current="page" class="transition-colors bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg px-space-sm py-space-xs" data-path="browse-houses" href="#">Browse Houses</a><a class="font-label-md text-label-md text-surface-container-high hover:text-surface transition-colors" data-path="estates-directory" href="#">Estates</a><a class="font-label-md text-label-md text-surface-container-high hover:text-surface transition-colors" data-path="saved-listings" href="#">Saved</a><a class="font-label-md text-label-md text-surface-container-high hover:text-surface transition-colors" data-path="landlord-directory" href="#">Landlords</a></nav><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="relative p-space-xs rounded-lg text-surface-container-high hover:text-surface hover:bg-surface/10 transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-[#12151C]"></span></button><a class="hidden sm:inline-flex items-center justify-center font-label-sm text-label-sm bg-primary-container hover:bg-primary-fixed-dim text-on-primary-fixed px-space-sm py-space-xs rounded-lg transition-colors font-semibold" data-path="list-property" href="#">List Property</a><div class="flex items-center pl-space-xs"><a class="rounded-full ring-2 ring-primary-container/40 hover:ring-primary-container transition-all" data-path="tenant-profile" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1W_xB_Bbv1tfBm1Np0ErnnQ9qp_NKS9a-ModHXsJE_LrTha8SbhtNGo8DKWzH7zA6JoD5hewmxTtZIA0XzknHZy7U0dSwJgK7TKVWo0_XcKjox6ZmAX3XGw3TTyui-cOWxoiDTnJixzkDzRoJHG1NOoxvlSnGzLV8t6KSjVjqHt8TLkW6u8SevUJQjIOkWLbyNBxdn8F0Qxxmu3AkV-RuZv0BF6KMng7grNIVr8gX-vWVo-3qTF4iDTaj6F"/></a></div></div></div></header><main class="w-full pt-16 flex-1 bg-background"><div class="flex flex-col w-full">
+<section class="sticky top-16 z-30 bg-surface shadow-sm py-space-sm">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-space-sm justify-between">
+<div class="flex items-center flex-1 max-w-2xl bg-surface-container-low rounded-xl px-space-sm py-space-2xs shadow-sm">
+<span class="material-symbols-outlined text-secondary mr-space-xs text-xl">location_on</span>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-caption text-caption text-secondary uppercase tracking-wider">Target Estate</span>
+<input class="bg-transparent border-none outline-none font-headline-sm text-headline-sm text-on-surface w-full p-0 truncate" id="estate-search-input" type="text" value="Ruaka, Kiambu / Nairobi"/>
+</div>
+<button aria-label="Clear location text" class="p-space-2xs text-secondary hover:text-on-surface rounded-full" type="button">
+<span class="material-symbols-outlined text-lg">cancel</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto pb-space-2xs lg:pb-0 scrollbar-none">
+<button class="inline-flex items-center gap-space-xs h-10 px-space-sm bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-lg">tune</span>
+<span>All Filters (4)</span>
+</button>
+<button class="inline-flex items-center gap-space-2xs h-10 px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg shadow-sm whitespace-nowrap">
+<span>Price: Up to 30k</span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+<button class="inline-flex items-center gap-space-2xs h-10 px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg shadow-sm whitespace-nowrap">
+<span>Bedrooms: 2</span>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+<button class="inline-flex items-center gap-space-2xs h-10 px-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-verified-green text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Verified Escrow Only</span>
+</button>
+</div>
+</div>
+<div class="flex items-center flex-wrap gap-space-xs mt-space-sm pt-space-xs">
+<span class="font-caption text-caption text-secondary uppercase font-semibold mr-space-2xs">Active constraints:</span>
+<span class="inline-flex items-center gap-1 bg-surface-container text-on-surface font-label-sm text-label-sm pl-space-sm pr-space-xs py-1 rounded-full shadow-sm">
+<span>Max Ksh 30,000/mo</span>
+<button aria-label="Remove max price filter" class="hover:text-error flex items-center" type="button"><span class="material-symbols-outlined text-sm">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 bg-surface-container text-on-surface font-label-sm text-label-sm pl-space-sm pr-space-xs py-1 rounded-full shadow-sm">
+<span>2 Bedrooms</span>
+<button aria-label="Remove bedroom count filter" class="hover:text-error flex items-center" type="button"><span class="material-symbols-outlined text-sm">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 bg-surface-container text-on-surface font-label-sm text-label-sm pl-space-sm pr-space-xs py-1 rounded-full shadow-sm">
+<span>Borehole Water Backup</span>
+<button aria-label="Remove water filter" class="hover:text-error flex items-center" type="button"><span class="material-symbols-outlined text-sm">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 bg-surface-container text-on-surface font-label-sm text-label-sm pl-space-sm pr-space-xs py-1 rounded-full shadow-sm">
+<span>Pets Allowed</span>
+<button aria-label="Remove pets filter" class="hover:text-error flex items-center" type="button"><span class="material-symbols-outlined text-sm">close</span></button>
+</span>
+<button class="font-label-sm text-label-sm text-danger-red hover:underline ml-space-xs" id="reset-all-tags-btn">Clear all filters</button>
+</div>
+</div>
+</section>
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-lg w-full">
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-sm text-headline-sm text-on-surface">Showing <span class="font-bold text-on-surface">0</span> rental houses in Ruaka</h1>
+<span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-pending-amber-bg text-pending-amber font-caption text-caption font-semibold">Strict Filter Mode</span>
+</div>
+<span class="hidden sm:inline-flex font-body-sm text-body-sm text-secondary">Updated 4 mins ago • Nairobi MLS Feed</span>
+</div>
+<div class="bg-surface rounded-2xl shadow-md p-space-lg sm:p-space-2xl text-center flex flex-col items-center justify-center my-space-md">
+<div class="w-48 sm:w-60 h-48 sm:h-60 flex items-center justify-center mb-space-sm">
+<img alt="No houses matching your filter criteria illustration" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VNMaLRux0sOJiGlgTaTWNZ8ZkDe8ye5iEHvEIJlb7aLv5--r8RCAndc2Zs0rDi7Y6yu3M35AR32PbXEvS9k_aclE3ag87A-ahYHS2dk4A_CD5KzGUPRbfwIeIdFCbA6U0m8nWNk_RVBdwcFx0twOX866PbDMotjfUt0_-cFvru7YLAgvCmA_980nNwzQb5LOO7WZT343H71b1sOa7L_ReedD_C6uMTs96ixQOgFNY5ney45G211tlORW6e"/>
+</div>
+<div class="max-w-xl space-y-space-xs">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">No houses match these filters in Ruaka</h2>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+          Ruaka 2-bedroom units with continuous borehole backup typically trade between <strong class="text-on-surface font-semibold">Ksh 35,000 – 48,000</strong>. Try increasing your ceiling budget, adjusting bedroom specifications, or expanding to nearby clusters.
+        </p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-space-xs mt-space-md mb-space-lg max-w-lg">
+<span class="font-caption text-caption text-secondary uppercase tracking-wider w-full">Explore Adjacent Zones</span>
+<button class="bg-surface-container-high hover:bg-surface-container text-on-surface font-label-sm text-label-sm px-space-sm py-1.5 rounded-full transition-colors">Ndenderu (+2 km • 14 units)</button>
+<button class="bg-surface-container-high hover:bg-surface-container text-on-surface font-label-sm text-label-sm px-space-sm py-1.5 rounded-full transition-colors">Banana Hill (19 units)</button>
+<button class="bg-surface-container-high hover:bg-surface-container text-on-surface font-label-sm text-label-sm px-space-sm py-1.5 rounded-full transition-colors">Rosslyn / Two Rivers (8 units)</button>
+<button class="bg-surface-container-high hover:bg-surface-container text-on-surface font-label-sm text-label-sm px-space-sm py-1.5 rounded-full transition-colors">Kiambu Town (32 units)</button>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md w-full sm:w-auto">
+<button class="w-full sm:w-auto h-11 px-space-lg rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold transition-all" id="clear-filters-cta">
+          Clear filters
+        </button>
+<button class="w-full sm:w-auto h-11 px-space-lg rounded-lg bg-primary-container hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md font-bold shadow-sm flex items-center justify-center gap-space-xs transition-all" id="alert-modal-trigger">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">add_alert</span>
+<span>Set Ruaka Price Alert</span>
+</button>
+</div>
+<p class="font-caption text-caption text-secondary mt-space-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-verified-green" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+        We will WhatsApp or email you when a verified 2-bed in Ruaka matching under Ksh 30,000 drops. Zero agent commissions.
+      </p>
+</div>
+<div class="mt-space-3xl mb-space-2xl">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-space-lg gap-space-xs">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm font-semibold uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-base">near_me</span>
+            Nearby Alternatives
+          </div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Popular verified homes nearby in Kiambu Road &amp; Westlands</h3>
+<p class="font-body-sm text-body-sm text-secondary">Verified units with borehole backups, high tenant retention, and direct landlord contact.</p>
+</div>
+<a class="inline-flex items-center gap-space-2xs text-on-surface font-label-md text-label-md hover:text-primary transition-colors" href="#">
+<span>View all 148 adjacent rentals</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<article class="bg-surface rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col group">
+<div class="relative aspect-[4/3] w-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A modern well-lit living room of a 2-bedroom rental apartment in Thindigua near Kiambu Road, clean tiled floors, large balcony sliding door letting in natural morning sunlight, contemporary minimalist Kenyan urban home setting with neutral furniture and warm sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2dPIYCL-1tX4Dw9dmqoFJF4-j78mtxibYVHQynxRYmD8E5pq-t0W3lhfnA0sK18h0thmzIAj5UGsQMR5Y8ChpI_Unl4_OfWriDzL-JocVdMI3fJNfxOgMjD-EkKhj0tOPgKX62lZyHPlPJHxIAmFTZ6SlIPLGGeGdeKPGYeoc6L_dUrVo6uAMkpDdsOZgWJOXVjUQZGaHG8SwDxyiboeH6twGzExw7l8SrGXMNAMXTiMCHJkHfjpfpw"/>
+<button aria-label="Save this listing" class="absolute top-space-sm right-space-sm w-9 h-9 bg-surface rounded-full shadow-md flex items-center justify-center text-on-surface hover:text-danger-red transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<span class="absolute bottom-space-sm left-space-sm bg-[#12151C]/85 text-surface font-label-sm text-label-sm px-space-sm py-1 rounded-md backdrop-blur-none">
+              2 Bed Apartment
+            </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-space-2xs">
+<span class="font-price-listing text-price-listing text-on-surface font-bold">Ksh 32,000 <span class="font-body-sm text-body-sm text-secondary font-normal">/ mo</span></span>
+<span class="inline-flex items-center px-space-2xs py-0.5 rounded bg-verified-green-bg text-verified-green font-caption text-caption font-semibold">Ready to move</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 mb-1 group-hover:text-primary transition-colors">The Oakwood Residencies • Unit 4B</h4>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-1 mb-space-sm">
+<span class="material-symbols-outlined text-sm">pin_drop</span>
+                Kiambu Road • Thindigua (3.4 km from Ruaka)
+              </p>
+<div class="flex items-center gap-space-md py-space-xs bg-surface-container-low px-space-sm rounded-lg text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">bed</span> 2 Beds</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">bathtub</span> 2 Baths</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">water_drop</span> Borehole</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface">
+<div class="flex items-center gap-space-xs">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of a trustworthy middle-aged Kenyan landlord in professional attire smiling warmly against clean warm studio backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcxiuqSfUVkScBk4pSs1p1P2jb8m9gkHUe0D3sqc8iTaQuWRDgbzYDgE1oC3R7rOAwwo64whzRecKQNOsred5gyfxndjvhjs3XLf2W8vspgHf_rfkswveqUAIKKHHIc__rGg2PDjSg79dASMbNp3-73_4EBAereVI_XUP75eq8-fi76I-oLdpGdO039b2-Mo6h-spngYqrEkDJsGF0g8N637U8OPJ3n2oD2U8VZZoVPC_gXOSbjnxMdw"/>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface font-medium leading-none">Muthoni K.</p>
+<p class="font-caption text-caption text-secondary leading-tight">Landlord • 4 yrs on MoveApp</p>
+</div>
+</div>
+<span class="inline-flex items-center text-verified-green font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-base mr-1" style="font-variation-settings: 'FILL' 1;">verified</span>
+                Verified
+              </span>
+</div>
+</div>
+</article>
+<article class="bg-surface rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col group">
+<div class="relative aspect-[4/3] w-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Spacious airy 2-bedroom master ensuite flat in Ndenderu Kiambu, modern open concept kitchen with granite counters, polished wooden doors, large sash windows overlooking suburban Kiambu greenery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy3DZJHT83a9d4P5CirzZrJpY-QD_gFDOeaySzD5-dAPRkxLfkzEYoQPfO6B6Lxjrcap3Al0C0Jhbz8SMx4VbNpMhacVsQovbrteYsESLRv9rNOr-5I2bou8CATpO8VerEACqWdYWVLgVWZiWblsI9k5u9zwR2udweuMycjEnzA0IVIGjzCLhqlkM_W3SmQuOSK3-9AywSNRXIPaSWpMoRTX2at2gkIiyVNAr8ckyd0Oo4_xgguHOfag"/>
+<button aria-label="Save this listing" class="absolute top-space-sm right-space-sm w-9 h-9 bg-surface rounded-full shadow-md flex items-center justify-center text-on-surface hover:text-danger-red transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<span class="absolute bottom-space-sm left-space-sm bg-[#12151C]/85 text-surface font-label-sm text-label-sm px-space-sm py-1 rounded-md backdrop-blur-none">
+              2 Bed Master Ensuite
+            </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-space-2xs">
+<span class="font-price-listing text-price-listing text-on-surface font-bold">Ksh 28,000 <span class="font-body-sm text-body-sm text-secondary font-normal">/ mo</span></span>
+<span class="inline-flex items-center px-space-2xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-caption text-caption font-semibold">Within Budget</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 mb-1 group-hover:text-primary transition-colors">Hillcrest Heights • Block C</h4>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-1 mb-space-sm">
+<span class="material-symbols-outlined text-sm">pin_drop</span>
+                Ndenderu • 6 mins from Ruaka Junction
+              </p>
+<div class="flex items-center gap-space-md py-space-xs bg-surface-container-low px-space-sm rounded-lg text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">bed</span> 2 Beds</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">bathtub</span> 2 Baths</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">pets</span> Pet Friendly</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface">
+<div class="flex items-center gap-space-xs">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of an energetic Kenyan property manager wearing an understated navy blue collar shirt with modern glasses in a bright office environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2JPuR2j0a0xV9y0djxHDTfqzGbjz_g9JheZ3Nfzu3hsVinbVMx2MQuiVRAwRffZqc7sooycd1n8I1o3FUNbEDmawzzX0X0duNuYR4DYuEIBVKNZqKHFmdXo6pUYw80rAN6Sv6v0ooU9QwWcHwompemqxVeFKVt7DSb3FNtj_cyp0QH-VMHDkNAbNUqoySTIGLjtZA3C_HEJ4by-jCXkYMKx0I-1T8NQx8AaZkp9P7dshlnmbiW4qkKQ"/>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface font-medium leading-none">Bernard O.</p>
+<p class="font-caption text-caption text-secondary leading-tight">Direct Property Owner</p>
+</div>
+</div>
+<span class="inline-flex items-center text-verified-green font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-base mr-1" style="font-variation-settings: 'FILL' 1;">verified</span>
+                Verified
+              </span>
+</div>
+</div>
+</article>
+<article class="bg-surface rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col group">
+<div class="relative aspect-[4/3] w-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Chic sunny 2-bedroom rental apartment in Banana Hill Kiambu, contemporary finishes, ceramic floor tiles, balcony view of rolling green hills, clean architectural lines with security grilles installed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSSt2q7_aMYcoR79ICOB2fR4zI1CeV5CwcqQAPZWgXRO0YeS0JMIHrGnHXVqamIbJxRezeIBTayXGNuQRrBe6OerPhDA9p64zxZhABTri9kOXQHfvE4Q5IAWTFen8dqYPOZf5BSFWMuISN5tumuZHm04Ahe76nn4zECyCImRNXwPv-syjR6q9Bop_qk1YPPvtuz8RPEABNtgaOYZRNOmEzyBk89ha93uFA-D-deTqpx3Eih2Uzm4-kUw"/>
+<button aria-label="Save this listing" class="absolute top-space-sm right-space-sm w-9 h-9 bg-surface rounded-full shadow-md flex items-center justify-center text-on-surface hover:text-danger-red transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<span class="absolute bottom-space-sm left-space-sm bg-[#12151C]/85 text-surface font-label-sm text-label-sm px-space-sm py-1 rounded-md backdrop-blur-none">
+              2 Bed Penthouse
+            </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-space-2xs">
+<span class="font-price-listing text-price-listing text-on-surface font-bold">Ksh 30,000 <span class="font-body-sm text-body-sm text-secondary font-normal">/ mo</span></span>
+<span class="inline-flex items-center px-space-2xs py-0.5 rounded bg-verified-green-bg text-verified-green font-caption text-caption font-semibold">Exact Budget</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1 mb-1 group-hover:text-primary transition-colors">The Valley View Suites • Top Floor</h4>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-1 mb-space-sm">
+<span class="material-symbols-outlined text-sm">pin_drop</span>
+                Banana • Near Karuri Hospital
+              </p>
+<div class="flex items-center gap-space-md py-space-xs bg-surface-container-low px-space-sm rounded-lg text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">bed</span> 2 Beds</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">bathtub</span> 1 Bath</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">local_parking</span> 1 Slot</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface">
+<div class="flex items-center gap-space-xs">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of an approachable young Kenyan businesswoman in business casual style, bright natural daylight, genuine gentle expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASnNRf_Xof7R8V_o9RG2k6bFD08TgsvzOIiB24GhtIlIll6Z96Dk7Id5ezXQ_IE0Ho2DXPdGugUl-d-B6zPo9H6lBqa-SajBwxDrH1HnvdjjBmOSuDUqj0TsKd_OWcR3UBDH562kWQEsmaAoyilBs-qAle8oqNlLGSeldyFSQooZ0poBEMjyz6I7LcSzC2ZqwIbLg0zEheI7uSrCcIEDC0xGg_1p7Se-jRGd5EoeSY8wCwGI9X-QwZWA"/>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface font-medium leading-none">Grace W.</p>
+<p class="font-caption text-caption text-secondary leading-tight">Escrow Verified Agent</p>
+</div>
+</div>
+<span class="inline-flex items-center text-verified-green font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-base mr-1" style="font-variation-settings: 'FILL' 1;">verified</span>
+                Verified
+              </span>
+</div>
+</div>
+</article>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-space-lg shadow-sm mb-space-2xl">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md max-w-2xl">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined text-2xl">insights</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Ruaka Rental Market Intelligence (Q1 2025)</h4>
+<p class="font-body-sm text-body-sm text-secondary">
+              2-bedroom apartments in Ruaka with dedicated borehole supply average <strong class="text-on-surface">Ksh 38,500</strong>. Only 4% of listings under Ksh 30,000 allow pets due to estate management bylaws.
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs w-full lg:w-auto">
+<button class="flex-1 lg:flex-none h-10 px-space-md rounded-lg bg-surface hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm shadow-sm">
+            View Ruaka Rent Report
+          </button>
+<button class="flex-1 lg:flex-none h-10 px-space-md rounded-lg bg-primary-container hover:bg-primary-fixed-dim text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+            Adjust Filter to 35k
+          </button>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 bg-[#12151C]/60 flex items-center justify-center p-gutter-mobile hidden" id="alert-modal">
+<div class="bg-surface rounded-2xl max-w-md w-full p-space-lg shadow-xl relative animate-in fade-in zoom-in-95 duration-200">
+<button class="absolute top-space-md right-space-md text-secondary hover:text-on-surface p-space-2xs rounded-full" id="alert-modal-close">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-2xs">Set Ruaka Instant Listing Alert</h3>
+<p class="font-body-sm text-body-sm text-secondary mb-space-md">
+        We track newly onboarded, title-deed verified rentals every 15 minutes. Get instant WhatsApp pings.
+      </p>
+<div class="space-y-space-sm">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-1">Target Filters Saved</label>
+<div class="bg-surface-container-low p-space-xs rounded-lg font-body-sm text-body-sm text-on-surface-variant">
+            Ruaka • Max Ksh 30,000 • 2 Bedrooms • Borehole Water
+          </div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-1">Kenyan Mobile (WhatsApp enabled)</label>
+<div class="flex rounded-lg bg-surface-container-low px-space-sm py-2 shadow-sm">
+<span class="font-body-md text-body-md text-secondary mr-2">+254</span>
+<input class="bg-transparent border-none outline-none font-body-md text-body-md text-on-surface w-full" placeholder="712 345 678" type="tel"/>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-1">Email Address</label>
+<input class="w-full rounded-lg bg-surface-container-low px-space-sm py-2 font-body-md text-body-md text-on-surface border-none outline-none shadow-sm" placeholder="tenant@example.com" type="email"/>
+</div>
+</div>
+<div class="mt-space-lg flex gap-space-sm">
+<button class="w-1/2 h-11 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold" id="alert-modal-cancel">
+          Cancel
+        </button>
+<button class="w-1/2 h-11 rounded-lg bg-primary-container hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md font-bold" id="alert-modal-confirm">
+          Activate Alert
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const alertModal = document.getElementById('alert-modal');
+    const alertTrigger = document.getElementById('alert-modal-trigger');
+    const alertClose = document.getElementById('alert-modal-close');
+    const alertCancel = document.getElementById('alert-modal-cancel');
+    const alertConfirm = document.getElementById('alert-modal-confirm');
+    const clearBtn = document.getElementById('clear-filters-cta');
+    const resetTags = document.getElementById('reset-all-tags-btn');
+
+    function openModal() {
+      if (alertModal) alertModal.classList.remove('hidden');
+    }
+    function closeModal() {
+      if (alertModal) alertModal.classList.add('hidden');
+    }
+
+    if (alertTrigger) alertTrigger.addEventListener('click', openModal);
+    if (alertClose) alertClose.addEventListener('click', closeModal);
+    if (alertCancel) alertCancel.addEventListener('click', closeModal);
+
+    if (alertConfirm) {
+      alertConfirm.addEventListener('click', function() {
+        alertConfirm.textContent = 'Alert Activated!';
+        alertConfirm.classList.add('bg-verified-green', 'text-white');
+        setTimeout(() => {
+          closeModal();
+          alertConfirm.textContent = 'Activate Alert';
+          alertConfirm.classList.remove('bg-verified-green', 'text-white');
+        }, 1200);
+      });
+    }
+
+    function triggerClearAnimation() {
+      const searchInput = document.getElementById('estate-search-input');
+      if (searchInput) {
+        searchInput.value = 'Nairobi Metropolitan';
+        searchInput.focus();
+      }
+    }
+
+    if (clearBtn) clearBtn.addEventListener('click', triggerClearAnimation);
+    if (resetTags) resetTags.addEventListener('click', triggerClearAnimation);
+  })();
+</script></main><footer class="w-full bg-surface-container-low border-t border-border mt-auto"><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-xl"><div class="space-y-space-sm"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">MoveApp<span class="text-primary font-bold">.ke</span></span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Kenya's street-smart rental housing platform. Direct listings, transparent security deposits, and verified landlord compliance in Nairobi and beyond.</p><div class="flex items-center gap-space-xs pt-space-xs"><span class="inline-flex items-center px-space-xs py-space-2xs rounded-full bg-verified-green-bg text-verified-green font-caption text-caption font-semibold"><span class="material-symbols-outlined text-[14px] mr-1">verified</span>Verified Kenyan Registry</span></div></div><div><h4 class="font-label-md text-label-md text-on-surface mb-space-sm uppercase tracking-wider">Renters</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="browse-houses" href="#">Search Rentals</a></li><li><a class="hover:text-on-surface transition-colors" data-path="estates-directory" href="#">Nairobi Estates Guide</a></li><li><a class="hover:text-on-surface transition-colors" data-path="saved-listings" href="#">Saved Searches</a></li><li><a class="hover:text-on-surface transition-colors" data-path="deposit-protection" href="#">Deposit Escrow Trust</a></li></ul></div><div><h4 class="font-label-md text-label-md text-on-surface mb-space-sm uppercase tracking-wider">Landlords &amp; Agents</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="list-property" href="#">List a House</a></li><li><a class="hover:text-on-surface transition-colors" data-path="landlord-verification" href="#">Get Verified Badge</a></li><li><a class="hover:text-on-surface transition-colors" data-path="tenant-screening" href="#">Screening Guidelines</a></li><li><a class="hover:text-on-surface transition-colors" data-path="owner-portal" href="#">Landlord Console</a></li></ul></div><div><h4 class="font-label-md text-label-md text-on-surface mb-space-sm uppercase tracking-wider">Trust &amp; Compliance</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="tenancy-laws" href="#">Rent Restriction Act FAQs</a></li><li><a class="hover:text-on-surface transition-colors" data-path="anti-fraud-policy" href="#">Anti-Fraud &amp; Scam Warning</a></li><li><a class="hover:text-on-surface transition-colors" data-path="dispute-resolution" href="#">Report a Listing</a></li><li><a class="hover:text-on-surface transition-colors" data-path="privacy-terms" href="#">Terms of Tenancy</a></li></ul></div></div><div class="border-t border-border mt-space-2xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm"><p class="font-caption text-caption text-on-surface-variant">© 2025 MoveApp Kenya Ltd. Regulated under Kenyan housing standards. All rights reserved.</p><p class="font-caption text-caption text-secondary">Built for Nairobi, Kiambu, Machakos &amp; Kajiado metropolitan areas.</p></div></div></footer></body></html>

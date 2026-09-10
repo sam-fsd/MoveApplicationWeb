@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>MoveApp Kenya - Landlord Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-variant": "#e3e2e0",
+          "on-surface-variant": "#4f4634",
+          "on-surface": "#1a1c1a",
+          "inverse-on-surface": "#f2f1ee",
+          "surface-container-low": "#f4f3f1",
+          "surface-container-highest": "#e3e2e0",
+          "tertiary-fixed": "#d9e3f4",
+          "pending-amber": "#E08700",
+          "surface-bright": "#faf9f6",
+          "primary-fixed-dim": "#f4bf32",
+          "tertiary": "#555f6d",
+          "on-primary-fixed": "#251a00",
+          "primary-container": "#ffc93c",
+          "outline": "#817661",
+          "error-container": "#ffdad6",
+          "error": "#ba1a1a",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-container": "#715500",
+          "on-secondary": "#ffffff",
+          "on-primary": "#ffffff",
+          "on-tertiary-fixed": "#121c28",
+          "primary": "#775a00",
+          "primary-fixed": "#ffdf9a",
+          "surface-container-high": "#e9e8e5",
+          "verified-green": "#1F9D55",
+          "on-secondary-fixed": "#191c23",
+          "pending-amber-bg": "#FEF3E2",
+          "on-tertiary": "#ffffff",
+          "verified-green-bg": "#E8F8EE",
+          "danger-red-bg": "#FCE8E6",
+          "tertiary-fixed-dim": "#bdc7d7",
+          "surface-tint": "#775a00",
+          "on-secondary-container": "#62646d",
+          "surface-container": "#efeeeb",
+          "on-background": "#1a1c1a",
+          "on-primary-fixed-variant": "#5a4300",
+          "surface-dim": "#dbdad7",
+          "secondary-container": "#e0e2ec",
+          "secondary-fixed-dim": "#c4c6d0",
+          "surface": "#FFFFFF",
+          "inverse-primary": "#f4bf32",
+          "danger-red": "#D93025",
+          "on-tertiary-fixed-variant": "#3e4855",
+          "outline-variant": "#d2c5ad",
+          "on-error": "#ffffff",
+          "secondary-fixed": "#e0e2ec",
+          "on-error-container": "#93000a",
+          "border": "#E6E3DC",
+          "on-secondary-fixed-variant": "#44474f",
+          "secondary": "#5c5e67",
+          "on-tertiary-container": "#505a67",
+          "background": "#faf9f6",
+          "inverse-surface": "#2f312f",
+          "tertiary-container": "#c7d1e1"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-3xl": "3rem",
+          "gutter-mobile": "1rem",
+          "space-2xl": "2.5rem",
+          "space-xl": "2rem",
+          "space-xs": "0.5rem",
+          "space-sm": "0.75rem",
+          "gutter-desktop": "1.5rem",
+          "container-max": "1280px",
+          "section-gap": "2rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "space-2xs": "0.25rem"
+        },
+        "fontFamily": {
+          "body-sm": ["Inter"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "body-lg": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-md": ["Inter"],
+          "caption": ["Inter"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "headline-xl": ["Plus Jakarta Sans"],
+          "label-sm": ["Inter"],
+          "headline-xl-mobile": ["Plus Jakarta Sans"],
+          "label-md": ["Inter"],
+          "price-hero": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "price-listing": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "caption": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+          "price-hero": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "price-listing": ["20px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-inverse-surface z-50 flex flex-col justify-between select-none shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-xs bg-inverse-surface"><img alt="Modern clean geometric house icon logo mark for MoveApp Kenya, signal yellow house roof line accent and bold ink black geometric frame, minimalist real estate logo on transparent background. Design context: - Primary color: #ffc93c
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WNUVKKf1BLkyNXrBOm1QMipYZmOjYCfT-6ZMEfh0nFJt71kZZ15eIGmsmfSeFNfzYzMoJXIWVud_sZLQv8EaYgWna1WRQzK1RvNbvyjNl7x_E0bxx8neQLcBcKlGxK1v2dVXwU_EsppSLU4tSTFMKRZWnVORcsFyUHW7PxQozLL7p7fFx-gRQU2LnzA3z4CuKcSt-GSuFrsYi6hOvctW263tyEH_qceUdcpwsf6MkLXzc1bJfA3vT7pajU"/><div class="flex flex-col"><div class="flex items-center gap-space-2xs"><span class="font-headline-sm text-headline-sm text-inverse-on-surface tracking-tight font-bold">MoveApp<span class="text-primary-container">.ke</span></span></div><span class="font-caption text-caption text-primary-container tracking-wider uppercase font-semibold">Landlord Portal</span></div></div><div class="px-space-md pt-space-md pb-space-xs"><a class="w-full flex items-center justify-center gap-space-xs bg-primary-container text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors py-space-xs px-space-md rounded-lg font-label-md text-label-md shadow-[0_2px_8px_-2px_rgba(18,21,28,0.05)]" data-path="add-listing" href="#"><span class="material-symbols-outlined text-[20px]">add_circle</span><span>Add Listing</span></a></div><nav class="mt-space-sm flex flex-col px-space-xs space-y-1" data-active-classes="bg-surface/10 text-primary-container border-l-[3px] border-primary-container font-semibold"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded transition-colors bg-surface/10 text-primary-container border-l-[3px] border-primary-container font-semibold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="my-listings" href="#"><span class="material-symbols-outlined text-[20px]">real_estate_agent</span><span>My Listings</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="enquiries" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">chat</span><span>Enquiries</span></div><span class="bg-primary-container text-on-primary-fixed font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold">3</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">account_box</span><span>Profile</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="p-space-md bg-inverse-surface"><div class="flex flex-col space-y-1"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="landlord-support" href="#"><span class="material-symbols-outlined text-[20px]">help</span><span>Landlord Support</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-danger-red transition-colors font-label-md text-label-md" data-path="logout" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span>Logout</span></a></div><div class="mt-space-md pt-space-sm bg-surface/5 rounded p-space-xs flex items-center justify-between text-inverse-on-surface/60 font-caption text-caption"><span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-verified-green"></span> Nairobi Central MLLS</span><span>v2.4</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface z-40 flex items-center justify-between px-gutter-desktop shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex-1 max-w-lg"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-sm text-secondary pointer-events-none text-[20px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-container-low text-on-surface placeholder:text-secondary rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-surface transition-all" placeholder="Search listings by estate, tenant name, or unit ID..." type="search"/></div></div><div class="flex items-center gap-space-md ml-space-md"><a class="hidden sm:flex items-center gap-space-xs bg-primary-container text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors h-10 px-space-md rounded-lg font-label-md text-label-md font-semibold" data-path="add-listing" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>Add New Listing</span></a><button aria-label="Notifications" class="relative p-space-xs rounded-full hover:bg-surface-container-high transition-colors text-secondary hover:text-on-surface focus:outline-none" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-primary-container rounded-full ring-2 ring-surface"></span></button><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-space-sm cursor-pointer py-1 px-space-2xs rounded-lg hover:bg-surface-container-low transition-colors"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbszAyKocpqykkMADj0WR4E62vs0FRNVwQKoauNCSXVIAqwVO9nCYxvNkLHO2QJsRWReMRFPnt-YiZQULwInmzcXvTfqcmLvn4mTN-OyT9da0mxdvQeJayuZ1t_LLCSVr7ipNNWAqht6oo_eMAMIbC34H3wbOa01MX5QrHolybF5FlkuijvGPOIgKgdlgOMud_E6hgoC84vcSSKSbSlZLCWf3aIpvU48r50Yc-2SS_jOi7oRm7WV6KlQ"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-verified-green rounded-full ring-2 ring-surface"></span></div><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-1"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Samuel Njoroge</span><span class="material-symbols-outlined text-verified-green text-[14px]">verified</span></div><span class="font-caption text-caption text-secondary leading-none">Kamau Properties</span></div><span class="material-symbols-outlined text-secondary text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-background w-full min-h-screen px-gutter-desktop py-space-xl"><div class="flex flex-col w-full">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs text-secondary mb-space-md">
+<a class="font-body-sm text-body-sm hover:text-on-surface transition-colors" data-path="dashboard" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="font-body-sm text-body-sm hover:text-on-surface transition-colors" data-path="my-listings" href="#">My Listings</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-label-sm text-label-sm text-on-surface">2 Bedroom Modern Flat (Muthithi Rd)</span>
+</nav>
+<!-- 1. Header Band -->
+<header class="bg-surface rounded-xl p-space-lg shadow-sm mb-space-xl">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-space-2xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">2 Bedroom Modern Flat with Balcony</h1>
+<span class="inline-flex items-center gap-1.5 px-space-xs py-1 rounded-full bg-verified-green-bg text-verified-green font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-verified-green"></span>
+            Published &amp; Active
+          </span>
+</div>
+<p class="font-body-md text-body-md text-secondary">
+          Muthithi Road, Westlands, Nairobi • Listed on 12 Oct 2024 • <span class="font-semibold text-on-surface">Unit Ref: #WST-8821</span>
+</p>
+</div>
+<!-- Action Buttons Group -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="inline-flex items-center gap-space-2xs px-space-sm h-10 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Edit Listing</span>
+</button>
+<button class="inline-flex items-center gap-space-2xs px-space-sm h-10 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">key</span>
+<span>Mark as Rented</span>
+</button>
+<button class="inline-flex items-center gap-space-2xs px-space-md h-10 rounded-lg bg-primary-container hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Boost Listing</span>
+</button>
+<!-- Kebab Dropdown Trigger -->
+<div class="relative">
+<button class="w-10 h-10 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors shadow-sm" id="listing-menu-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-2 w-48 bg-surface rounded-xl shadow-xl py-1 z-20" id="listing-menu-dropdown">
+<a class="flex items-center gap-2 px-4 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+              Duplicate Listing
+            </a>
+<a class="flex items-center gap-2 px-4 py-2 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+              Pause Listing
+            </a>
+<div class="h-px bg-surface-container my-1"></div>
+<a class="flex items-center gap-2 px-4 py-2 font-label-sm text-label-sm text-danger-red hover:bg-danger-red-bg transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+              Delete Listing
+            </a>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- 2. Stat Cards Strip -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-space-md mb-space-xl">
+<!-- Stat 1 -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Total Views</span>
+<span class="material-symbols-outlined text-primary text-[20px]">visibility</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface">1,420</span>
+<span class="font-label-sm text-label-sm text-verified-green font-bold">+14%</span>
+</div>
+<p class="font-caption text-caption text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">stars</span>
+        Top 5% in Westlands rentals
+      </p>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Saved by Tenants</span>
+<span class="material-symbols-outlined text-danger-red text-[20px]">favorite</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface">38</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded-full bg-pending-amber-bg text-pending-amber font-semibold">High Renter Interest</span>
+</div>
+<p class="font-caption text-caption text-secondary mt-1">6 price alerts actively watching this unit</p>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Enquiries Received</span>
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">chat_bubble</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface">19</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded-full bg-primary-container text-on-primary-fixed font-bold">4 Unread</span>
+</div>
+<p class="font-caption text-caption text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-verified-green text-[14px]">timer</span>
+        Avg response time: 12 mins
+      </p>
+</div>
+</section>
+<!-- 3. Main Content Area (Two Columns) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left Column (68%) -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- Performance Line Chart -->
+<section class="bg-surface rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Listing Views Performance</h2>
+<p class="font-caption text-caption text-secondary mt-0.5">Daily average: <span class="font-semibold text-on-surface">47 views</span></p>
+</div>
+<!-- Time Range Selector -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="px-3 py-1 font-label-sm text-label-sm rounded text-secondary hover:text-on-surface transition-colors" type="button">7 Days</button>
+<button class="px-3 py-1 font-label-sm text-label-sm rounded bg-primary-container text-on-primary-fixed font-bold shadow-sm" type="button">30 Days</button>
+<button class="px-3 py-1 font-label-sm text-label-sm rounded text-secondary hover:text-on-surface transition-colors" type="button">90 Days</button>
+</div>
+</div>
+<!-- SVG Line Chart with Gradient and Tooltip -->
+<div class="relative w-full overflow-x-auto">
+<svg class="w-full h-56 overflow-visible" preserveaspectratio="none" viewbox="0 0 720 220">
+<defs>
+<lineargradient id="yellowArea" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ffc93c" stop-opacity="0.38"></stop>
+<stop offset="100%" stop-color="#ffc93c" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Subtle horizontal grid lines -->
+<line stroke="#e3e2e0" stroke-dasharray="4 4" stroke-width="1" x1="30" x2="710" y1="30" y2="30"></line>
+<line stroke="#e3e2e0" stroke-dasharray="4 4" stroke-width="1" x1="30" x2="710" y1="80" y2="80"></line>
+<line stroke="#e3e2e0" stroke-dasharray="4 4" stroke-width="1" x1="30" x2="710" y1="130" y2="130"></line>
+<line stroke="#e3e2e0" stroke-width="1" x1="30" x2="710" y1="180" y2="180"></line>
+<!-- Grid values -->
+<text fill="#5c5e67" font-family="Inter" font-size="10" text-anchor="end" x="20" y="34">80</text>
+<text fill="#5c5e67" font-family="Inter" font-size="10" text-anchor="end" x="20" y="84">50</text>
+<text fill="#5c5e67" font-family="Inter" font-size="10" text-anchor="end" x="20" y="134">25</text>
+<text fill="#5c5e67" font-family="Inter" font-size="10" text-anchor="end" x="20" y="184">0</text>
+<!-- Gradient Area Fill -->
+<path d="M 40 160 Q 90 145 150 135 T 270 120 T 390 100 T 510 50 T 630 65 T 700 45 L 700 180 L 40 180 Z" fill="url(#yellowArea)"></path>
+<!-- Line Stroke -->
+<path d="M 40 160 Q 90 145 150 135 T 270 120 T 390 100 T 510 50 T 630 65 T 700 45" fill="none" stroke="#12151C" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Key Points -->
+<circle cx="150" cy="135" fill="#12151C" r="3.5"></circle>
+<circle cx="270" cy="120" fill="#12151C" r="3.5"></circle>
+<circle cx="390" cy="100" fill="#12151C" r="3.5"></circle>
+<circle cx="510" cy="50" fill="#ffc93c" r="5" stroke="#12151C" stroke-width="2"></circle>
+<circle cx="630" cy="65" fill="#12151C" r="3.5"></circle>
+<circle cx="700" cy="45" fill="#12151C" r="4"></circle>
+<!-- Interactive Highlight Tooltip for Oct 24 Peak -->
+<g transform="translate(450, 10)">
+<rect fill="#12151C" height="32" opacity="0.95" rx="6" width="120"></rect>
+<polygon fill="#12151C" points="60,32 55,38 65,38"></polygon>
+<text fill="#FFFFFF" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle" x="60" y="20">Oct 24: 78 views (+22%)</text>
+</g>
+</svg>
+<!-- Day Labels -->
+<div class="flex justify-between pl-8 pr-2 pt-2 text-secondary font-caption text-caption">
+<span>Oct 1</span>
+<span>Oct 8</span>
+<span>Oct 15</span>
+<span>Oct 22</span>
+<span>Oct 30</span>
+</div>
+</div>
+</section>
+<!-- Tenant Enquiries Section -->
+<section class="bg-surface rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Tenant Enquiries</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-secondary">
+              19 total • 4 unread
+            </span>
+</div>
+<div class="flex items-center gap-2">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-secondary text-[18px]">search</span>
+<input class="h-8 pl-8 pr-3 text-body-sm font-body-sm bg-surface-container-low rounded-lg focus:outline-none focus:bg-surface text-on-surface" placeholder="Search tenant name..." type="text"/>
+</div>
+<button class="inline-flex items-center gap-1 h-8 px-2.5 rounded-lg bg-surface-container-low font-label-sm text-label-sm text-secondary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>Filter</span>
+</button>
+</div>
+</div>
+<!-- Enquiries List -->
+<div class="space-y-space-md">
+<!-- Row 1: High Priority / Unread -->
+<article class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<img alt="Brian Otieno" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1W_xB_Bbv1tfBm1Np0ErnnQ9qp_NKS9a-ModHXsJE_LrTha8SbhtNGo8DKWzH7zA6JoD5hewmxTtZIA0XzknHZy7U0dSwJgK7TKVWo0_XcKjox6ZmAX3XGw3TTyui-cOWxoiDTnJixzkDzRoJHG1NOoxvlSnGzLV8t6KSjVjqHt8TLkW6u8SevUJQjIOkWLbyNBxdn8F0Qxxmu3AkV-RuZv0BF6KMng7grNIVr8gX-vWVo-3qTF4iDTaj6F"/>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-label-md text-label-md text-on-surface">Brian Otieno</h3>
+<span class="inline-flex items-center gap-0.5 text-verified-green font-caption text-caption bg-verified-green-bg px-1.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+                      ID Vetted
+                    </span>
+<span class="w-2 h-2 rounded-full bg-pending-amber"></span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                    "Habari Samuel, is this unit available for an in-person viewing this Saturday morning at 10am? We are ready to place deposit."
+                  </p>
+<p class="font-caption text-caption text-secondary mt-1">
+                    14 mins ago • Moving target: Nov 1st • Budget: <span class="font-semibold text-on-surface">Ksh 45,000</span>
+</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 self-end sm:self-start shrink-0">
+<a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-verified-green text-on-primary font-label-sm text-label-sm hover:opacity-90 transition-opacity" href="https://wa.me/254700000000" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>WhatsApp</span>
+</a>
+<button class="px-3 py-1.5 rounded-lg bg-surface hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors shadow-sm" type="button">
+                  Reply via MoveApp
+                </button>
+</div>
+</div>
+</article>
+<!-- Row 2 -->
+<article class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container font-headline-sm flex items-center justify-center shrink-0">
+                  GM
+                </div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-label-md text-label-md text-on-surface">Grace Mwangi</h3>
+<span class="inline-flex items-center gap-0.5 text-verified-green font-caption text-caption bg-verified-green-bg px-1.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+                      Tenant Verified
+                    </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                    "Hello! Does the rent include service charge and 24/7 borehole water, or is water billed separately on sub-meter?"
+                  </p>
+<p class="font-caption text-caption text-secondary mt-1">
+                    2 hours ago • Looking for 12-month lease
+                  </p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-start shrink-0">
+<a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-verified-green text-on-primary font-label-sm text-label-sm hover:opacity-90 transition-opacity" href="https://wa.me/254700000000" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>WhatsApp</span>
+</a>
+<button class="px-3 py-1.5 rounded-lg bg-surface hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors shadow-sm" type="button">
+                  Reply
+                </button>
+</div>
+</div>
+</article>
+<!-- Row 3 -->
+<article class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-tertiary-container text-on-tertiary-container font-headline-sm flex items-center justify-center shrink-0">
+                  DK
+                </div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-label-md text-label-md text-on-surface">Dennis Kiprop</h3>
+<span class="inline-flex items-center gap-0.5 text-secondary font-caption text-caption bg-surface-container px-1.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">call</span>
+                      Phone Verified
+                    </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                    "Interested in the dedicated parking bay. Is there space for a second visitor vehicle?"
+                  </p>
+<p class="font-caption text-caption text-secondary mt-1">
+                    Yesterday, 4:15 PM
+                  </p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-start shrink-0">
+<button class="px-3 py-1.5 rounded-lg bg-surface hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors shadow-sm" type="button">
+                  Reply
+                </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface hover:bg-surface-container text-secondary font-label-sm text-label-sm transition-colors shadow-sm" type="button">
+                  View Contact
+                </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Footer Pagination Link -->
+<div class="mt-space-md pt-space-xs text-center">
+<a class="font-label-md text-label-md text-primary hover:text-on-surface transition-colors inline-flex items-center gap-1" data-path="enquiries" href="#">
+<span>View All 19 Enquiries</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</section>
+</div>
+<!-- Right Rail (32%) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-xl">
+<!-- Tenant View Preview Card -->
+<section class="bg-surface rounded-xl p-space-md shadow-sm">
+<div class="mb-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Tenant Card Preview</h2>
+<p class="font-caption text-caption text-secondary">How your listing appears in Westlands search results</p>
+</div>
+<!-- Listing Card Mockup -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-md">
+<div class="relative w-full h-48 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Modern sunlit living room inside an apartment on Muthithi Road Westlands Nairobi, polished wooden floors, tasteful minimalist African artwork, neutral warm tones, large balcony sliding doors letting in bright natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCagvTk1Cz7R8i0j111tUip0X2HbFpsPZoNSV-wTfAboQqvgN6ilFxpwpYmLYiBfOyOxBjNaXidrnxpr1McmDqxw4Fd_1Q9leVdMVxupOVYlwdHgwb6Jb9wKrAcEHoRkTuc_eW48RoA_1fw8JUKW3m1Af1mKVMUpJnz9DPEvQRq6vjhPBLfRjV0TuoiAJrdJNrwr-8lUGCrPjxXNOSImQg2vXI4Aw8p4GU3bZQjGsOJQWqOtyO6sNorLA"/>
+<span class="absolute top-3 left-3 bg-inverse-surface/85 text-surface font-label-sm text-label-sm px-2.5 py-1 rounded">
+              FOR RENT
+            </span>
+<button aria-label="Favorite" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface text-secondary flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<span class="absolute bottom-3 left-3 bg-inverse-surface/90 text-surface font-caption text-caption px-2 py-0.5 rounded">
+              2 Bed Apartment
+            </span>
+</div>
+<div class="p-space-md space-y-space-xs">
+<div class="flex items-baseline justify-between">
+<div>
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 45,000</span>
+<span class="font-caption text-caption text-secondary">/ month</span>
+</div>
+<span class="font-caption text-caption text-secondary bg-surface-container-low px-2 py-0.5 rounded">
+                Deposit: 1 Month
+              </span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-1">2 Bedroom Modern Flat with Balcony</h3>
+<p class="font-caption text-caption text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+              Muthithi Road (near Sarit Centre), Westlands
+            </p>
+<div class="pt-2 flex items-center justify-between text-secondary font-caption text-caption">
+<span>2 Beds</span>
+<span>•</span>
+<span>1 Bath</span>
+<span>•</span>
+<span>1 Parking</span>
+<span>•</span>
+<span>24/7 Borehole</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between bg-surface-container-low p-space-xs rounded-lg">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center font-bold text-[10px]">
+                  KP
+                </div>
+<span class="font-label-sm text-label-sm text-on-surface">Kamau Properties</span>
+</div>
+<span class="material-symbols-outlined text-verified-green text-[18px]">verified</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md">
+<a class="w-full flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" href="#">
+<span>Open Full Public Listing</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</section>
+<!-- Quick Listing Diagnostics Card -->
+<section class="bg-surface rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-label-md text-label-md text-on-surface">Listing Health Score</h2>
+<span class="px-2 py-0.5 rounded-full bg-verified-green-bg text-verified-green font-label-sm text-label-sm font-bold">
+            96% Excellent
+          </span>
+</div>
+<!-- Progress Bar Indicator -->
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden mb-space-md">
+<div class="h-full bg-verified-green rounded-full" style="width: 96%;"></div>
+</div>
+<!-- Verification Checklist -->
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-verified-green text-[18px]">check_circle</span>
+<span>5 HD Photos uploaded</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-verified-green text-[18px]">check_circle</span>
+<span>Cap 296 Compliant pricing</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-verified-green text-[18px]">check_circle</span>
+<span>Transparent utility breakdown</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-verified-green text-[18px]">check_circle</span>
+<span>WhatsApp direct verified</span>
+</li>
+</ul>
+<!-- Pro Advice Box -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-low flex items-start gap-2 text-secondary">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">tips_and_updates</span>
+<p class="font-caption text-caption leading-relaxed">
+<span class="font-semibold text-on-surface">Landlord Tip:</span> Landlords with response times under 30 minutes secure deposits 2.8x faster in Nairobi.
+          </p>
+</div>
+</section>
+</aside>
+</div>
+</div>
+<script>
+  // Kebab menu toggle interaction
+  const menuBtn = document.getElementById('listing-menu-btn');
+  const menuDropdown = document.getElementById('listing-menu-dropdown');
+
+  if (menuBtn && menuDropdown) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuDropdown.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      if (!menuDropdown.classList.contains('hidden')) {
+        menuDropdown.classList.add('hidden');
+      }
+    });
+  }
+</script></main></div></body></html>

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-container":"#e0e2ec","pending-amber-bg":"#FEF3E2","secondary-fixed-dim":"#c4c6d0","error":"#ba1a1a","tertiary-container":"#c7d1e1","danger-red-bg":"#FCE8E6","outline":"#817661","primary-fixed-dim":"#f4bf32","surface-container-low":"#f4f3f1","surface-container-lowest":"#ffffff","surface-container-high":"#e9e8e5","on-tertiary-fixed-variant":"#3e4855","tertiary-fixed":"#d9e3f4","surface-container":"#efeeeb","primary-container":"#ffc93c","secondary-fixed":"#e0e2ec","surface-tint":"#775a00","on-background":"#1a1c1a","on-primary-fixed-variant":"#5a4300","on-primary":"#ffffff","on-tertiary":"#ffffff","on-surface-variant":"#4f4634","outline-variant":"#d2c5ad","on-primary-container":"#715500","inverse-primary":"#f4bf32","on-error":"#ffffff","pending-amber":"#E08700","tertiary-fixed-dim":"#bdc7d7","on-error-container":"#93000a","inverse-on-surface":"#f2f1ee","on-primary-fixed":"#251a00","on-secondary-fixed-variant":"#44474f","inverse-surface":"#2f312f","on-secondary-fixed":"#191c23","secondary":"#5c5e67","verified-green":"#1F9D55","surface-dim":"#dbdad7","surface-container-highest":"#e3e2e0","on-tertiary-fixed":"#121c28","on-surface":"#1a1c1a","danger-red":"#D93025","on-tertiary-container":"#505a67","primary":"#775a00","on-secondary-container":"#62646d","surface-bright":"#faf9f6","verified-green-bg":"#E8F8EE","error-container":"#ffdad6","surface-variant":"#e3e2e0","surface":"#FFFFFF","primary-fixed":"#ffdf9a","border":"#E6E3DC","tertiary":"#555f6d","background":"#faf9f6","on-secondary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-2xl":"2.5rem","space-xs":"0.5rem","gutter-desktop":"1.5rem","space-md":"1rem","space-xl":"2rem","space-2xs":"0.25rem","container-max":"1280px","space-sm":"0.75rem","space-lg":"1.5rem","space-3xl":"3rem","gutter-mobile":"1rem","section-gap":"2rem"},"fontFamily":{"headline-md":["Plus Jakarta Sans"],"label-sm":["Inter"],"price-hero":["Plus Jakarta Sans"],"body-md":["Inter"],"headline-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-xl":["Plus Jakarta Sans"],"price-listing":["Plus Jakarta Sans"],"caption":["Inter"],"label-md":["Inter"],"body-sm":["Inter"]},"fontSize":{"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}],"price-hero":["28px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"price-listing":["20px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"caption":["11px",{"lineHeight":"14px","fontWeight":"500"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-[#12151C] z-50 flex flex-col justify-between border-r border-[#1E232F]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between border-b border-[#1E232F]"><div class="flex items-center gap-space-xs"><img alt="MoveApp Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WNUVKKf1BLkyNXrBOm1QMipYZmOjYCfT-6ZMEfh0nFJt71kZZ15eIGmsmfSeFNfzYzMoJXIWVud_sZLQv8EaYgWna1WRQzK1RvNbvyjNl7x_E0bxx8neQLcBcKlGxK1v2dVXwU_EsppSLU4tSTFMKRZWnVORcsFyUHW7PxQozLL7p7fFx-gRQU2LnzA3z4CuKcSt-GSuFrsYi6hOvctW263tyEH_qceUdcpwsf6MkLXzc1bJfA3vT7pajU"/><span class="font-headline-sm text-headline-sm text-surface tracking-tight">MoveApp<span class="text-primary-container">.ke</span></span></div><span class="bg-primary-container text-on-primary-container font-label-sm text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">OPS CONSOLE</span></div><div class="px-space-md pt-space-md pb-space-xs"><span class="text-[11px] uppercase tracking-wider font-semibold text-[#6E788B]">Operational Units</span></div><nav class="flex flex-col space-y-1 px-space-xs" data-active-classes="bg-[#1E232F] text-surface font-semibold border-l-[3px] border-primary-container"><a class="flex items-center justify-between px-space-sm py-2.5 rounded-r text-[#9EABB9] hover:bg-[#1A1F2B] hover:text-surface transition-colors" data-path="overview" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-label-md text-label-md">Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-2.5 rounded-r text-[#9EABB9] hover:bg-[#1A1F2B] hover:text-surface transition-colors" data-path="owner-verifications" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-md text-label-md">Owner Verifications</span></div><span class="bg-[#2A2312] text-primary-container border border-[#483713] font-label-sm text-[11px] px-2 py-0.5 rounded-full font-bold">7</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2.5 rounded-r transition-colors bg-[#1E232F] text-surface font-semibold border-l-[3px] border-primary-container" data-path="listings" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">home_work</span><span class="font-label-md text-label-md">Listings</span></div></a><a class="flex items-center justify-between px-space-sm py-2.5 rounded-r text-[#9EABB9] hover:bg-[#1A1F2B] hover:text-surface transition-colors" data-path="reports" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">flag</span><span class="font-label-md text-label-md">Reports</span></div><span class="bg-danger-red-bg text-danger-red font-label-sm text-[11px] px-2 py-0.5 rounded-full font-bold">4</span></a><a class="flex items-center justify-between px-space-sm py-2.5 rounded-r text-[#9EABB9] hover:bg-[#1A1F2B] hover:text-surface transition-colors" data-path="users" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md">Users</span></div></a><a class="flex items-center justify-between px-space-sm py-2.5 rounded-r text-[#9EABB9] hover:bg-[#1A1F2B] hover:text-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-md text-label-md">Settings</span></div></a></nav></div><div class="p-space-md border-t border-[#1E232F] flex flex-col gap-space-sm"><div class="flex items-center gap-2 bg-[#171B24] border border-[#232938] px-3 py-2 rounded-lg"><span class="w-2 h-2 rounded-full bg-verified-green animate-pulse"></span><div class="flex flex-col"><span class="text-[11px] text-[#A6B2C2] leading-tight">All Systems Operational</span><span class="text-[10px] text-verified-green font-semibold leading-tight">99.9% Uptime</span></div></div><div class="flex items-center justify-between pt-1"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs">NO</div><div class="flex flex-col"><span class="text-surface font-label-md text-label-md leading-tight">Nairobi Ops</span><span class="text-[#6E788B] text-caption leading-tight">Admin Lead</span></div></div><span class="material-symbols-outlined text-[#6E788B] text-[20px] cursor-pointer hover:text-surface">more_vert</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface border-b border-border shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md"><span class="text-secondary">MoveApp Operations</span><span class="text-outline-variant">/</span><span class="text-on-surface font-semibold">Listings Management</span></div><div class="h-4 w-[1px] bg-border mx-1"></div><div class="flex items-center bg-surface-container-low border border-border rounded-lg px-space-sm py-1.5 gap-2 w-64"><span class="material-symbols-outlined text-secondary text-[18px]">search</span><input class="bg-transparent text-on-surface font-body-sm text-body-sm outline-none placeholder:text-secondary w-full" placeholder="Search listings, MLS, ID..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 bg-surface-container-low border border-border rounded-lg px-space-sm py-1.5"><span class="material-symbols-outlined text-secondary text-[18px]">location_city</span><select class="bg-transparent text-on-surface font-label-md text-body-sm outline-none cursor-pointer"><option value="all">All Counties (Kenya)</option><option selected="" value="nairobi">Nairobi County</option><option value="kiambu">Kiambu County</option><option value="machakos">Machakos County</option><option value="kajiado">Kajiado County</option></select></div><button aria-label="Notifications" class="relative p-2 rounded-lg text-secondary hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-primary-container rounded-full border-2 border-surface"></span></button><button class="flex items-center gap-1.5 bg-primary-container text-on-primary-container hover:bg-[#F5BD2F] px-space-md py-2 rounded-lg font-label-md text-label-md font-semibold transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">download</span><span>Export CSV</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-background min-h-screen w-full"><div class="flex flex-col w-full">
+<div class="max-w-[1400px] w-full mx-auto px-space-lg py-space-xl flex flex-col gap-space-lg">
+<!-- Header & Metric Summary -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-verified-green"></span>
+<span class="text-caption font-caption uppercase tracking-wider text-secondary">Metropolitan Real-Time Ledger</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Listings Directory &amp; Moderation</h1>
+<p class="font-body-md text-body-md text-secondary mt-1">
+          Monitor, audit, and moderate verified property rental units across Nairobi Metropolitan.
+        </p>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="flex items-center gap-2 bg-surface hover:bg-surface-container border border-border px-space-md py-2.5 rounded-lg text-on-surface font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">fact_check</span>
+<span>Batch Status Audit</span>
+</button>
+<button class="flex items-center gap-2 bg-primary-container hover:bg-[#F5BD2F] text-on-primary-container px-space-md py-2.5 rounded-lg font-label-md text-label-md font-semibold transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Add Unit on Behalf of Owner</span>
+</button>
+</div>
+</div>
+<!-- Quick Metric Bar -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm">
+<div class="bg-surface border border-border rounded-xl p-space-md flex flex-col shadow-sm">
+<span class="text-caption font-caption uppercase tracking-wider text-secondary">Total Inventory</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-price-hero text-price-hero text-on-surface">3,814</span>
+<span class="text-caption font-caption text-verified-green font-semibold">Nairobi Registry</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-on-surface h-full rounded-full w-full"></div>
+</div>
+</div>
+<div class="bg-surface border border-border rounded-xl p-space-md flex flex-col shadow-sm">
+<div class="flex items-center justify-between">
+<span class="text-caption font-caption uppercase tracking-wider text-secondary">Published &amp; Live</span>
+<span class="w-2 h-2 rounded-full bg-verified-green"></span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-price-hero text-price-hero text-on-surface">3,540</span>
+<span class="text-caption font-caption text-secondary">92.8% active</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-verified-green h-full rounded-full" style="width: 92.8%"></div>
+</div>
+</div>
+<div class="bg-surface border border-border rounded-xl p-space-md flex flex-col shadow-sm">
+<div class="flex items-center justify-between">
+<span class="text-caption font-caption uppercase tracking-wider text-secondary">Under Review</span>
+<span class="w-2 h-2 rounded-full bg-pending-amber"></span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-price-hero text-price-hero text-on-surface">186</span>
+<span class="text-caption font-caption text-pending-amber font-semibold">Verification Queue</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-pending-amber h-full rounded-full" style="width: 4.8%"></div>
+</div>
+</div>
+<div class="bg-surface border border-border rounded-xl p-space-md flex flex-col shadow-sm">
+<div class="flex items-center justify-between">
+<span class="text-caption font-caption uppercase tracking-wider text-secondary">Suspended / Flagged</span>
+<span class="w-2 h-2 rounded-full bg-danger-red"></span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-price-hero text-price-hero text-danger-red">88</span>
+<span class="text-caption font-caption text-danger-red font-semibold">2.3% restricted</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-danger-red h-full rounded-full" style="width: 2.3%"></div>
+</div>
+</div>
+</div>
+<!-- Search & Filter Controls -->
+<div class="bg-surface border border-border rounded-xl p-space-md flex flex-col gap-space-md shadow-sm">
+<!-- Search Input Line -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-[20px]">search</span>
+<input class="w-full pl-11 pr-4 py-2.5 bg-surface-container-low border border-border rounded-lg font-body-md text-body-md text-on-surface placeholder:text-secondary focus:outline-none focus:border-on-surface focus:ring-2 focus:ring-primary-container" placeholder="Search listing title, building name, landlord, or unit ID (e.g. #WST-8821)..." type="text"/>
+</div>
+<!-- Filter Controls Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-xs">
+<div class="flex flex-col">
+<label class="text-caption font-caption text-secondary mb-1">Listing Status</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-border rounded-lg px-3 py-2 text-on-surface font-body-sm text-body-sm focus:outline-none cursor-pointer appearance-none">
+<option value="all">All Statuses (3,814)</option>
+<option selected="" value="active">Active &amp; Published (3,540)</option>
+<option value="review">Pending Review (186)</option>
+<option value="flagged">Flagged / Under Report (24)</option>
+<option value="inactive">Unpublished / Inactive (64)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="text-caption font-caption text-secondary mb-1">Nairobi Sub-County / Estate</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-border rounded-lg px-3 py-2 text-on-surface font-body-sm text-body-sm focus:outline-none cursor-pointer appearance-none">
+<option selected="" value="all">All Nairobi Areas</option>
+<option value="westlands">Westlands (Rhapta, Mpaka)</option>
+<option value="kilimani">Kilimani &amp; Dennis Pritt</option>
+<option value="parklands">Parklands (1st - 6th Ave)</option>
+<option value="kileleshwa">Kileleshwa (Gatundu, Mandera)</option>
+<option value="south-b">South B (Plainview, Mariakani)</option>
+<option value="karen">Karen (Miotoni, Hardy)</option>
+<option value="lavington">Lavington</option>
+<option value="kasarani">Kasarani &amp; Roysambu</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="text-caption font-caption text-secondary mb-1">Owner / Agency</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-border rounded-lg px-3 py-2 text-on-surface font-body-sm text-body-sm focus:outline-none cursor-pointer appearance-none">
+<option selected="" value="all">All Owners &amp; Agents</option>
+<option value="kamau">Kamau Properties Ltd (Verified)</option>
+<option value="kilimani-heights">Kilimani Heights Ltd (Verified)</option>
+<option value="apex">Apex Management (Unverified)</option>
+<option value="kileleshwa-holdings">Kileleshwa Holdings</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="text-caption font-caption text-secondary mb-1">Date Created</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border border-border rounded-lg px-3 py-2 text-on-surface font-body-sm text-body-sm focus:outline-none cursor-pointer appearance-none">
+<option selected="" value="all">All Time</option>
+<option value="7d">Past 7 Days</option>
+<option value="30d">Past 30 Days</option>
+<option value="quarter">Past Quarter</option>
+<option value="custom">Custom Date Range...</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Quick Chips Filter Row -->
+<div class="flex items-center justify-between pt-space-xs border-t border-border flex-wrap gap-2">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-caption font-caption uppercase tracking-wider text-secondary mr-1">Quick Filters:</span>
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-danger-red/30 bg-danger-red-bg text-danger-red font-label-sm text-label-sm hover:bg-danger-red hover:text-white transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">flag</span>
+<span>Has Open Reports (24)</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-verified-green/30 bg-verified-green-bg text-verified-green font-label-sm text-label-sm hover:bg-verified-green hover:text-white transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Zero Viewing Fee Verified</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border bg-surface text-secondary font-label-sm text-label-sm hover:border-on-surface hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span>
+<span>High-Res Floorplan Attached</span>
+</button>
+</div>
+<button class="inline-flex items-center gap-1 text-secondary hover:text-on-surface font-label-sm text-label-sm transition-colors ml-auto" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset All Filters</span>
+</button>
+</div>
+</div>
+<!-- Floating Bulk Action Bar -->
+<div class="bg-[#12151C] text-surface rounded-xl p-space-sm px-space-md flex items-center justify-between gap-space-md shadow-md border border-[#1E232F] animate-fade-in">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-white font-semibold">3 listings selected</span>
+<span class="text-caption font-caption text-[#8C98A9]">of 3,814 total</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#3A4252] hover:bg-[#1E2430] text-white font-label-sm text-label-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-pending-amber">visibility_off</span>
+<span>Unpublish (3)</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#3A4252] hover:bg-[#1E2430] text-white font-label-sm text-label-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">assignment_late</span>
+<span>Flag for Audit (3)</span>
+</button>
+<div class="relative inline-block">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-[#3A4252] hover:bg-[#1E2430] text-white font-label-sm text-label-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">label</span>
+<span>Assign Landlord Tag</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-danger-red hover:bg-[#B5251C] text-white font-label-sm text-label-sm font-semibold transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Delete Selected (3)</span>
+</button>
+<div class="h-5 w-[1px] bg-[#2E3646] mx-1"></div>
+<button class="flex items-center justify-center w-8 h-8 rounded-lg hover:bg-[#1E2430] text-[#8C98A9] hover:text-white transition-colors" title="Clear selection" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="bg-surface border border-border rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-border text-caption font-caption text-secondary uppercase tracking-wider">
+<th class="py-3.5 pl-4 pr-2 w-10 text-center">
+<input checked="" class="w-4 h-4 rounded accent-primary-container border-border cursor-pointer" type="checkbox"/>
+</th>
+<th class="py-3.5 px-4 font-semibold min-w-[280px]">Unit &amp; Property Title</th>
+<th class="py-3.5 px-4 font-semibold min-w-[200px]">Owner / Agency</th>
+<th class="py-3.5 px-4 font-semibold min-w-[170px]">Location (Nairobi)</th>
+<th class="py-3.5 px-4 font-semibold min-w-[130px]">Monthly Rent</th>
+<th class="py-3.5 px-4 font-semibold min-w-[130px]">Status</th>
+<th class="py-3.5 px-4 font-semibold min-w-[120px]">Dispute Reports</th>
+<th class="py-3.5 px-4 font-semibold min-w-[110px]">Posted</th>
+<th class="py-3.5 pr-4 pl-2 text-right min-w-[80px]">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border font-body-sm text-body-sm text-on-surface">
+<!-- ROW 1: SELECTED -->
+<tr class="bg-[#FEFCE8] hover:bg-[#FEF9C3] transition-colors">
+<td class="py-3.5 pl-4 pr-2 text-center">
+<input checked="" class="w-4 h-4 rounded accent-primary-container border-border cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-12 rounded-lg overflow-hidden flex-shrink-0 border border-border">
+<img alt="2 Bed Modern Flat with Balcony" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VKuoXXrXcEtcHq8CQ_aBGVZz67YpeuxOuT5ezjcgDWFkrGxRWJSYvOVtkYAPrSWIDtbFGSEiP8cAZpJfvRiQgVJkOGf5NhfqOC2ePOznuaCQZKncuccZmxCYDYLbS6sP24uAsgp8OjD0jmIsFEw9YvrfqEGqN1eAfvhaZfc16dleplQ_YQMKZOH7PVqAnlbckdquF_uCPkN-zWy6VqFNEV6yCrmEmi8Xhay3UATy7yGwzw_TPkCNnPT537"/>
+<span class="absolute bottom-0 right-0 bg-[#12151C]/90 text-[9px] font-bold text-white px-1 rounded-tl">2B</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate hover:underline cursor-pointer">2 Bed Modern Flat with Balcony</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-mono text-caption text-secondary">#WST-8821</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">2 Beds / 2 Baths</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">Furnished</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Samuel Njoroge</span>
+<span class="material-symbols-outlined text-verified-green text-[15px]" style="font-variation-settings: 'FILL' 1;" title="Verified Landlord">verified</span>
+</div>
+<div class="flex items-center gap-1.5 text-caption text-secondary mt-0.5">
+<span>Kamau Properties Ltd</span>
+<span class="bg-surface-container px-1.5 py-0.2 rounded text-[10px] font-semibold text-on-surface-variant">Tier 2</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Westlands</span>
+<span class="text-caption text-secondary">Rhapta Rd, Nairobi</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 45,000</span>
+<span class="text-caption text-secondary">1 mo deposit • Nil fee</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 bg-verified-green-bg text-verified-green font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-verified-green"></span>
+                  Published
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 bg-danger-red-bg text-danger-red font-label-sm text-label-sm px-2 py-0.5 rounded font-semibold" title="Viewing fee allegation reported by user">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                  1 Open Report
+                </span>
+</td>
+<td class="py-3.5 px-4 text-secondary text-caption">24 Oct 2024</td>
+<td class="py-3.5 pr-4 pl-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" title="View details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" title="Edit listing" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: SELECTED -->
+<tr class="bg-[#FEFCE8] hover:bg-[#FEF9C3] transition-colors">
+<td class="py-3.5 pl-4 pr-2 text-center">
+<input checked="" class="w-4 h-4 rounded accent-primary-container border-border cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-border flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[24px]">apartment</span>
+<span class="absolute bottom-0 right-0 bg-[#12151C]/90 text-[9px] font-bold text-white px-1 rounded-tl">ST</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate hover:underline cursor-pointer">Executive Studio 4th Ave Parklands</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-mono text-caption text-secondary">#PKL-4109</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">Studio • 1 Bath</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">Unfurnished</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Apex Management</span>
+<span class="material-symbols-outlined text-secondary text-[15px]" title="Unverified Agency">help_outline</span>
+</div>
+<div class="flex items-center gap-1.5 text-caption text-secondary mt-0.5">
+<span class="text-pending-amber font-semibold">Unverified Agent</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Parklands</span>
+<span class="text-caption text-secondary">4th Avenue, Nairobi</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 32,000</span>
+<span class="text-caption text-secondary">2 mo deposit</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 bg-pending-amber-bg text-pending-amber font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-pending-amber"></span>
+                  Under Review
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 bg-pending-amber-bg text-pending-amber font-label-sm text-label-sm px-2 py-0.5 rounded font-semibold" title="Flagged for photo mismatch">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                  2 Reports
+                </span>
+</td>
+<td class="py-3.5 px-4 text-secondary text-caption">27 Oct 2024</td>
+<td class="py-3.5 pr-4 pl-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: SELECTED -->
+<tr class="bg-[#FEFCE8] hover:bg-[#FEF9C3] transition-colors">
+<td class="py-3.5 pl-4 pr-2 text-center">
+<input checked="" class="w-4 h-4 rounded accent-primary-container border-border cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-border flex items-center justify-center">
+<span class="material-symbols-outlined text-danger-red text-[24px]">question_mark</span>
+<span class="absolute bottom-0 right-0 bg-danger-red text-[9px] font-bold text-white px-1 rounded-tl">3B</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate hover:underline cursor-pointer">3 Bed Townhouse with Garden</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-mono text-caption text-secondary">#KLH-1904</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">3 Beds / 3 Baths</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">DSQ Included</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">David Kariuki</span>
+<span class="material-symbols-outlined text-verified-green text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-1.5 text-caption text-secondary mt-0.5">
+<span>Kileleshwa Holdings</span>
+<span class="bg-surface-container px-1.5 py-0.2 rounded text-[10px] font-semibold text-on-surface-variant">Tier 1</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Kileleshwa</span>
+<span class="text-caption text-secondary">Gatundu Close, Nairobi</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 95,000</span>
+<span class="text-caption text-secondary">2 mo deposit</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 bg-danger-red-bg text-danger-red font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-danger-red"></span>
+                  Flagged (Cap 296)
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 bg-danger-red text-white font-label-sm text-label-sm px-2 py-0.5 rounded font-bold shadow-xs">
+<span class="material-symbols-outlined text-[14px]">flag</span>
+                  3 Reports
+                </span>
+</td>
+<td class="py-3.5 px-4 text-secondary text-caption">18 Oct 2024</td>
+<td class="py-3.5 pr-4 pl-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: UNSELECTED -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 pl-4 pr-2 text-center">
+<input class="w-4 h-4 rounded border-border accent-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-border flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[24px]">bed</span>
+<span class="absolute bottom-0 right-0 bg-[#12151C]/90 text-[9px] font-bold text-white px-1 rounded-tl">1B</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate hover:underline cursor-pointer">1 Bed Furnished Kilimani Oasis</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-mono text-caption text-secondary">#KLM-6623</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">1 Bed / 1 Bath</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">Solar Backup</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Grace Muthoni</span>
+<span class="material-symbols-outlined text-verified-green text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-1.5 text-caption text-secondary mt-0.5">
+<span>Kilimani Heights Ltd</span>
+<span class="bg-surface-container px-1.5 py-0.2 rounded text-[10px] font-semibold text-on-surface-variant">Tier 1</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Kilimani</span>
+<span class="text-caption text-secondary">Dennis Pritt Rd, Nairobi</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 55,000</span>
+<span class="text-caption text-secondary">1 mo deposit</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 bg-verified-green-bg text-verified-green font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-verified-green"></span>
+                  Published
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-secondary text-caption font-medium">
+<span class="w-2 h-2 rounded-full bg-verified-green"></span>
+                  0 Reports
+                </span>
+</td>
+<td class="py-3.5 px-4 text-secondary text-caption">26 Oct 2024</td>
+<td class="py-3.5 pr-4 pl-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: UNSELECTED -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 pl-4 pr-2 text-center">
+<input class="w-4 h-4 rounded border-border accent-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-border flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[24px]">house</span>
+<span class="absolute bottom-0 right-0 bg-[#12151C]/90 text-[9px] font-bold text-white px-1 rounded-tl">2B</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate hover:underline cursor-pointer">2 Bedroom Master Ensuite South B</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-mono text-caption text-secondary">#STB-2311</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">2 Beds / 2 Baths</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">Borehole Water</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Peter Kiprono</span>
+<span class="material-symbols-outlined text-verified-green text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-1.5 text-caption text-secondary mt-0.5">
+<span>South B Residentials</span>
+<span class="bg-surface-container px-1.5 py-0.2 rounded text-[10px] font-semibold text-on-surface-variant">Tier 2</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">South B</span>
+<span class="text-caption text-secondary">Plainview Estate, Nairobi</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 38,000</span>
+<span class="text-caption text-secondary">1 mo deposit</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 bg-verified-green-bg text-verified-green font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-verified-green"></span>
+                  Published
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-secondary text-caption font-medium">
+<span class="w-2 h-2 rounded-full bg-verified-green"></span>
+                  0 Reports
+                </span>
+</td>
+<td class="py-3.5 px-4 text-secondary text-caption">20 Oct 2024</td>
+<td class="py-3.5 pr-4 pl-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 6: UNSELECTED -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 pl-4 pr-2 text-center">
+<input class="w-4 h-4 rounded border-border accent-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-border flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[24px]">single_bed</span>
+<span class="absolute bottom-0 right-0 bg-[#12151C]/90 text-[9px] font-bold text-white px-1 rounded-tl">1B</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate hover:underline cursor-pointer">Charming 1 Bed Gated Court Lavington</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-mono text-caption text-secondary">#LVG-5502</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">1 Bed / 1 Bath</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">CCTV / 24hr Guard</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Amina Hassan Noor</span>
+<span class="material-symbols-outlined text-verified-green text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-1.5 text-caption text-secondary mt-0.5">
+<span>Lavington Court</span>
+<span class="bg-surface-container px-1.5 py-0.2 rounded text-[10px] font-semibold text-on-surface-variant">Tier 1</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Lavington</span>
+<span class="text-caption text-secondary">James Gichuru, Nairobi</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 48,000</span>
+<span class="text-caption text-secondary">1 mo deposit</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 bg-verified-green-bg text-verified-green font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-verified-green"></span>
+                  Published
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-secondary text-caption font-medium">
+<span class="w-2 h-2 rounded-full bg-verified-green"></span>
+                  0 Reports
+                </span>
+</td>
+<td class="py-3.5 px-4 text-secondary text-caption">15 Oct 2024</td>
+<td class="py-3.5 pr-4 pl-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 7: UNSELECTED -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 pl-4 pr-2 text-center">
+<input class="w-4 h-4 rounded border-border accent-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-12 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 border border-border flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[24px]">villa</span>
+<span class="absolute bottom-0 right-0 bg-[#12151C]/90 text-[9px] font-bold text-white px-1 rounded-tl">4B</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate hover:underline cursor-pointer">Spacious 4 Bed Villa Karen</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-mono text-caption text-secondary">#KRN-9941</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">4 Beds / 4 Baths</span>
+<span class="text-outline-variant">•</span>
+<span class="text-caption text-secondary">0.5 Acre Compound</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Mwangi Properties</span>
+<span class="material-symbols-outlined text-verified-green text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-1.5 text-caption text-secondary mt-0.5">
+<span>Corporate Landlord</span>
+<span class="bg-surface-container px-1.5 py-0.2 rounded text-[10px] font-semibold text-on-surface-variant">Tier 1</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Karen</span>
+<span class="text-caption text-secondary">Miotoni Rd, Nairobi</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 160,000</span>
+<span class="text-caption text-secondary">2 mo deposit</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 bg-surface-container-high text-secondary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Unpublished
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 text-secondary text-caption font-medium">
+<span class="w-2 h-2 rounded-full bg-verified-green"></span>
+                  0 Reports
+                </span>
+</td>
+<td class="py-3.5 px-4 text-secondary text-caption">05 Oct 2024</td>
+<td class="py-3.5 pr-4 pl-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer & Pagination -->
+<div class="px-space-md py-space-sm border-t border-border flex flex-col sm:flex-row items-center justify-between gap-space-sm bg-surface-bright">
+<div class="flex items-center gap-3">
+<span class="font-body-sm text-body-sm text-secondary">
+            Showing <strong class="text-on-surface">1 to 7</strong> of <strong class="text-on-surface">3,814</strong> listings (<span class="text-on-surface font-semibold">3 selected</span>)
+          </span>
+<div class="flex items-center gap-1.5 border-l border-border pl-3">
+<span class="text-caption text-secondary">Rows:</span>
+<select class="bg-surface border border-border rounded px-2 py-1 font-body-sm text-body-sm text-on-surface focus:outline-none cursor-pointer">
+<option selected="" value="10">10</option>
+<option value="25">25</option>
+<option value="50">50</option>
+<option value="100">100</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="flex items-center justify-center px-2.5 py-1.5 rounded-lg border border-border bg-surface text-secondary hover:bg-surface-container-low text-caption font-semibold transition-colors disabled:opacity-50" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px] mr-1">chevron_left</span>
+            Previous
+          </button>
+<div class="flex items-center gap-1 mx-1">
+<button class="w-8 h-8 rounded-lg bg-[#12151C] text-white font-label-sm text-label-sm font-bold flex items-center justify-center" type="button">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center justify-center transition-colors" type="button">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center justify-center transition-colors" type="button">3</button>
+<span class="text-secondary text-caption px-1">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center justify-center transition-colors" type="button">382</button>
+</div>
+<button class="flex items-center justify-center px-2.5 py-1.5 rounded-lg border border-border bg-surface text-on-surface hover:bg-surface-container-low text-caption font-semibold transition-colors" type="button">
+            Next
+            <span class="material-symbols-outlined text-[16px] ml-1">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Compliance & Operational Notice -->
+<div class="bg-surface-container-low border border-border rounded-xl p-space-md flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">gavel</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Rent Restriction Act (Cap 296) &amp; Consumer Protection Compliance</span>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">
+          Any listings reported for unauthorized viewing fees, landlord impersonation, or deposit disputes are subject to immediate suspension by Nairobi Ops Leads. Review the Kenyan Tenancy Tribunal guidelines before overriding Cap 296 restriction flags.
+        </p>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

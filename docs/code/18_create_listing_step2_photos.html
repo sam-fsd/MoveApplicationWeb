@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>MoveApp Kenya - Landlord Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-variant": "#e3e2e0",
+          "on-surface-variant": "#4f4634",
+          "on-surface": "#1a1c1a",
+          "inverse-on-surface": "#f2f1ee",
+          "surface-container-low": "#f4f3f1",
+          "surface-container-highest": "#e3e2e0",
+          "tertiary-fixed": "#d9e3f4",
+          "pending-amber": "#E08700",
+          "surface-bright": "#faf9f6",
+          "primary-fixed-dim": "#f4bf32",
+          "tertiary": "#555f6d",
+          "on-primary-fixed": "#251a00",
+          "primary-container": "#ffc93c",
+          "outline": "#817661",
+          "error-container": "#ffdad6",
+          "error": "#ba1a1a",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-container": "#715500",
+          "on-secondary": "#ffffff",
+          "on-primary": "#ffffff",
+          "on-tertiary-fixed": "#121c28",
+          "primary": "#775a00",
+          "primary-fixed": "#ffdf9a",
+          "surface-container-high": "#e9e8e5",
+          "verified-green": "#1F9D55",
+          "on-secondary-fixed": "#191c23",
+          "pending-amber-bg": "#FEF3E2",
+          "on-tertiary": "#ffffff",
+          "verified-green-bg": "#E8F8EE",
+          "danger-red-bg": "#FCE8E6",
+          "tertiary-fixed-dim": "#bdc7d7",
+          "surface-tint": "#775a00",
+          "on-secondary-container": "#62646d",
+          "surface-container": "#efeeeb",
+          "on-background": "#1a1c1a",
+          "on-primary-fixed-variant": "#5a4300",
+          "surface-dim": "#dbdad7",
+          "secondary-container": "#e0e2ec",
+          "secondary-fixed-dim": "#c4c6d0",
+          "surface": "#FFFFFF",
+          "inverse-primary": "#f4bf32",
+          "danger-red": "#D93025",
+          "on-tertiary-fixed-variant": "#3e4855",
+          "outline-variant": "#d2c5ad",
+          "on-error": "#ffffff",
+          "secondary-fixed": "#e0e2ec",
+          "on-error-container": "#93000a",
+          "border": "#E6E3DC",
+          "on-secondary-fixed-variant": "#44474f",
+          "secondary": "#5c5e67",
+          "on-tertiary-container": "#505a67",
+          "background": "#faf9f6",
+          "inverse-surface": "#2f312f",
+          "tertiary-container": "#c7d1e1"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-3xl": "3rem",
+          "gutter-mobile": "1rem",
+          "space-2xl": "2.5rem",
+          "space-xl": "2rem",
+          "space-xs": "0.5rem",
+          "space-sm": "0.75rem",
+          "gutter-desktop": "1.5rem",
+          "container-max": "1280px",
+          "section-gap": "2rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "space-2xs": "0.25rem"
+        },
+        "fontFamily": {
+          "body-sm": ["Inter"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "body-lg": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-md": ["Inter"],
+          "caption": ["Inter"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "headline-xl": ["Plus Jakarta Sans"],
+          "label-sm": ["Inter"],
+          "headline-xl-mobile": ["Plus Jakarta Sans"],
+          "label-md": ["Inter"],
+          "price-hero": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "price-listing": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "caption": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+          "price-hero": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "price-listing": ["20px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-inverse-surface z-50 flex flex-col justify-between select-none shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-xs bg-inverse-surface"><img alt="Modern clean geometric house icon logo mark for MoveApp Kenya, signal yellow house roof line accent and bold ink black geometric frame, minimalist real estate logo on transparent background. Design context: - Primary color: #ffc93c
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+. The logo should be visually consistent with these brand tokens." class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WNUVKKf1BLkyNXrBOm1QMipYZmOjYCfT-6ZMEfh0nFJt71kZZ15eIGmsmfSeFNfzYzMoJXIWVud_sZLQv8EaYgWna1WRQzK1RvNbvyjNl7x_E0bxx8neQLcBcKlGxK1v2dVXwU_EsppSLU4tSTFMKRZWnVORcsFyUHW7PxQozLL7p7fFx-gRQU2LnzA3z4CuKcSt-GSuFrsYi6hOvctW263tyEH_qceUdcpwsf6MkLXzc1bJfA3vT7pajU"/><div class="flex flex-col"><div class="flex items-center gap-space-2xs"><span class="font-headline-sm text-headline-sm text-inverse-on-surface tracking-tight font-bold">MoveApp<span class="text-primary-container">.ke</span></span></div><span class="font-caption text-caption text-primary-container tracking-wider uppercase font-semibold">Landlord Portal</span></div></div><div class="px-space-md pt-space-md pb-space-xs"><a class="w-full flex items-center justify-center gap-space-xs bg-primary-container text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors py-space-xs px-space-md rounded-lg font-label-md text-label-md shadow-[0_2px_8px_-2px_rgba(18,21,28,0.05)]" data-path="add-listing" href="#"><span class="material-symbols-outlined text-[20px]">add_circle</span><span>Add Listing</span></a></div><nav class="mt-space-sm flex flex-col px-space-xs space-y-1" data-active-classes="bg-surface/10 text-primary-container border-l-[3px] border-primary-container font-semibold"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded transition-colors bg-surface/10 text-primary-container border-l-[3px] border-primary-container font-semibold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="my-listings" href="#"><span class="material-symbols-outlined text-[20px]">real_estate_agent</span><span>My Listings</span></a><a class="flex items-center justify-between px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="enquiries" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">chat</span><span>Enquiries</span></div><span class="bg-primary-container text-on-primary-fixed font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold">3</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">account_box</span><span>Profile</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="p-space-md bg-inverse-surface"><div class="flex flex-col space-y-1"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-inverse-on-surface hover:bg-surface/5 transition-colors font-label-md text-label-md" data-path="landlord-support" href="#"><span class="material-symbols-outlined text-[20px]">help</span><span>Landlord Support</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-inverse-on-surface/75 hover:text-danger-red transition-colors font-label-md text-label-md" data-path="logout" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span>Logout</span></a></div><div class="mt-space-md pt-space-sm bg-surface/5 rounded p-space-xs flex items-center justify-between text-inverse-on-surface/60 font-caption text-caption"><span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-verified-green"></span> Nairobi Central MLLS</span><span>v2.4</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface z-40 flex items-center justify-between px-gutter-desktop shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex-1 max-w-lg"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-sm text-secondary pointer-events-none text-[20px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-container-low text-on-surface placeholder:text-secondary rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-surface transition-all" placeholder="Search listings by estate, tenant name, or unit ID..." type="search"/></div></div><div class="flex items-center gap-space-md ml-space-md"><a class="hidden sm:flex items-center gap-space-xs bg-primary-container text-on-primary-fixed hover:bg-primary-fixed-dim transition-colors h-10 px-space-md rounded-lg font-label-md text-label-md font-semibold" data-path="add-listing" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>Add New Listing</span></a><button aria-label="Notifications" class="relative p-space-xs rounded-full hover:bg-surface-container-high transition-colors text-secondary hover:text-on-surface focus:outline-none" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-primary-container rounded-full ring-2 ring-surface"></span></button><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-space-sm cursor-pointer py-1 px-space-2xs rounded-lg hover:bg-surface-container-low transition-colors"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbszAyKocpqykkMADj0WR4E62vs0FRNVwQKoauNCSXVIAqwVO9nCYxvNkLHO2QJsRWReMRFPnt-YiZQULwInmzcXvTfqcmLvn4mTN-OyT9da0mxdvQeJayuZ1t_LLCSVr7ipNNWAqht6oo_eMAMIbC34H3wbOa01MX5QrHolybF5FlkuijvGPOIgKgdlgOMud_E6hgoC84vcSSKSbSlZLCWf3aIpvU48r50Yc-2SS_jOi7oRm7WV6KlQ"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-verified-green rounded-full ring-2 ring-surface"></span></div><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-1"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Samuel Njoroge</span><span class="material-symbols-outlined text-verified-green text-[14px]">verified</span></div><span class="font-caption text-caption text-secondary leading-none">Kamau Properties</span></div><span class="material-symbols-outlined text-secondary text-[18px]">expand_more</span></div></div></header><main class="relative pt-16 bg-background w-full min-h-screen px-gutter-desktop py-space-xl"><div class="flex flex-col w-full">
+<!-- Breadcrumb Navigation -->
+<nav class="flex items-center gap-space-xs text-secondary font-caption text-caption mb-space-xs select-none">
+<a class="hover:text-on-surface transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[15px]">space_dashboard</span>
+<span>Dashboard</span>
+</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-on-surface transition-colors" href="#">My Listings</a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">Create New Listing</span>
+</nav>
+<!-- Page Header Area -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs mb-space-2xs">
+<span class="bg-primary-container/20 text-on-primary-fixed-variant font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold uppercase tracking-wider">
+          Unit Intake Wizard
+        </span>
+<span class="text-secondary font-caption text-caption flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-verified-green"></span>
+          Autosaved 2m ago
+        </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+        List a New Property
+      </h1>
+<p class="font-body-md text-body-md text-secondary mt-1 max-w-2xl">
+        Add high quality, unedited photos of your rental unit to get verified and published faster across Nairobi and Kiambu tenant streams.
+      </p>
+</div>
+<!-- Quick Status Badge -->
+<div class="hidden lg:flex items-center gap-space-sm bg-surface-container px-space-md py-space-xs rounded-xl shadow-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Priority Verification</span>
+<span class="font-caption text-caption text-secondary">Target: Live within 4 hours</span>
+</div>
+</div>
+</div>
+<!-- Main Multi-step Form Card Container -->
+<div class="bg-surface rounded-xl shadow-md overflow-hidden flex flex-col mb-space-2xl">
+<!-- Stepper Navigation Bar -->
+<div class="bg-surface-container-low px-gutter-desktop py-space-lg">
+<div class="max-w-4xl mx-auto">
+<ol class="relative flex items-center justify-between w-full">
+<!-- Connector Track Base -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-surface-variant z-0 rounded-full"></div>
+<!-- Connector Progress Fill (Completed through step 1 to step 2) -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-[25%] h-1 bg-on-surface z-0 rounded-full transition-all duration-500"></div>
+<!-- Step 1: Details (Completed) -->
+<li class="relative z-10 flex flex-col items-center group cursor-pointer">
+<div class="w-9 h-9 rounded-full bg-verified-green text-on-primary flex items-center justify-center shadow-sm transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[20px] font-bold">check</span>
+</div>
+<div class="mt-2 text-center">
+<span class="block font-label-sm text-label-sm text-on-surface font-semibold">Details</span>
+<span class="hidden sm:block font-caption text-caption text-verified-green font-medium">Completed</span>
+</div>
+</li>
+<!-- Step 2: Photos (Active) -->
+<li class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-on-surface text-primary-container flex items-center justify-center ring-4 ring-primary-container/40 shadow-md">
+<span class="font-headline-sm text-headline-sm font-bold leading-none">2</span>
+</div>
+<div class="mt-2 text-center">
+<span class="block font-label-md text-label-md text-on-surface font-bold">Photos</span>
+<span class="hidden sm:block font-caption text-caption text-secondary font-medium">Upload &amp; arrange</span>
+</div>
+</li>
+<!-- Step 3: Location (Inactive) -->
+<li class="relative z-10 flex flex-col items-center opacity-60">
+<div class="w-9 h-9 rounded-full bg-surface text-secondary flex items-center justify-center shadow-sm">
+<span class="font-label-md text-label-md font-bold">3</span>
+</div>
+<div class="mt-2 text-center">
+<span class="block font-label-sm text-label-sm text-secondary font-semibold">Location</span>
+<span class="hidden sm:block font-caption text-caption text-secondary">Nairobi zone</span>
+</div>
+</li>
+<!-- Step 4: Price & Terms (Inactive) -->
+<li class="relative z-10 flex flex-col items-center opacity-60">
+<div class="w-9 h-9 rounded-full bg-surface text-secondary flex items-center justify-center shadow-sm">
+<span class="font-label-md text-label-md font-bold">4</span>
+</div>
+<div class="mt-2 text-center">
+<span class="block font-label-sm text-label-sm text-secondary font-semibold">Price &amp; Terms</span>
+<span class="hidden sm:block font-caption text-caption text-secondary">Rent &amp; deposit</span>
+</div>
+</li>
+<!-- Step 5: Review (Inactive) -->
+<li class="relative z-10 flex flex-col items-center opacity-60">
+<div class="w-9 h-9 rounded-full bg-surface text-secondary flex items-center justify-center shadow-sm">
+<span class="font-label-md text-label-md font-bold">5</span>
+</div>
+<div class="mt-2 text-center">
+<span class="block font-label-sm text-label-sm text-secondary font-semibold">Review</span>
+<span class="hidden sm:block font-caption text-caption text-secondary">Instant submit</span>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<!-- Step 2 Content Container -->
+<div class="p-gutter-desktop flex flex-col gap-space-lg">
+<!-- Section Title & Counter Block -->
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-sm gap-space-xs">
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">
+              Upload Rental Unit Photos
+            </h2>
+<span class="bg-primary-container text-on-primary-fixed font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold">
+              4 of 5 photos uploaded
+            </span>
+</div>
+<p class="font-body-md text-body-md text-secondary mt-1">
+            MoveApp verified listings require authentic, real photos. Maximum 5 photos per listing. Recommended shots: Living room, Primary Bedroom, Kitchen, Bathroom, and Building Exterior / Compound.
+          </p>
+</div>
+<!-- Visual Progress Ring Metric -->
+<div class="flex items-center gap-3 bg-surface-container-low px-space-md py-space-xs rounded-lg self-start md:self-auto">
+<svg class="w-8 h-8 -rotate-90" viewbox="0 0 36 36">
+<circle class="text-surface-variant" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-width="3"></circle>
+<circle class="text-verified-green" cx="18" cy="18" fill="none" r="14" stroke="currentColor" stroke-dasharray="88" stroke-dashoffset="17.6" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">80% Ready</span>
+<span class="font-caption text-caption text-secondary">1 slot remaining</span>
+</div>
+</div>
+</div>
+<!-- Drag & Drop Upload Zone -->
+<div class="relative group cursor-pointer bg-surface-container-low hover:bg-surface-container rounded-xl p-space-xl text-center transition-all duration-200">
+<input accept="image/jpeg,image/png" aria-label="Drop files here to upload" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" multiple="" type="file"/>
+<div class="flex flex-col items-center justify-center max-w-lg mx-auto pointer-events-none">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-fixed flex items-center justify-center mb-space-sm shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">add_photo_alternate</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">
+            Drag and drop additional photos here, or <span class="text-on-surface underline decoration-primary-container decoration-2 underline-offset-4">browse from your device</span>
+</p>
+<p class="font-body-sm text-body-sm text-secondary mt-space-xs">
+            High-resolution JPG or PNG (up to 10MB each). Authentic unwatermarked smartphone or camera photos preferred.
+          </p>
+<div class="flex items-center gap-space-md mt-space-sm text-secondary font-caption text-caption">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-verified-green">check_circle</span>
+              Geo-tag preserved
+            </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-verified-green">check_circle</span>
+              No auto-cropping
+            </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-verified-green">check_circle</span>
+              Encrypted storage
+            </span>
+</div>
+</div>
+</div>
+<!-- Photo Grid: 5 Display Tiles -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-space-md pt-space-xs">
+<!-- Tile 1: Cover Photo (Living Room) -->
+<div class="group relative bg-surface rounded-xl shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col">
+<!-- Badges & Action Bar -->
+<div class="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+<img alt="Living Room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XGI86URMUSQvugBeu658FcssESyQorskVIOHjIvCauyY1u0fBRcu8-WUSdHLoV43WQFZ-mXNP2aC-9OMlc2_qZdi_t__smCFjUDRv-Dl9KIZPWDilDv6tZR3uu-3xrz3DX885KtvQIYtL-dbGNGONgsxgb_-kWE7Be6S78OgDWXVdNhkWxi8_QpbXPGdovvPEKbiOxfHT1Cbckfstl8D9mk04F07AFZq7NLKn7KDSnqYpsppSg-YqXA6o3"/>
+<!-- Cover Photo Star Badge -->
+<div class="absolute top-2.5 left-2.5 bg-primary-container text-on-primary-fixed px-2 py-0.5 rounded font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>Cover photo</span>
+</div>
+<!-- Top Right Remove Trigger -->
+<button class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 hover:bg-danger-red hover:text-on-primary text-on-surface flex items-center justify-center shadow-sm transition-colors" title="Delete Photo" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+<!-- Bottom Drag Handle -->
+<div class="absolute bottom-2 right-2 bg-inverse-surface/80 text-inverse-on-surface px-2 py-0.5 rounded font-caption text-caption flex items-center gap-1 backdrop-blur-sm cursor-grab">
+<span class="material-symbols-outlined text-[14px]">drag_indicator</span>
+<span>Reorder</span>
+</div>
+</div>
+<!-- Card Info Footer -->
+<div class="p-space-sm bg-surface flex flex-col justify-between flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">living_room_main.jpg</span>
+<span class="font-caption text-caption text-secondary">2.4 MB</span>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-variant/40">
+<span class="font-caption text-caption text-verified-green font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-verified-green"></span> Natural lighting
+              </span>
+<span class="font-caption text-caption text-secondary">Primary shot</span>
+</div>
+</div>
+</div>
+<!-- Tile 2: Bedroom -->
+<div class="group relative bg-surface rounded-xl shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col">
+<div class="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+<img alt="Master Bedroom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1XmpELLiiVWcyMQwiWkyD4g4DJuKJSfrBvPu2y7torSqIDCxIOPXe8YId9N_6iNMikkS-OxdB7q5AQuIu2F3WJ_cg0St6jqSU6mX_VD3OcV2tmMXaUD7zfyLoj6m-71e5lm3YPM1bPFFDdDYVxfuqkqCx133pnqeOmSqjV4lRyEgwecbryICx-yKyZos3LmaRpRdpM2mQzok4EKhNYgyrS1fqV57zgfmKgNsy_syjWOspgL2rIkGknkf-RE"/>
+<div class="absolute top-2.5 left-2.5 bg-inverse-surface/85 text-inverse-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bed</span>
+<span>Bedroom</span>
+</div>
+<button class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 hover:bg-danger-red hover:text-on-primary text-on-surface flex items-center justify-center shadow-sm transition-colors" title="Delete Photo" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+<div class="absolute bottom-2 right-2 bg-inverse-surface/80 text-inverse-on-surface px-2 py-0.5 rounded font-caption text-caption flex items-center gap-1 backdrop-blur-sm cursor-grab">
+<span class="material-symbols-outlined text-[14px]">drag_indicator</span>
+</div>
+</div>
+<div class="p-space-sm bg-surface flex flex-col justify-between flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">master_bedroom.jpg</span>
+<span class="font-caption text-caption text-secondary">1.9 MB</span>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-variant/40">
+<span class="font-caption text-caption text-secondary">Built-in Wardrobes</span>
+<button class="font-caption text-caption text-primary hover:underline font-medium" type="button">Make Cover</button>
+</div>
+</div>
+</div>
+<!-- Tile 3: Modern Kitchen -->
+<div class="group relative bg-surface rounded-xl shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col">
+<div class="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Authentic clean modern Kenyan apartment kitchen with black granite countertops, tiled splashback, wooden cabinets, stainless steel sink with clean running water tap, natural sunbeam entering from kitchen balcony window, realistic Nairobi middle-class rental housing interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1UUVvmmC_5ausAuMUNdCGgR2E29-fely1XOq9bqlx5v03O4ZhvQCbIFc_pHpME5XDVrPJ_iMh_ZihjERBGYnOEjkTXJBDZuchK5pq-2yXYbPO71UP6HzgBm9Rs2sNkjrtfWnwQiAOydxnpGStGPa3mxago1O1QC2c9WQi_bK4EAiCtF3vD-d_cOo-LloqDnflEe42_K7sSVZ9kdL-LI3-pHyL8mKrHCUqrhrSJOH6ykNu9uUeS8wf0w"/>
+<div class="absolute top-2.5 left-2.5 bg-inverse-surface/85 text-inverse-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">countertops</span>
+<span>Kitchen</span>
+</div>
+<button class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 hover:bg-danger-red hover:text-on-primary text-on-surface flex items-center justify-center shadow-sm transition-colors" title="Delete Photo" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+<div class="absolute bottom-2 right-2 bg-inverse-surface/80 text-inverse-on-surface px-2 py-0.5 rounded font-caption text-caption flex items-center gap-1 backdrop-blur-sm cursor-grab">
+<span class="material-symbols-outlined text-[14px]">drag_indicator</span>
+</div>
+</div>
+<div class="p-space-sm bg-surface flex flex-col justify-between flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">kitchen_granite.jpg</span>
+<span class="font-caption text-caption text-secondary">2.1 MB</span>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-variant/40">
+<span class="font-caption text-caption text-secondary">Pantry &amp; Sink</span>
+<button class="font-caption text-caption text-primary hover:underline font-medium" type="button">Make Cover</button>
+</div>
+</div>
+</div>
+<!-- Tile 4: Clean Bathroom -->
+<div class="group relative bg-surface rounded-xl shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col">
+<div class="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Bright clean Kenyan apartment bathroom with instant hot water shower head, glazed ceramic wall tiles, ceramic sink, clean mirror, functional modern Nairobi rental apartment bathroom interior, architectural real estate snapshot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9Gwep2tI6Rv9Hz6X1fqgXFxI0ChuiPXQh1M3uPLI2wZAOEQ74vTB5Fb686KpaRfce8zrfKXdPfhdQLiJxBkjdh1gaoiqGEPhIVxx8aNYqcSx7QCzwy0-iJLStIoRlyuQE7eZWhQZoMLmDUubweCHU3jvWK4kH4o-kQF2sWF4-TZ-79ImFMGJ-RdCi-4oOBZb34niK0I3ZITXJxHmsxL8Lvzwin1_k7PrwPi8hPIQyJ8QW21zeNuyDIQ"/>
+<div class="absolute top-2.5 left-2.5 bg-inverse-surface/85 text-inverse-on-surface px-2 py-0.5 rounded font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shower</span>
+<span>Bathroom</span>
+</div>
+<button class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-surface/90 hover:bg-danger-red hover:text-on-primary text-on-surface flex items-center justify-center shadow-sm transition-colors" title="Delete Photo" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+<div class="absolute bottom-2 right-2 bg-inverse-surface/80 text-inverse-on-surface px-2 py-0.5 rounded font-caption text-caption flex items-center gap-1 backdrop-blur-sm cursor-grab">
+<span class="material-symbols-outlined text-[14px]">drag_indicator</span>
+</div>
+</div>
+<div class="p-space-sm bg-surface flex flex-col justify-between flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">bathroom_shower.jpg</span>
+<span class="font-caption text-caption text-secondary">1.6 MB</span>
+</div>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-variant/40">
+<span class="font-caption text-caption text-secondary">Instant Shower Head</span>
+<button class="font-caption text-caption text-primary hover:underline font-medium" type="button">Make Cover</button>
+</div>
+</div>
+</div>
+<!-- Tile 5: In-progress Upload Tile -->
+<div class="relative bg-surface-container-low rounded-xl p-space-sm flex flex-col justify-between overflow-hidden shadow-sm">
+<div class="relative w-full aspect-[4/3] bg-surface-container rounded-lg flex flex-col items-center justify-center p-3 text-center">
+<!-- Animated Spinner Icon -->
+<div class="w-10 h-10 rounded-full bg-primary-container/30 text-on-primary-fixed flex items-center justify-center mb-2 animate-pulse">
+<span class="material-symbols-outlined text-[24px] animate-spin">sync</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Uploading photo...</span>
+<span class="font-caption text-caption text-secondary mt-0.5">exterior_balcony.jpg</span>
+<!-- Progress Bar Strip -->
+<div class="w-full bg-surface-variant h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-300" style="width: 68%;"></div>
+</div>
+<div class="w-full flex justify-between items-center text-[10px] text-secondary mt-1">
+<span>68% done</span>
+<span>1.8 MB / 2.6 MB</span>
+</div>
+</div>
+<div class="pt-2 flex items-center justify-between">
+<span class="font-caption text-caption text-secondary font-medium flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-pending-amber animate-ping"></span> Uploading
+            </span>
+<button class="font-caption text-caption text-danger-red hover:underline font-semibold" type="button">
+              Cancel
+            </button>
+</div>
+</div>
+</div>
+<!-- MoveApp Quality & Verification Tip Banner -->
+<div class="bg-pending-amber-bg/60 rounded-xl p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface font-bold">
+              MoveApp Quality Tip for Kenyan Landlords
+            </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5 max-w-3xl">
+              Verified landlords who upload clear natural lighting photos of the water meter, kitchen token meter, and bathroom receive <strong>3.4x more viewing inquiries</strong> and experience zero dispute delays.
+            </p>
+</div>
+</div>
+<button class="whitespace-nowrap px-space-md py-space-xs rounded-lg bg-surface hover:bg-surface-container font-label-sm text-label-sm text-on-surface font-semibold shadow-sm transition-colors shrink-0" type="button">
+          Photo Checklist
+        </button>
+</div>
+</div>
+<!-- Bottom Action Bar (Anchored Footer) -->
+<div class="bg-surface-container-low px-gutter-desktop py-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<!-- Left: Draft Action -->
+<button class="flex items-center gap-space-xs text-secondary hover:text-on-surface font-label-md text-label-md transition-colors order-2 sm:order-1" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Save as Draft</span>
+</button>
+<!-- Right: Navigation Stepper Actions -->
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end order-1 sm:order-2">
+<button class="w-1/2 sm:w-auto px-space-lg py-2.5 rounded-lg bg-surface text-on-surface hover:bg-surface-container font-label-md text-label-md font-semibold transition-colors shadow-sm flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back</span>
+</button>
+<button class="w-1/2 sm:w-auto px-space-xl py-2.5 rounded-lg bg-primary-container hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-1" type="button">
+<span>Continue to Location</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footnote Compliance for Landlords -->
+<div class="flex flex-col sm:flex-row items-center justify-between text-secondary font-caption text-caption px-space-xs mb-space-lg gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-verified-green text-[16px]">shield</span>
+<span>Compliant with Kenya Landlord and Tenant Act (Cap 301) image accuracy mandates.</span>
+</div>
+<span>Listing Reference: KMP-7829-NRB</span>
+</div>
+</div></main></div></body></html>

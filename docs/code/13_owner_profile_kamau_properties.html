@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "verified-green": "#1F9D55", "tertiary-container": "#c7d1e1", "surface-variant": "#e3e2e0", "surface-container-high": "#e9e8e5", "secondary-fixed": "#e0e2ec", "secondary-fixed-dim": "#c4c6d0", "background": "#faf9f6", "on-tertiary": "#ffffff", "surface-container-highest": "#e3e2e0", "on-secondary-fixed": "#191c23", "primary-container": "#ffc93c", "on-error-container": "#93000a", "on-surface-variant": "#4f4634", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#d9e3f4", "verified-green-bg": "#E8F8EE", "pending-amber-bg": "#FEF3E2", "inverse-surface": "#2f312f", "on-secondary": "#ffffff", "surface-dim": "#dbdad7", "tertiary": "#555f6d", "surface-container-low": "#f4f3f1", "primary-fixed-dim": "#f4bf32", "danger-red-bg": "#FCE8E6", "error-container": "#ffdad6", "primary": "#775a00", "surface-container": "#efeeeb", "on-tertiary-fixed-variant": "#3e4855", "primary-fixed": "#ffdf9a", "outline": "#817661", "on-tertiary-fixed": "#121c28", "on-primary-fixed": "#251a00", "on-secondary-container": "#62646d", "on-surface": "#1a1c1a", "on-error": "#ffffff", "surface": "#FFFFFF", "on-primary-fixed-variant": "#5a4300", "error": "#ba1a1a", "border": "#E6E3DC", "secondary": "#5c5e67", "tertiary-fixed-dim": "#bdc7d7", "outline-variant": "#d2c5ad", "on-secondary-fixed-variant": "#44474f", "surface-bright": "#faf9f6", "inverse-on-surface": "#f2f1ee", "pending-amber": "#E08700", "on-primary": "#ffffff", "secondary-container": "#e0e2ec", "surface-tint": "#775a00", "on-background": "#1a1c1a", "on-primary-container": "#715500", "on-tertiary-container": "#505a67", "danger-red": "#D93025", "inverse-primary": "#f4bf32" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xl": "2.5rem", "space-2xs": "0.25rem", "gutter-desktop": "1.5rem", "space-lg": "1.5rem", "space-md": "1rem", "space-3xl": "3rem", "gutter-mobile": "1rem", "section-gap": "2rem", "space-xs": "0.5rem", "container-max": "1280px", "space-sm": "0.75rem", "space-xl": "2rem" }, fontFamily: { "caption": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-md": ["Inter"], "price-listing": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "price-hero": ["Plus Jakarta Sans"], "label-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"] }, fontSize: { "caption": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "price-listing": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "price-hero": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-xs" data-path="browse-rentals" href="#"><img alt="MoveApp Kenya geometric house logo mark with yellow accent" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WNUVKKf1BLkyNXrBOm1QMipYZmOjYCfT-6ZMEfh0nFJt71kZZ15eIGmsmfSeFNfzYzMoJXIWVud_sZLQv8EaYgWna1WRQzK1RvNbvyjNl7x_E0bxx8neQLcBcKlGxK1v2dVXwU_EsppSLU4tSTFMKRZWnVORcsFyUHW7PxQozLL7p7fFx-gRQU2LnzA3z4CuKcSt-GSuFrsYi6hOvctW263tyEH_qceUdcpwsf6MkLXzc1bJfA3vT7pajU"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">MoveApp<span class="text-primary-container ml-0.5">.</span></span></a><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-on-surface font-semibold"><a aria-current="page" class="transition-colors text-on-surface font-semibold" data-path="browse-rentals" href="#">Browse Rentals</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="saved-homes" href="#">Saved Homes (1)</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="why-moveapp" href="#">Why MoveApp</a></nav></div><div class="hidden xl:flex items-center flex-1 max-w-xs mx-space-sm"><div class="w-full flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-tertiary">search</span><span class="font-body-sm text-body-sm text-tertiary select-none">Search Nairobi, Kilimani, Westlands...</span></div></div><div class="flex items-center gap-space-sm sm:gap-space-md shrink-0"><a class="inline-flex items-center justify-center px-space-md py-2 rounded-lg bg-primary-container text-on-secondary-fixed font-label-md text-label-md hover:bg-primary-fixed-dim transition-colors shadow-sm" data-path="list-a-house" href="#">List a House</a><a class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></a><div class="flex items-center pl-space-xs"><button aria-label="Tenant user menu" class="flex items-center gap-1.5 p-1 rounded-full hover:bg-surface-container transition-colors" type="button"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="material-symbols-outlined text-[18px] text-on-surface-variant hidden sm:inline-block">expand_more</span></button></div></div></div></header><main class="w-full pt-16 bg-background"><div class="flex flex-col w-full">
+<!-- Breadcrumb Navigation Bar -->
+<div class="w-full bg-surface-bright">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-sm">
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-caption text-caption text-tertiary">
+<a class="hover:text-on-surface transition-colors flex items-center gap-1" data-path="browse-rentals" href="#">
+<span class="material-symbols-outlined text-[15px]">home</span>
+<span>Home</span>
+</a>
+<span class="material-symbols-outlined text-[13px] text-tertiary">chevron_right</span>
+<a class="hover:text-on-surface transition-colors" data-path="property-owners" href="#">Property Owners</a>
+<span class="material-symbols-outlined text-[13px] text-tertiary">chevron_right</span>
+<span class="text-on-surface font-semibold truncate">Kamau Properties</span>
+</nav>
+</div>
+</div>
+<div class="max-w-container-max mx-auto w-full px-gutter-mobile lg:px-gutter-desktop py-space-lg flex flex-col gap-space-xl">
+<!-- Hero Profile Section -->
+<section class="bg-surface rounded-xl shadow-sm p-space-lg lg:p-space-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left: Avatar & Identity -->
+<div class="lg:col-span-8 flex flex-col sm:flex-row gap-space-lg items-start">
+<div class="relative shrink-0">
+<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-surface-container flex items-center justify-center shadow-inner overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional warm portrait photograph of a confident middle-aged Kenyan real estate property owner and landlord wearing a navy blue collared shirt with a welcoming smile in front of modern Nairobi brick and glass residential architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7MBASCBj-bflMhiwQ7bFftcAMHcukBwd9ALRJV1wMlDTpj6bJpPgY5BWZ-KCxk8ySeW7sIB-OHLgrAjQ5Jt7K4IL2SstNNJgJ9HGGZ1zRUBWl5CBuln9aQXlihjo_X8zrXavKFM_k_lTCA1jqQ10d-4yzSAzSTwlnLYbySnCpaTqt9yOvOu5bQAP7aC7mTje5W5ML_nw4qXOy-epws8ggDWP5UCxoYxqHbZOSsYs-4Cuhumkh5jNwXA"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-verified-green text-on-tertiary flex items-center justify-center shadow-md" title="Verified Landlord">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs flex-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Kamau Properties</h1>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-verified-green-bg text-verified-green font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Verified Owner &amp; Landlord</span>
+</span>
+</div>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-space-md text-tertiary font-body-sm text-body-sm mt-0.5">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">location_on</span>
+                Westlands, Kilimani &amp; Parklands, Nairobi
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">calendar_today</span>
+                Member since May 2022 • 3 years on MoveApp
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed max-w-2xl">
+              Managing verified, scam-free residential apartments across Westlands and Kilimani with zero middleman viewing fees. We provide direct landlord tenancy agreements compliant with the Kenyan Rent Restriction Act (Cap 296) and dedicated on-site caretaker support.
+            </p>
+<div class="flex flex-wrap items-center gap-2 mt-space-xs">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface font-caption text-caption">
+<span class="material-symbols-outlined text-[14px] text-verified-green">check_circle</span> Title Deeds Vetted
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface font-caption text-caption">
+<span class="material-symbols-outlined text-[14px] text-verified-green">check_circle</span> KRA Tax Compliant
+              </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface font-caption text-caption">
+<span class="material-symbols-outlined text-[14px] text-verified-green">check_circle</span> No Middleman Brokers
+              </span>
+</div>
+</div>
+</div>
+<!-- Right: Action CTAs -->
+<div class="lg:col-span-4 w-full bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">Direct Landlord Contact</span>
+<span class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-verified-green-bg text-verified-green font-caption text-caption font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-verified-green animate-pulse"></span> Available Now
+            </span>
+</div>
+<div class="flex flex-col gap-2">
+<a class="w-full h-11 px-space-md rounded-lg bg-primary-container text-on-secondary-fixed font-label-md text-label-md hover:bg-primary-fixed-dim transition-all duration-200 flex items-center justify-center gap-2 shadow-sm font-semibold" href="https://wa.me/254700000000" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Contact Owner (WhatsApp / Call)</span>
+</a>
+<button class="w-full h-11 px-space-md rounded-lg bg-surface text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2 font-label-md text-label-md font-semibold shadow-sm" id="inquire-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span>Send In-App Inquiry</span>
+</button>
+</div>
+<div class="flex items-center gap-2 pt-space-xs text-tertiary">
+<span class="material-symbols-outlined text-verified-green text-[18px]">verified_user</span>
+<span class="font-caption text-caption">Zero viewing fee pledge. Directly verified by MoveApp Kenya trust unit.</span>
+</div>
+</div>
+</div>
+<!-- Performance Metrics Banner -->
+<div class="mt-space-lg pt-space-md bg-surface-container-low/60 rounded-lg p-space-md grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-md text-left">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">18</span>
+<span class="font-caption text-caption text-tertiary">Listings Posted</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight text-primary-container">6</span>
+<span class="font-caption text-caption text-tertiary">Currently Available</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">&lt; 15 mins</span>
+<span class="font-caption text-caption text-tertiary">Avg. Response Time</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">98%</span>
+<span class="font-caption text-caption text-tertiary">Response Rate</span>
+</div>
+<div class="col-span-2 sm:col-span-1 flex flex-col justify-center">
+<div class="flex items-center gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">4.9</span>
+<div class="flex text-pending-amber">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<span class="font-caption text-caption text-tertiary">42 tenant reviews</span>
+</div>
+</div>
+</section>
+<!-- Navigation Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1">
+<button class="tab-btn px-space-md py-2.5 rounded-lg bg-primary-container text-on-secondary-fixed font-label-md text-label-md font-semibold transition-all shrink-0" type="button">
+        Available Listings (6)
+      </button>
+<button class="tab-btn px-space-md py-2.5 rounded-lg bg-surface text-tertiary hover:text-on-surface font-label-md text-label-md transition-all shrink-0" type="button">
+        About &amp; Management Policy
+      </button>
+<button class="tab-btn px-space-md py-2.5 rounded-lg bg-surface text-tertiary hover:text-on-surface font-label-md text-label-md transition-all shrink-0" type="button">
+        Tenant Reviews (42)
+      </button>
+<button class="tab-btn px-space-md py-2.5 rounded-lg bg-surface text-tertiary hover:text-on-surface font-label-md text-label-md transition-all shrink-0" type="button">
+        Past Rented (12)
+      </button>
+</div>
+<!-- Filter & Sort Sub-bar -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative w-full md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-tertiary">search</span>
+<input class="w-full h-11 pl-9 pr-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-tertiary focus:outline-none focus:bg-surface transition-all" id="listing-search" placeholder="Search in Kamau Properties..." type="text"/>
+</div>
+<!-- Quick Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
+<button class="filter-chip px-space-md py-1.5 rounded-full bg-primary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold whitespace-nowrap shadow-xs" type="button">
+          All (6)
+        </button>
+<button class="filter-chip px-space-md py-1.5 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">
+          2 Bedrooms (3)
+        </button>
+<button class="filter-chip px-space-md py-1.5 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">
+          1 Bedroom (2)
+        </button>
+<button class="filter-chip px-space-md py-1.5 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm whitespace-nowrap transition-colors" type="button">
+          Studios (1)
+        </button>
+</div>
+<!-- Sort Dropdown -->
+<div class="flex items-center gap-2 shrink-0 self-end md:self-center">
+<span class="font-body-sm text-body-sm text-tertiary">Sort:</span>
+<select class="h-10 px-space-sm bg-surface-container-low rounded-lg font-label-sm text-label-sm text-on-surface focus:outline-none cursor-pointer">
+<option>Newest first</option>
+<option>Rent: Low to High</option>
+<option>Rent: High to Low</option>
+<option>Most popular</option>
+</select>
+</div>
+</div>
+<!-- Active Listings Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="listings-grid">
+<!-- Card 1 -->
+<article class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sunlit modern two bedroom apartment living room in Westlands Nairobi with clean ceramic tile floors, a comfortable charcoal fabric sectional sofa, warm wooden coffee table, large glass window overlooking leafy Muthithi Road, and natural morning daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEYjMR5fxfwvUI4BIrs3w1bXFBxlvchfdl5UIAkY8AORgESldqtLIiIL4LsgZyKCGAhHmIQCN8XTWEwC2qQVu1qpnDvYwcmuwLq-3OY2jNhob8SuLyo55DWs5NkyQT2kHh1vX_KQQGaXzdaXqxLzb3DgjLCYRP3Y7XT_ykd-jeDdYI9wDqEi-6zgdbd9Q0DGon0MmOEW6f8TVsQhRVmArVCmWdO_SFPyKZXkWDbqT3Xy7_V4cUt2Ci-A"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-inverse-surface/90 text-on-secondary font-label-sm text-label-sm tracking-wide">
+            2 Bed Apartment
+          </div>
+<button aria-label="Save Muthithi Road apartment" class="like-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface/90 text-on-surface flex items-center justify-center hover:bg-surface transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-verified-green-bg/95 text-verified-green font-caption text-caption font-semibold flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> 24/7 Borehole
+            </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-baseline justify-between mb-1">
+<div class="flex items-baseline gap-1">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 45,000</span>
+<span class="font-body-sm text-body-sm text-tertiary">/ month</span>
+</div>
+<span class="font-caption text-caption text-verified-green font-semibold">Deposit: 1 Mo</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+              2 Bedroom Modern Flat
+            </h3>
+<p class="font-body-sm text-body-sm text-tertiary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+              Muthithi Road (near Sarit), Westlands
+            </p>
+</div>
+<!-- Specs row -->
+<div class="flex items-center justify-between py-2 px-2.5 rounded-lg bg-surface-container-low text-tertiary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">bed</span>
+<span class="text-on-surface font-medium">2 Beds</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">bathtub</span>
+<span class="text-on-surface font-medium">1 Bath</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">directions_car</span>
+<span class="text-on-surface font-medium">1 Parking</span>
+</div>
+</div>
+<!-- Features tags -->
+<div class="flex flex-wrap gap-1.5 text-tertiary font-caption text-caption">
+<span class="px-2 py-0.5 rounded bg-surface-container">Prepaid KPLC</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">Safaricom Fiber Ready</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">CCTV Security</span>
+</div>
+<!-- Footer card action -->
+<div class="pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-1 text-tertiary font-caption text-caption">
+<span class="material-symbols-outlined text-[14px] text-verified-green">security</span>
+              Direct Tenancy Lease
+            </div>
+<a class="px-3 py-1.5 rounded-lg bg-primary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold hover:bg-primary-fixed-dim transition-colors" href="#">
+              View Details
+            </a>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern compact executive studio apartment interior in Parklands Nairobi featuring fitted open kitchenette with granite countertop, bright natural window light, clean neutral walls, and a queen-size platform bed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPZnDQwJD3lNDxfS6Kikr4VLGuq7NB3KTkPPupQzbgflfwqJ3M1VUhFTZY9tpGo0gPBgNgR0UoRABd4lBgjQD7wHra7eHkz7G3udQ9CpdmTNfRS6MSjGwdWWxBcO1eHdhoBCZwrWomX8KW6onqXyw5DzHu_pR2Ykp3FvBI2pzOsFqmYhRvufDpSJVxODHOBrZbkxtEN1sDBY92vylYadxuBCx9GWaVQ0PhGtE6DqaA4TLLmnvFW-9I8g"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-inverse-surface/90 text-on-secondary font-label-sm text-label-sm tracking-wide">
+            Studio Flat
+          </div>
+<button aria-label="Save Parklands studio" class="like-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface/90 text-on-surface flex items-center justify-center hover:bg-surface transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-verified-green-bg/95 text-verified-green font-caption text-caption font-semibold flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[13px]">water_drop</span> Water Included
+            </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-baseline justify-between mb-1">
+<div class="flex items-baseline gap-1">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 28,000</span>
+<span class="font-body-sm text-body-sm text-tertiary">/ month</span>
+</div>
+<span class="font-caption text-caption text-verified-green font-semibold">Deposit: 1 Mo</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+              Executive Studio on 4th Ave
+            </h3>
+<p class="font-body-sm text-body-sm text-tertiary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+              Parklands 4th Avenue, near MP Shah
+            </p>
+</div>
+<div class="flex items-center justify-between py-2 px-2.5 rounded-lg bg-surface-container-low text-tertiary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">square_foot</span>
+<span class="text-on-surface font-medium">38 sq m</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">bathtub</span>
+<span class="text-on-surface font-medium">1 Bath</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+<span class="text-on-surface font-medium">Biometric</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 text-tertiary font-caption text-caption">
+<span class="px-2 py-0.5 rounded bg-surface-container">Token Meter</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">Rooftop Drying Area</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">Elevator</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-1 text-tertiary font-caption text-caption">
+<span class="material-symbols-outlined text-[14px] text-verified-green">bolt</span>
+              Individual Meter
+            </div>
+<a class="px-3 py-1.5 rounded-lg bg-primary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold hover:bg-primary-fixed-dim transition-colors" href="#">
+              View Details
+            </a>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Spacious sunny master bedroom ensuite in an upscale Westlands Nairobi apartment on Rhapta Road with large glass sliding doors leading to a private terrace, modern polished wooden flooring and white built-in wardrobes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdloNT6JUNhRmKqoiodc6XTeeszANyUIZUDURMnsae_Y8GbAHO2AS2zyZUYPXJCUcyJMJIsIAxQTLFnZwJHvTE5E6f0VAntFBSgrwv--_4ZkAHOW06fi2rUAlg-F9VWFW3fiqrFRDzJ6ZHH2eQ7dPWT5VXF-UUF9ooIqSCop01UnWx1F3k74LEfP-GwJRSj3aufGPoxeXRUJRRx-Qb-FMMSSykqfEytxn5d08QUUv-X8OpLXA4t2Q7Zg"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-inverse-surface/90 text-on-secondary font-label-sm text-label-sm tracking-wide">
+            2 Bed Master Ensuite
+          </div>
+<button aria-label="Save Rhapta Road apartment" class="like-btn active absolute top-3 right-3 w-9 h-9 rounded-full bg-surface/90 text-danger-red flex items-center justify-center hover:bg-surface transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-secondary-fixed font-caption text-caption font-semibold flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[13px]">offline_bolt</span> Standby Generator
+            </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-baseline justify-between mb-1">
+<div class="flex items-baseline gap-1">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 52,000</span>
+<span class="font-body-sm text-body-sm text-tertiary">/ month</span>
+</div>
+<span class="font-caption text-caption text-verified-green font-semibold">Deposit: 1 Mo</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+              Spacious 2 Bed Master Ensuite
+            </h3>
+<p class="font-body-sm text-body-sm text-tertiary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+              Rhapta Road, Westlands
+            </p>
+</div>
+<div class="flex items-center justify-between py-2 px-2.5 rounded-lg bg-surface-container-low text-tertiary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">bed</span>
+<span class="text-on-surface font-medium">2 Beds</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">bathtub</span>
+<span class="text-on-surface font-medium">2 Baths</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">local_parking</span>
+<span class="text-on-surface font-medium">Reserved Bay</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 text-tertiary font-caption text-caption">
+<span class="px-2 py-0.5 rounded bg-surface-container">High Speed Lift</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">Borehole Water</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">Electric Fence</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-1 text-tertiary font-caption text-caption">
+<span class="material-symbols-outlined text-[14px] text-verified-green">verified</span>
+              Caretaker on-site
+            </div>
+<a class="px-3 py-1.5 rounded-lg bg-primary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold hover:bg-primary-fixed-dim transition-colors" href="#">
+              View Details
+            </a>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern 1 bedroom apartment balcony view in Westlands Nairobi on Mpaka Road with sliding glass door, clean tiled terrace looking over mature jacaranda trees and Nairobi urban cityscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLr6HpAHqJ7UPkuHxz4AkmYPeSf3f5d5QTvhkATzP1Bjj369LkL76ecvrYSWwXetUv6kmNQ5o5DQ1o_Nuv0ZueJ2Mi_xdKHEk5Fm1YuP-Cx1RJ6ND9TrXFajaz1z1Yu7ddLf_oc6jzMVMlE_LO7vOaDQvbk3lgLzZOK5Pa6oiDMZwh9WDMLy0CwMpX4xFmyVoKsor6ygM77KWMyO0CjQ1_jy3z4vf465cn8YA1PEfzqcoHiw1ALfHIpQ"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-inverse-surface/90 text-on-secondary font-label-sm text-label-sm tracking-wide">
+            1 Bed Apartment
+          </div>
+<button aria-label="Save Mpaka Road apartment" class="like-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface/90 text-on-surface flex items-center justify-center hover:bg-surface transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface/90 text-on-surface font-caption text-caption font-semibold flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[13px]">deck</span> Private Balcony
+            </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-baseline justify-between mb-1">
+<div class="flex items-baseline gap-1">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 38,000</span>
+<span class="font-body-sm text-body-sm text-tertiary">/ month</span>
+</div>
+<span class="font-caption text-caption text-verified-green font-semibold">Deposit: 1 Mo</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+              Modern 1 Bed on Mpaka Road
+            </h3>
+<p class="font-body-sm text-body-sm text-tertiary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+              Mpaka Road, Westlands
+            </p>
+</div>
+<div class="flex items-center justify-between py-2 px-2.5 rounded-lg bg-surface-container-low text-tertiary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">bed</span>
+<span class="text-on-surface font-medium">1 Bed</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">bathtub</span>
+<span class="text-on-surface font-medium">1 Bath</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">videocam</span>
+<span class="text-on-surface font-medium">24/7 CCTV</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 text-tertiary font-caption text-caption">
+<span class="px-2 py-0.5 rounded bg-surface-container">Fiber Internet Ready</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">Council Water + Tank</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">Perimeter Wall</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-1 text-tertiary font-caption text-caption">
+<span class="material-symbols-outlined text-[14px] text-verified-green">shield</span>
+              Guarded Compound
+            </div>
+<a class="px-3 py-1.5 rounded-lg bg-primary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold hover:bg-primary-fixed-dim transition-colors" href="#">
+              View Details
+            </a>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bright sunlit open concept living room and dining area in a contemporary Kenyan apartment on Woodvale Grove Westlands, with large windows, modern pendant lights, wooden dining table, and detached staff quarters access door" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTiB3XxUWzzD877nHQH_VwjzHJrNjiOUluFl1Kgn7K-aoqE53sZgu1M7UPaC3hxfQmGQkTUbBiXv6mXBd-2glSoXEViAgBlVTRxCoIshvdDuK102jc6NsS29vrN9kAJ2qo_yFticZ3m2Y3mIh_kgzA59uGdgIXmzxsKvuRmDDKZIiva0djECdy7xCek7KNxBgelpNkksXiq9uLUG7W9hoXveqlvreUsvojhHcrfWHn_ireS6YsZkCcKw"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-inverse-surface/90 text-on-secondary font-label-sm text-label-sm tracking-wide">
+            2 Bed + DSQ
+          </div>
+<button aria-label="Save Woodvale Grove apartment" class="like-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface/90 text-on-surface flex items-center justify-center hover:bg-surface transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-verified-green-bg/95 text-verified-green font-caption text-caption font-semibold flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[13px]">solar_power</span> Solar Water
+            </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-baseline justify-between mb-1">
+<div class="flex items-baseline gap-1">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 60,000</span>
+<span class="font-body-sm text-body-sm text-tertiary">/ month</span>
+</div>
+<span class="font-caption text-caption text-verified-green font-semibold">Deposit: 1 Mo</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+              Sunlit 2 Bed with DSQ
+            </h3>
+<p class="font-body-sm text-body-sm text-tertiary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+              Woodvale Grove, Westlands
+            </p>
+</div>
+<div class="flex items-center justify-between py-2 px-2.5 rounded-lg bg-surface-container-low text-tertiary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">bed</span>
+<span class="text-on-surface font-medium">2 Beds + DSQ</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">bathtub</span>
+<span class="text-on-surface font-medium">2 Baths</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">local_parking</span>
+<span class="text-on-surface font-medium">2 Cars</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 text-tertiary font-caption text-caption">
+<span class="px-2 py-0.5 rounded bg-surface-container">Backup Generator</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">Solar Water Heating</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">Intercom</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-1 text-tertiary font-caption text-caption">
+<span class="material-symbols-outlined text-[14px] text-verified-green">done_all</span>
+              Ready to Occupy
+            </div>
+<a class="px-3 py-1.5 rounded-lg bg-primary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold hover:bg-primary-fixed-dim transition-colors" href="#">
+              View Details
+            </a>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col group">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cozy tastefully furnished 1 bedroom apartment lounge in Nairobi Kenya with modern sofa, flat screen television on low console, neutral jute rug, framed African wall art, and warm ambient evening lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAl_0DMhcrl3AWfGl8F-YWIFczWBxtsLp3JFovJ8CJXjK6Uu-zix1yOf_Z-TEiUfH5YzT3IIa-6BsC6qTh8OksZrMgwv-YdM4pH_DcW0YjT8HCHRjAcSt3ZEb_IpO0BaI_ZYbr6GRt7ToE0QYLfnTwnMcLhFmu9CgOteouRpW68LtF-rykTtoG6N9x_oiEw5VynLhlDzA0rIhDgBlimX_DjNnm3E9gPJGiKM_9EnOQBi7zIo1kMsk8CA"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-inverse-surface/90 text-on-secondary font-label-sm text-label-sm tracking-wide">
+            Furnished 1 Bed
+          </div>
+<button aria-label="Save Furnished Raphta apartment" class="like-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface/90 text-on-surface flex items-center justify-center hover:bg-surface transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface/90 text-on-surface font-caption text-caption font-semibold flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[13px]">pool</span> Pool &amp; Gym
+            </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-baseline justify-between mb-1">
+<div class="flex items-baseline gap-1">
+<span class="font-price-listing text-price-listing text-on-surface">Ksh 48,000</span>
+<span class="font-body-sm text-body-sm text-tertiary">/ month</span>
+</div>
+<span class="font-caption text-caption text-verified-green font-semibold">Flexible Lease</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+              Furnished 1 Bed on Rhapta Rd
+            </h3>
+<p class="font-body-sm text-body-sm text-tertiary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+              Rhapta Road, Westlands
+            </p>
+</div>
+<div class="flex items-center justify-between py-2 px-2.5 rounded-lg bg-surface-container-low text-tertiary font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">chair</span>
+<span class="text-on-surface font-medium">Fully Furnished</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">fitness_center</span>
+<span class="text-on-surface font-medium">Gym</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+<span class="text-on-surface font-medium">Borehole</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 text-tertiary font-caption text-caption">
+<span class="px-2 py-0.5 rounded bg-surface-container">Smart TV + Wi-Fi</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">Housekeeping Opt.</span>
+<span class="px-2 py-0.5 rounded bg-surface-container">Elevator</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-1 text-tertiary font-caption text-caption">
+<span class="material-symbols-outlined text-[14px] text-verified-green">handshake</span>
+              Short or Long Lease
+            </div>
+<a class="px-3 py-1.5 rounded-lg bg-primary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold hover:bg-primary-fixed-dim transition-colors" href="#">
+              View Details
+            </a>
+</div>
+</div>
+</article>
+</div>
+<!-- Owner Guarantees & Verification Details Banner -->
+<section class="bg-surface rounded-xl p-space-lg lg:p-space-xl shadow-sm">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-1 max-w-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-verified-green text-[22px]">verified</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Kamau Properties Verification Standards</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Every home listed under this profile has undergone in-person vetting by MoveApp Kenya field inspectors in Nairobi.
+          </p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-verified-green text-[18px]">verified_user</span>
+<span>Title Deed Certified</span>
+</div>
+<div class="flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-verified-green text-[18px]">money_off</span>
+<span>No Viewing Fees Ever</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mt-space-lg pt-space-md bg-surface-container-low/50 rounded-lg p-space-md">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-verified-green-bg text-verified-green flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Cap 296 Compliant</h3>
+<p class="font-caption text-caption text-tertiary mt-0.5">Written standardized rental lease conforming with Kenyan Tenant laws.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-verified-green-bg text-verified-green flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">location_city</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Physical Inspection</h3>
+<p class="font-caption text-caption text-tertiary mt-0.5">Units checked for active water supply, KPLC metering, and compound security.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-verified-green-bg text-verified-green flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Dedicated Caretakers</h3>
+<p class="font-caption text-caption text-tertiary mt-0.5">On-site caretaker contacts assigned to each property for repairs.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-verified-green-bg text-verified-green flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Deposit Protection</h3>
+<p class="font-caption text-caption text-tertiary mt-0.5">Transparent refund checkout terms documented in writing upon move-out.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Inquiry Modal (Dynamic Vanilla JS Micro-interaction) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-xs flex items-center justify-center p-4 hidden" id="inquiry-modal">
+<div class="bg-surface rounded-xl max-w-lg w-full p-space-lg shadow-xl relative animate-in fade-in zoom-in-95 duration-200">
+<button class="absolute top-4 right-4 text-tertiary hover:text-on-surface p-1 rounded-full hover:bg-surface-container" id="close-modal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-secondary-fixed flex items-center justify-center font-bold">
+          KP
+        </div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Inquire with Kamau Properties</h3>
+<p class="font-caption text-caption text-tertiary">Direct tenant message • Average response time &lt; 15 mins</p>
+</div>
+</div>
+<form class="flex flex-col gap-space-sm mt-space-md" id="inquiry-form">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1">Select Property</label>
+<select class="w-full h-11 px-space-sm bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none">
+<option>2 Bedroom Modern Flat - Muthithi Rd (Ksh 45,000/mo)</option>
+<option>Executive Studio on 4th Ave - Parklands (Ksh 28,000/mo)</option>
+<option>Spacious 2 Bed Master Ensuite - Rhapta Rd (Ksh 52,000/mo)</option>
+<option>Modern 1 Bed on Mpaka Road - Westlands (Ksh 38,000/mo)</option>
+<option>Sunlit 2 Bed with DSQ - Woodvale Grove (Ksh 60,000/mo)</option>
+<option>Furnished 1 Bed - Rhapta Road (Ksh 48,000/mo)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1">Your Mobile / WhatsApp Number (Safaricom / Airtel)</label>
+<input class="w-full h-11 px-space-sm bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none" placeholder="e.g. 0712 345 678" required="" type="tel"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1">Proposed Move-in Date</label>
+<input class="w-full h-11 px-space-sm bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none" type="date"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-1">Message to Landlord</label>
+<textarea class="w-full p-space-sm bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none" placeholder="Hi Mr. Kamau, I would like to schedule a viewing for Saturday morning..." rows="3"></textarea>
+</div>
+<div class="pt-2 flex items-center justify-between gap-space-sm">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" id="cancel-modal" type="button">
+            Cancel
+          </button>
+<button class="flex-1 py-2.5 rounded-lg bg-primary-container text-on-secondary-fixed font-label-md text-label-md font-semibold hover:bg-primary-fixed-dim transition-colors shadow-sm flex items-center justify-center gap-1.5" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Send Direct Message</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<script>
+    (function() {
+      // Favorite toggling micro-interaction
+      const likeButtons = document.querySelectorAll('.like-btn');
+      likeButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const icon = btn.querySelector('.material-symbols-outlined');
+          const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+          if (isFilled) {
+            icon.style.fontVariationSettings = "'FILL' 0";
+            btn.classList.remove('text-danger-red');
+            btn.classList.add('text-on-surface');
+          } else {
+            icon.style.fontVariationSettings = "'FILL' 1";
+            btn.classList.add('text-danger-red');
+            btn.classList.remove('text-on-surface');
+          }
+        });
+      });
+
+      // Filter chips active state
+      const filterChips = document.querySelectorAll('.filter-chip');
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          filterChips.forEach(c => {
+            c.className = 'filter-chip px-space-md py-1.5 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm whitespace-nowrap transition-colors';
+          });
+          chip.className = 'filter-chip px-space-md py-1.5 rounded-full bg-primary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold whitespace-nowrap shadow-xs';
+        });
+      });
+
+      // Tabs active state
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.className = 'tab-btn px-space-md py-2.5 rounded-lg bg-surface text-tertiary hover:text-on-surface font-label-md text-label-md transition-all shrink-0';
+          });
+          tab.className = 'tab-btn px-space-md py-2.5 rounded-lg bg-primary-container text-on-secondary-fixed font-label-md text-label-md font-semibold transition-all shrink-0';
+        });
+      });
+
+      // Modal open/close handling
+      const inquireBtn = document.getElementById('inquire-btn');
+      const modal = document.getElementById('inquiry-modal');
+      const closeModal = document.getElementById('close-modal');
+      const cancelModal = document.getElementById('cancel-modal');
+      const inquiryForm = document.getElementById('inquiry-form');
+
+      if (inquireBtn && modal) {
+        inquireBtn.addEventListener('click', () => {
+          modal.classList.remove('hidden');
+        });
+
+        const hideModal = () => {
+          modal.classList.add('hidden');
+        };
+
+        closeModal.addEventListener('click', hideModal);
+        cancelModal.addEventListener('click', hideModal);
+
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) hideModal();
+        });
+
+        inquiryForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const submitBtn = inquiryForm.querySelector('button[type="submit"]');
+          submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span> Sending...';
+          setTimeout(() => {
+            submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done</span> Message Sent!';
+            submitBtn.classList.replace('bg-primary-container', 'bg-verified-green-bg');
+            submitBtn.classList.add('text-verified-green');
+            setTimeout(() => {
+              hideModal();
+              submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">send</span><span>Send Direct Message</span>';
+              submitBtn.classList.replace('bg-verified-green-bg', 'bg-primary-container');
+              submitBtn.classList.remove('text-verified-green');
+              inquiryForm.reset();
+            }, 1200);
+          }, 800);
+        });
+      }
+
+      // Search input filter micro-interaction
+      const searchInput = document.getElementById('listing-search');
+      const cards = document.querySelectorAll('#listings-grid article');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const val = e.target.value.toLowerCase().trim();
+          cards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            if (text.includes(val)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-3xl py-space-3xl"><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-2xl pb-space-2xl"><div class="md:col-span-4 flex flex-col gap-space-sm"><div class="flex items-center gap-space-xs"><img alt="MoveApp Kenya" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WNUVKKf1BLkyNXrBOm1QMipYZmOjYCfT-6ZMEfh0nFJt71kZZ15eIGmsmfSeFNfzYzMoJXIWVud_sZLQv8EaYgWna1WRQzK1RvNbvyjNl7x_E0bxx8neQLcBcKlGxK1v2dVXwU_EsppSLU4tSTFMKRZWnVORcsFyUHW7PxQozLL7p7fFx-gRQU2LnzA3z4CuKcSt-GSuFrsYi6hOvctW263tyEH_qceUdcpwsf6MkLXzc1bJfA3vT7pajU"/><span class="font-headline-sm text-headline-sm text-on-surface">MoveApp Kenya</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Authentic, street-level rental housing platform engineered for urban Kenyan tenants, certified landlords, and verified caretakers across Nairobi and expanding metropolitan hubs.</p><div class="flex items-center gap-2 mt-space-xs"><span class="material-symbols-outlined text-verified-green text-[18px]">verified</span><span class="font-caption text-caption text-on-surface-variant font-medium">100% Anti-fraud vetted properties</span></div></div><div class="md:col-span-2 md:col-start-6 flex flex-col gap-space-sm"><h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Renters</h3><div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="browse-rentals" href="#">Search Rentals</a><a class="hover:text-on-surface transition-colors" data-path="saved-homes" href="#">Saved Homes</a><a class="hover:text-on-surface transition-colors" data-path="verified-estates" href="#">Verified Estates</a><a class="hover:text-on-surface transition-colors" data-path="tenant-rights-guide" href="#">Tenant Rights Guide</a></div></div><div class="md:col-span-2 flex flex-col gap-space-sm"><h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Property Owners</h3><div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="list-a-house" href="#">List a House</a><a class="hover:text-on-surface transition-colors" data-path="landlord-verification" href="#">Get Verified</a><a class="hover:text-on-surface transition-colors" data-path="caretaker-portal" href="#">Caretaker Portal</a><a class="hover:text-on-surface transition-colors" data-path="listing-pricing" href="#">Listing Packages</a></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Trust &amp; Compliance</h3><div class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant"><a class="hover:text-danger-red transition-colors flex items-center gap-1" data-path="report-dispute" href="#"><span class="material-symbols-outlined text-[16px]">flag</span>Report Scam / Dispute</a><a class="hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" data-path="rent-restriction-act" href="#">Rent Restriction Act Advisory</a></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-caption text-caption text-on-surface-variant"><div class="flex items-center gap-1.5 text-center md:text-left"><span class="material-symbols-outlined text-[15px] text-tertiary">gavel</span><span>Compliant with the Rent Restriction Act (Cap 296) and Landlord &amp; Tenant Act of the Laws of Kenya.</span></div><p class="text-center md:text-right">© 2025 MoveApp Kenya Technologies Ltd. All rights reserved.</p></div></div></footer></body></html>
