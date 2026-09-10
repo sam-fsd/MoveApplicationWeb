@@ -74,6 +74,12 @@ app, and 404 in production.
 | `/saved` | 09, 10 | Saved grid, price alerts with real match counts |
 | `/account` | 12 | Tenant details and search preferences |
 | `/owners/[id]` | 13 | Public owner profile; approved owners only |
+| `/dashboard` | 15 | Owner dashboard: stat cards, listings table, verification, enquiries |
+| `/dashboard/listings` | — | Full listings table behind "View all listings" |
+| `/dashboard/listings/new` | 17, 18 | Five-step wizard with local photo upload |
+| `/dashboard/listings/[id]` | 19 | Views chart, enquiries, tenant card preview, health score |
+| `/dashboard/verification` | 16 | Document checklist and audit status |
+| `/dashboard/profile` | 14 | Public profile edit with live tenant preview |
 | `not-found` | 24 | |
 
 `GET /dev/as/<email>?next=<path>` signs in as a seeded account and redirects —

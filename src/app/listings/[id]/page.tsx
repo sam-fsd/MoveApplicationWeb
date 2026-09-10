@@ -60,7 +60,9 @@ export default async function ListingDetailPage({ params }: { params: Promise<{ 
   ]);
 
   const profile = listing.owner.ownerProfile;
-  const location = `${listing.roadOrLandmark}, ${listing.estate}`;
+  const location = listing.roadOrLandmark.toLowerCase().includes(listing.estate.toLowerCase())
+    ? listing.roadOrLandmark
+    : `${listing.roadOrLandmark}, ${listing.estate}`;
   const waMessage = enquiryMessage({
     listingTitle: listing.title,
     estate: listing.estate,

@@ -221,3 +221,34 @@ Appended as they are taken, so they survive into the next session.
 - **`GET /dev/as/<email>?next=<path>` signs in as a seeded account** and
   redirects. Dev-only, 404s in production. It exists so signed-in pages open
   from a plain link, which is handy when driving the demo.
+
+### Phase 4
+
+- **The publish gate is enforced in three places**, because it is the product's
+  whole point: `/dashboard/listings/new` redirects an unverified owner to the
+  verification page, `createListing` refuses outright, and even a verified
+  owner's new listing is written as `PENDING_REVIEW`. An owner can move a
+  listing to RENTED_OUT or back to PENDING_REVIEW, but never to PUBLISHED —
+  only an admin does that.
+- **Node 18 has no global `File`.** `formData.getAll()` entries must be
+  duck-typed (`"arrayBuffer" in entry`), not tested with `instanceof File` —
+  that throws a ReferenceError on this runtime.
+- **recharts areas need `isAnimationActive={false}`.** The mount animation
+  leaves the path empty in any environment that does not run animation frames,
+  which is how the views chart on screen 19 first rendered as bare axes.
+- **The wizard is one `<form>` with hidden steps**, so a single submit carries
+  every field and all photos in one request. Removing a photo rebuilds the file
+  input's `FileList` through a `DataTransfer`, since a `FileList` is read-only
+  and the removed file would otherwise still be submitted.
+- **Wizard steps 3–5 are not drawn in the designs.** Screens 17 and 18 are
+  steps 1 and 2, but the stepper shows five. Location, Price & Terms, and
+  Review reuse the established field vocabulary rather than inventing a new
+  layout.
+- **Uploads are written before the listing row**, so a failed write never
+  leaves a listing pointing at images that do not exist.
+- **`badgeLabel` is not editable by owners** on screen 14. It is set by admins;
+  letting an owner type their own "Verified …" string would undermine the badge.
+- **A road that already names its estate is not suffixed again** — the seed has
+  "Rhapta Road, Westlands" in an estate called Westlands.
+- **Screen 19's Boost Listing action was not built** — it implies paid
+  promotion, and payments are explicitly out of scope.
