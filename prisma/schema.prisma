@@ -1,0 +1,307 @@
+// MoveApp Kenya — schema.
+//
+// Starts from docs/DATA_MODEL.md. Three deliberate departures, made here rather
+// than in a later migration because they are structural:
+//
+//  1. HouseType is re-cut. The doc's enum mixed building type with bedroom
+//     count (ONE_BED, TWO_BED, THREE_BED) but screen 04 filters those as two
+//     independent controls, and its house-type list contains Townhouse, which
+//     the doc's enum lacked. Bedroom count lives in `Listing.bedrooms`.
+//  2. ListingViewDaily and PlatformWeekly are new. `Listing.viewCount` is a
+//     single integer and cannot draw the sparklines on screen 15, the views
+//     chart on screen 19, or the 12-week stacked bar on screen 20.
+//  3. Scalar fields added for values the screens render but the doc omitted:
+//     floor area, parking, the variable chip beside the price, and the spec-card
+//     sub-labels on screen 06.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  TENANT
+  OWNER
+  ADMIN
+}
+
+enum OwnerKind {
+  LANDLORD
+  AGENT
+}
+
+enum VerificationState {
+  UNSUBMITTED
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum ListingStatus {
+  PENDING_REVIEW
+  PUBLISHED
+  RENTED_OUT
+  REJECTED
+}
+
+enum HouseType {
+  BEDSITTER
+  SINGLE_ROOM
+  STUDIO
+  APARTMENT
+  MAISONETTE
+  TOWNHOUSE
+}
+
+enum ReportStatus {
+  OPEN
+  UNDER_REVIEW
+  RESOLVED
+  DISMISSED
+}
+
+enum ReportSeverity {
+  LOW
+  MODERATE
+  CRITICAL
+}
+
+model User {
+  id           String   @id @default(cuid())
+  role         Role
+  fullName     String
+  email        String   @unique
+  phone        String // E.164, +254...
+  passwordHash String
+  avatarUrl    String?
+  createdAt    DateTime @default(now())
+
+  ownerProfile  OwnerProfile?
+  tenantProfile TenantProfile?
+  listings      Listing[]      @relation("OwnerListings")
+  savedListings SavedListing[]
+  enquiries     Enquiry[]
+  reportsFiled  Report[]       @relation("Reporter")
+  priceAlerts   PriceAlert[]
+  notifications Notification[]
+}
+
+model OwnerProfile {
+  id            String    @id @default(cuid())
+  userId        String    @unique
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  businessName  String // "Kamau Properties Ltd"
+  kind          OwnerKind
+  about         String
+  primaryEstate String // "Westlands"
+  memberSince   DateTime
+
+  // The exports use five different badge strings (Verified Landlord, Verified
+  // Owner, Verified Agent, Verified Agency, bare "Verified") against only two
+  // OwnerKind values. This overrides the kind-derived default when set.
+  badgeLabel String?
+
+  verification Verification?
+}
+
+model Verification {
+  id                String            @id @default(cuid())
+  ownerProfileId    String            @unique
+  ownerProfile      OwnerProfile      @relation(fields: [ownerProfileId], references: [id], onDelete: Cascade)
+  state             VerificationState @default(UNSUBMITTED)
+  certificateNumber String? // "#MP-NBI-2025-084", set on approval
+  submittedAt       DateTime?
+  reviewedAt        DateTime?
+  reviewedById      String?
+  adminNotes        String?
+
+  // Individual checks — screens 16 and 22 render these as separate rows.
+  // Screen 15 collapses the first two into one line for display only.
+  nationalIdOk Boolean @default(false)
+  kraPinOk     Boolean @default(false)
+  titleDeedOk  Boolean @default(false)
+  inspectionOk Boolean @default(false)
+  feePledgeOk  Boolean @default(false)
+
+  documents VerificationDocument[]
+}
+
+model VerificationDocument {
+  id             String       @id @default(cuid())
+  verificationId String
+  verification   Verification @relation(fields: [verificationId], references: [id], onDelete: Cascade)
+  label          String // "National ID", "Title Deed", "KRA PIN", "Mandate", "KPLC Meter Bill"
+  fileUrl        String
+  uploadedAt     DateTime     @default(now())
+}
+
+model TenantProfile {
+  id               String @id @default(cuid())
+  userId           String @unique
+  user             User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  preferredEstates String // JSON array, SQLite has no String[]
+  budgetMin        Int?
+  budgetMax        Int?
+  preferredTypes   String // JSON array of HouseType
+}
+
+model Listing {
+  id             String        @id @default(cuid())
+  ownerId        String
+  owner          User          @relation("OwnerListings", fields: [ownerId], references: [id], onDelete: Cascade)
+  title          String // "2 Bedroom Apartment in Westlands"
+  description    String
+  houseType      HouseType
+  bedrooms       Int
+  bathrooms      Float // half-baths appear on screen 04 ("1.5 Baths", "3.5 Baths")
+  furnished      Boolean       @default(false)
+  rentKes        Int // 45000
+  depositMonths  Int           @default(1)
+  serviceCharge  Boolean       @default(false) // "Service Charge Incl."
+  estate         String // "Westlands"
+  roadOrLandmark String // "Muthithi Road, near Westgate"
+  latitude       Float?
+  longitude      Float?
+  availableFrom  DateTime
+  status         ListingStatus @default(PENDING_REVIEW)
+  viewCount      Int           @default(0)
+  createdAt      DateTime      @default(now())
+
+  // Rendered by the screens, absent from docs/DATA_MODEL.md.
+  floorAreaSqft Int? // "680 sqft" on screen 04
+  parkingSpaces Int     @default(0) // "1 Bay", "1 Car", "2 Cars"
+  highlight     String? // chip beside the price: "Token Meter", "All-Inc Water", "Gated Court"
+  bedroomsNote  String? // spec-card sub-label, screen 06: "Master Ensuite"
+  bathroomsNote String? // "Hot Instant Shower"
+  furnishedNote String? // "L-Couch & Dining"
+
+  images     ListingImage[]
+  amenities  ListingAmenity[]
+  savedBy    SavedListing[]
+  enquiries  Enquiry[]
+  reports    Report[]
+  dailyViews ListingViewDaily[]
+
+  @@index([status, estate])
+  @@index([status, rentKes])
+}
+
+model ListingImage {
+  id        String  @id @default(cuid())
+  listingId String
+  listing   Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  url       String
+  isCover   Boolean @default(false)
+  position  Int     @default(0)
+
+  @@index([listingId, position])
+}
+
+model ListingAmenity {
+  id        String  @id @default(cuid())
+  listingId String
+  listing   Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  label     String // "Borehole Water 24/7", "Prepaid KPLC Token", "Fibre Ready", "CCTV"
+  sublabel  String? // utility strip on screen 06: "Zero water rationing"
+
+  @@index([listingId])
+}
+
+// Per-day view counts. Sums to Listing.viewCount; drives the sparklines on
+// screen 15 and the views chart on screen 19.
+model ListingViewDaily {
+  id        String   @id @default(cuid())
+  listingId String
+  listing   Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  date      DateTime // midnight UTC, one row per listing per day
+  views     Int      @default(0)
+
+  @@unique([listingId, date])
+  @@index([date])
+}
+
+// Platform-wide weekly intake for the stacked bar chart on screen 20. Seeded
+// rather than derived: the design shows ~186 listings/week against a seed of
+// 30-40 listings total.
+model PlatformWeekly {
+  id        String   @id @default(cuid())
+  weekStart DateTime @unique
+  published Int
+  inReview  Int
+  rejected  Int
+}
+
+model SavedListing {
+  id        String   @id @default(cuid())
+  userId    String
+  listingId String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  listing   Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, listingId])
+}
+
+model PriceAlert {
+  id        String     @id @default(cuid())
+  userId    String
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  label     String // "2 Bedroom in Kasarani under Ksh 25,000"
+  estate    String?
+  houseType HouseType?
+  maxRent   Int?
+  active    Boolean    @default(true)
+}
+
+model Enquiry {
+  id        String    @id @default(cuid())
+  listingId String
+  tenantId  String
+  listing   Listing   @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  tenant    User      @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  message   String
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  // Screen 15 puts a Reply button on every enquiry; screen 06 offers
+  // "Send Direct Message" as the third contact channel.
+  reply     String?
+  repliedAt DateTime?
+
+  @@index([listingId])
+}
+
+model Report {
+  id         String         @id @default(cuid())
+  listingId  String
+  reporterId String
+  listing    Listing        @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  reporter   User           @relation("Reporter", fields: [reporterId], references: [id], onDelete: Cascade)
+  reason     String // see REPORT_REASONS in src/lib/constants.ts
+  details    String?
+  severity   ReportSeverity @default(MODERATE)
+  status     ReportStatus   @default(OPEN)
+  resolution String?
+  createdAt  DateTime       @default(now())
+  resolvedAt DateTime?
+
+  @@index([status, severity])
+}
+
+model Notification {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  kind      String // "SAVED_SEARCH_MATCH" | "ENQUIRY_REPLY" | "LISTING_APPROVED" | "REPORT_UPDATE"
+  title     String
+  body      String
+  href      String?
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([userId, readAt])
+}
