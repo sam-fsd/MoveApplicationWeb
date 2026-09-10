@@ -58,5 +58,16 @@ src/lib/         format.ts, db.ts, constants.ts, and queries/ from Phase 1
 public/seed/     seeded listing photos and avatars
 ```
 
-`/kitchen-sink` renders every shared primitive on one page. It is a development
-page and is not linked from the app.
+`/kitchen-sink` renders every shared primitive on one page, and `/dev` is a
+role-switching smoke test. Both are development pages, are not linked from the
+app, and 404 in production.
+
+## Routes so far
+
+| Route | Screen | Notes |
+|---|---|---|
+| `/` | 01 | Landing: hero search, featured rentals, three steps, trust, split CTA |
+| `/login` | 02 | Split layout, real password sign-in, redirects by role |
+| `/register` | 03 | Tenant / Owner toggle; owners land unverified and cannot publish |
+| `/listings` | 04, 05 | Filters, sort and pagination, all as URL search params |
+| `not-found` | 24 | |

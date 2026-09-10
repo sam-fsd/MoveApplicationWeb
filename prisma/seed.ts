@@ -181,10 +181,13 @@ async function main() {
 
   console.log("Creating listings…");
   const listings = [];
-  for (const seed of LISTINGS) {
+  for (const [index, seed] of LISTINGS.entries()) {
     const owner = approvedOwners[seed.owner];
     const createdAt = daysAgo(seed.ageDays);
     const photoCount = randomInt(3, 5);
+    // Offset the photo cycle per listing, otherwise every cover is the same
+    // image — there are only three seed photos to go round.
+    const photoOffset = index % LISTING_PHOTOS.length;
 
     // Views accumulate per day since the listing went up, capped at 90 days of
     // history. Published listings get more traffic than pending or rented ones.
@@ -231,7 +234,7 @@ async function main() {
           furnishedNote: seed.furnishedNote,
           images: {
             create: Array.from({ length: photoCount }, (_, i) => ({
-              url: LISTING_PHOTOS[i % LISTING_PHOTOS.length],
+              url: LISTING_PHOTOS[(i + photoOffset) % LISTING_PHOTOS.length],
               isCover: i === 0,
               position: i,
             })),

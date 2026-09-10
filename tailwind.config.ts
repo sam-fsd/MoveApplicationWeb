@@ -17,6 +17,8 @@ const config: Config = {
         brand: "#FFC93C",
         "brand-hover": "#F4BF32",
         "brand-subtle": "#FFF7DB",
+        // Readable yellow for text on light grounds: the fill colour fails contrast.
+        "brand-strong": "#8A6A00",
 
         ink: "#12151C",
         "ink-soft": "#1E232F",

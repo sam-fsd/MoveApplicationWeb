@@ -132,27 +132,24 @@ export function buildListingWhere(filters: ListingFilters): Prisma.ListingWhereI
 
 export async function findListings(filters: ListingFilters = {}): Promise<ListingPage> {
   const perPage = filters.perPage ?? DEFAULT_PER_PAGE;
-  const page = Math.max(1, filters.page ?? 1);
   const where = buildListingWhere(filters);
 
-  const [total, listings] = await Promise.all([
-    db.listing.count({ where }),
-    db.listing.findMany({
-      where,
-      select: listingCardSelect,
-      orderBy: SORTS[filters.sort ?? "newest"],
-      skip: (page - 1) * perPage,
-      take: perPage,
-    }),
-  ]);
+  const total = await db.listing.count({ where });
+  const pageCount = Math.max(1, Math.ceil(total / perPage));
 
-  return {
-    listings,
-    total,
-    page,
-    perPage,
-    pageCount: Math.max(1, Math.ceil(total / perPage)),
-  };
+  // Clamp rather than return an empty page: ?page=99 on a 5-page result should
+  // land on page 5, not on an empty state that blames the filters.
+  const page = Math.min(Math.max(1, filters.page ?? 1), pageCount);
+
+  const listings = await db.listing.findMany({
+    where,
+    select: listingCardSelect,
+    orderBy: SORTS[filters.sort ?? "newest"],
+    skip: (page - 1) * perPage,
+    take: perPage,
+  });
+
+  return { listings, total, page, perPage, pageCount };
 }
 
 /** Facet counts for the filter sidebar, computed against the same filters. */

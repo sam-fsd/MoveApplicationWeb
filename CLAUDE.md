@@ -153,3 +153,38 @@ Appended as they are taken, so they survive into the next session.
 - **`/login` and `/dev` are Phase 1 scaffolding.** The login page is a plain
   working form to be replaced wholesale by screen 02 in Phase 2, not restyled.
   `/dev` is a smoke-test console and 404s in production.
+
+### Phase 2
+
+- **One white top bar for every tenant page.** The designs carry two — white on
+  screens 01, 03, 04 and 06, ink on 05 and 24. White wins: it covers both
+  load-bearing screens and four of six. Screens 01 and 04 differ only in their
+  nav, and they differ exactly along the signed-out / signed-in line, so
+  `TopBar` splits on that.
+- **One footer, following screen 01's columns** (Popular Estates / Property
+  Types / Company & Trust). The designs carry three variants; this one wins
+  because two of its columns are real links into filtered searches, where the
+  other variants' columns are mostly pages this project does not build.
+- **All listing filters are URL search params**, parsed and written in one place
+  (`src/lib/search-params.ts`). Unknown or malformed values are dropped rather
+  than rejected, so a hand-edited URL degrades to a broader search. An
+  out-of-range `?page=` clamps to the last page rather than showing the empty
+  state, which would wrongly blame the filters.
+- **Filtering works without JavaScript.** The sidebar and hero search are plain
+  GET forms; the only client component on the listings page is the sort select,
+  which navigates rather than holding state.
+- **The hero budget select emits a `budget` range param** (`"15000-30000"`,
+  `"60000-"`), because two of the design's five options ("Any Budget" and
+  "Ksh 60,000+") cannot both be expressed as a max.
+- **A listing card's price never wraps**; a long highlight chip ellipsizes
+  instead. Letting either wrap gave cards in the same row different heights.
+- **`brand-strong` (#8A6A00) is the readable yellow** for text on light
+  grounds. The brand fill fails contrast as a text colour, and the rule stands
+  that yellow is a fill only.
+- **Registration creates an owner with an UNSUBMITTED verification**, so the
+  account exists but cannot publish (rule 1). Owners land on
+  `/dashboard/verification`, tenants on `/listings`.
+- **Screen 05's market-intelligence panel and adjacent-zone chips were not
+  built.** They need per-suburb inventory the seed has no notion of. The empty
+  state carries the real derived average rent for the estate instead, plus
+  nearby listings from real rows.
