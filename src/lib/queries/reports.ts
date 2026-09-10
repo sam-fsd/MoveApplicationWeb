@@ -39,15 +39,23 @@ export async function findReports(filters: ReportFilters = {}) {
       where,
       orderBy: { createdAt: "desc" },
       include: {
-        reporter: { select: { id: true, fullName: true, avatarUrl: true } },
+        reporter: { select: { id: true, fullName: true, email: true, avatarUrl: true } },
         listing: {
           select: {
             id: true,
             title: true,
             estate: true,
+            roadOrLandmark: true,
+            rentKes: true,
             status: true,
             images: { where: { isCover: true }, take: 1, select: { url: true } },
-            owner: { select: { id: true, fullName: true } },
+            owner: {
+              select: {
+                id: true,
+                fullName: true,
+                ownerProfile: { select: { businessName: true } },
+              },
+            },
           },
         },
       },

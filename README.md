@@ -80,6 +80,11 @@ app, and 404 in production.
 | `/dashboard/listings/[id]` | 19 | Views chart, enquiries, tenant card preview, health score |
 | `/dashboard/verification` | 16 | Document checklist and audit status |
 | `/dashboard/profile` | 14 | Public profile edit with live tenant preview |
+| `/admin` | 20 | Ops overview: six stat cards, queues, weekly stacked bar chart |
+| `/admin/verifications` | — | Verification queue by state |
+| `/admin/verifications/[id]` | 22 | Review file, pre-checks, approve / reject |
+| `/admin/listings` | 21 | Moderation table with bulk publish / unpublish |
+| `/admin/reports` | 23 | Incident queue with detail drawer and four actions |
 | `not-found` | 24 | |
 
 `GET /dev/as/<email>?next=<path>` signs in as a seeded account and redirects —

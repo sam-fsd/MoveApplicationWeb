@@ -252,3 +252,30 @@ Appended as they are taken, so they survive into the next session.
   "Rhapta Road, Westlands" in an estate called Westlands.
 - **Screen 19's Boost Listing action was not built** — it implies paid
   promotion, and payments are explicitly out of scope.
+
+### Phase 5
+
+- **Approval is the hinge of the product.** `approveVerification` flips the
+  owner's state, issues a certificate, and unblocks publishing in the portal —
+  verified end to end: the new-listing route goes 307 to 200 for that owner.
+- **Certificate numbers run `#MP-NBI-<year>-<sequence>`**, the sequence being
+  the count already issued that year, so numbers never collide or repeat.
+- **Rejecting requires a reason** of at least 10 characters — the owner is
+  notified with it, so an empty rejection would be useless to them.
+- **`moderateListings` is the only path to PUBLISHED anywhere in the app.**
+  Owners cannot publish; the wizard writes PENDING_REVIEW and the owner-side
+  status action refuses anything but RENTED_OUT and PENDING_REVIEW.
+- **Taking a listing down over a report sets it REJECTED**, which removes it
+  from tenant search and 404s its public page — verified: the listing left the
+  Westlands results and its detail page went from 200 to 404.
+- **Every moderation action notifies both sides.** The reporter learns the
+  outcome, and the owner learns their listing moved.
+- **The four report actions are Uphold-and-take-down, Investigate, Resolve, and
+  Dismiss.** Severity stays as filed; only status, resolution, and the listing
+  change.
+- **Screen 21's "Assign Landlord Tag" and "Delete Selected" were not built.**
+  Tiers are not in the data model, and hard-deleting a listing would destroy
+  the reports filed against it — unpublishing is the reversible equivalent.
+- **Screen 22's document viewer shows metadata, not documents.** Real OCR and
+  ID verification are explicitly out of scope, and the seeded files are
+  placeholders; the page says so rather than implying otherwise.
