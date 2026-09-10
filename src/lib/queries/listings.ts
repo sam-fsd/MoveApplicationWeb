@@ -32,7 +32,7 @@ const SORTS: Record<ListingSort, Prisma.ListingOrderByWithRelationInput[]> = {
 export const DEFAULT_PER_PAGE = 6;
 
 /** The card shape. Six later screens render this, so it is selected once here. */
-const listingCardSelect = {
+export const listingCardSelect = {
   id: true,
   title: true,
   rentKes: true,

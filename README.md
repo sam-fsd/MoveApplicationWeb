@@ -70,4 +70,11 @@ app, and 404 in production.
 | `/login` | 02 | Split layout, real password sign-in, redirects by role |
 | `/register` | 03 | Tenant / Owner toggle; owners land unverified and cannot publish |
 | `/listings` | 04, 05 | Filters, sort and pagination, all as URL search params |
+| `/listings/[id]` | 06, 07, 08 | Gallery, contact modal with `wa.me` deep link, report modal |
+| `/saved` | 09, 10 | Saved grid, price alerts with real match counts |
+| `/account` | 12 | Tenant details and search preferences |
+| `/owners/[id]` | 13 | Public owner profile; approved owners only |
 | `not-found` | 24 | |
+
+`GET /dev/as/<email>?next=<path>` signs in as a seeded account and redirects —
+dev-only, and the quickest way to jump into a role while demoing.

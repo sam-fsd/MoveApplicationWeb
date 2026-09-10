@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { listingCardSelect } from "@/lib/queries/listings";
 
 /** The dropdown on screen 11 — newest first, unread marked with a dot. */
 export async function findNotifications(userId: string, take = 12) {
@@ -18,32 +19,9 @@ export async function findSavedListings(userId: string) {
   return db.savedListing.findMany({
     where: { userId },
     orderBy: { createdAt: "desc" },
-    include: {
-      listing: {
-        select: {
-          id: true,
-          title: true,
-          rentKes: true,
-          depositMonths: true,
-          estate: true,
-          roadOrLandmark: true,
-          houseType: true,
-          bedrooms: true,
-          bathrooms: true,
-          status: true,
-          highlight: true,
-          images: { where: { isCover: true }, take: 1, select: { url: true } },
-          owner: {
-            select: {
-              id: true,
-              fullName: true,
-              avatarUrl: true,
-              ownerProfile: { select: { businessName: true, kind: true, badgeLabel: true } },
-            },
-          },
-        },
-      },
-    },
+    // The same shape the card renders everywhere else, so the saved grid needs
+    // no field stubbing to satisfy the component.
+    include: { listing: { select: listingCardSelect } },
   });
 }
 

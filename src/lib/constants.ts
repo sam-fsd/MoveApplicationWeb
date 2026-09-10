@@ -60,15 +60,75 @@ export const AMENITIES = [
   "Lift / Elevator",
 ] as const;
 
-/** The four reasons the report modal on screen 08 offers. */
+/**
+ * Report reasons.
+ *
+ * Screen 08's modal offers six tenant-facing options; screen 20's admin queue
+ * tags reports with shorter phrases. They are the same reports seen from two
+ * ends, so the stored `reason` is the admin tag and the modal carries the
+ * longer label and blurb. Severity is derived here rather than chosen by the
+ * reporter — a demanded viewing fee is always critical.
+ */
+export const REPORT_REASON_OPTIONS = [
+  {
+    reason: "Fake Photos / Middleman Broker",
+    label: "Listing is fake or a scam",
+    description: "Impersonating owners, nonexistent location, or cloned photos",
+    severity: "CRITICAL",
+  },
+  {
+    reason: "House Already Taken",
+    label: "House is already taken",
+    description: "Unit was already rented or no longer available",
+    severity: "LOW",
+  },
+  {
+    reason: "Rent Price Misrepresentation",
+    label: "Wrong price or location",
+    description: "Quoted higher rent upon enquiry, or inaccurate street and neighbourhood",
+    severity: "MODERATE",
+  },
+  {
+    reason: "Illegal Viewing Fee Demanded",
+    label: "Owner asked for money upfront",
+    description:
+      "Landlord or agent demanded a viewing fee, fuel facilitation, or a deposit prior to viewing",
+    severity: "CRITICAL",
+    critical: true,
+  },
+  {
+    reason: "Offensive Content",
+    label: "Offensive content",
+    description: "Inappropriate images, discriminatory terms, or abusive conduct",
+    severity: "MODERATE",
+  },
+  {
+    reason: "Other",
+    label: "Other",
+    description: "Any other issue not covered above",
+    severity: "LOW",
+  },
+] as const satisfies readonly {
+  reason: string;
+  label: string;
+  description: string;
+  severity: ReportSeverity;
+  critical?: boolean;
+}[];
+
+/** Every reason that may be stored, including ones only the seed produces. */
 export const REPORT_REASONS = [
-  "Illegal Viewing Fee Demanded",
-  "Fake Photos / Middleman Broker",
+  ...REPORT_REASON_OPTIONS.map((o) => o.reason),
   "Unresponsive Landlord",
-  "Rent Price Misrepresentation",
 ] as const;
 
 export type ReportReason = (typeof REPORT_REASONS)[number];
+
+export function severityForReason(reason: string): ReportSeverity {
+  return REPORT_REASON_OPTIONS.find((o) => o.reason === reason)?.severity ?? "MODERATE";
+}
+
+export const REPORT_DETAILS_MAX = 500;
 
 export const LISTING_STATUS_LABEL: Record<ListingStatus, string> = {
   PENDING_REVIEW: "Pending Review",

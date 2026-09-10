@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { listingCardSelect } from "@/lib/queries/listings";
 
 /** The public owner profile on screen 13. */
 export async function getOwnerProfile(userId: string) {
@@ -43,6 +44,39 @@ export async function getOwnerProfile(userId: string) {
   ]);
 
   return { ...owner, activeListings, totalViews: totalViews._sum.viewCount ?? 0 };
+}
+
+/**
+ * How responsive this owner actually is, computed from their enquiry replies.
+ * Screen 13 shows both; neither is stored, and neither is invented.
+ */
+export async function getOwnerResponsiveness(userId: string) {
+  const enquiries = await db.enquiry.findMany({
+    where: { listing: { ownerId: userId } },
+    select: { createdAt: true, repliedAt: true },
+  });
+
+  const replied = enquiries.filter((e) => e.repliedAt);
+  const totalMinutes = replied.reduce(
+    (sum, e) => sum + (e.repliedAt!.getTime() - e.createdAt.getTime()) / 60_000,
+    0,
+  );
+
+  return {
+    total: enquiries.length,
+    replied: replied.length,
+    responseRate: enquiries.length ? Math.round((replied.length / enquiries.length) * 100) : null,
+    averageMinutes: replied.length ? Math.round(totalMinutes / replied.length) : null,
+  };
+}
+
+/** Listings shown on a public owner profile — published only. */
+export async function findListingsForOwnerProfile(userId: string) {
+  return db.listing.findMany({
+    where: { ownerId: userId, status: "PUBLISHED" },
+    select: listingCardSelect,
+    orderBy: { createdAt: "desc" },
+  });
 }
 
 export async function getOwnerVerification(ownerProfileId: string) {

@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { Bell, Heart, Search } from "lucide-react";
+import { Heart, Search } from "lucide-react";
 import { Avatar } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/layout/Logo";
 import { getCurrentUser, homePathForRole } from "@/lib/auth";
-import { countUnreadNotifications } from "@/lib/queries/notifications";
+import { NotificationsMenu } from "@/components/layout/NotificationsMenu";
+import { countUnreadNotifications, findNotifications } from "@/lib/queries/notifications";
 import { db } from "@/lib/db";
 
 /**
@@ -19,12 +20,13 @@ import { db } from "@/lib/db";
 export async function TopBar({ searchSlot }: { searchSlot?: React.ReactNode }) {
   const user = await getCurrentUser();
 
-  const [unread, savedCount] = user
+  const [unread, savedCount, notifications] = user
     ? await Promise.all([
         countUnreadNotifications(user.id),
         db.savedListing.count({ where: { userId: user.id } }),
+        findNotifications(user.id),
       ])
-    : [0, 0];
+    : [0, 0, []];
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-surface">
@@ -75,19 +77,11 @@ export async function TopBar({ searchSlot }: { searchSlot?: React.ReactNode }) {
                 <Heart className="size-5" />
                 <span className="sr-only">Saved homes</span>
               </Link>
-              <Link href="/notifications" className="relative p-space-2xs text-muted hover:text-ink">
-                <Bell className="size-5" />
-                {unread > 0 && (
-                  <span
-                    className="absolute right-0.5 top-0.5 size-2 rounded-full bg-brand ring-2 ring-surface"
-                    aria-hidden
-                  />
-                )}
-                <span className="sr-only">
-                  Notifications{unread > 0 ? ` (${unread} unread)` : ""}
-                </span>
-              </Link>
-              <Link href={homePathForRole(user.role)} aria-label={`Signed in as ${user.fullName}`}>
+              <NotificationsMenu notifications={notifications} unread={unread} />
+              <Link
+                href={user.role === "TENANT" ? "/account" : homePathForRole(user.role)}
+                aria-label={`Signed in as ${user.fullName}`}
+              >
                 <Avatar name={user.fullName} src={user.avatarUrl} size="sm" />
               </Link>
             </>

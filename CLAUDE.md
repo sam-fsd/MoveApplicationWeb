@@ -188,3 +188,36 @@ Appended as they are taken, so they survive into the next session.
   built.** They need per-suburb inventory the seed has no notion of. The empty
   state carries the real derived average rent for the estate instead, plus
   nearby listings from real rows.
+
+### Phase 3
+
+- **Report reasons exist at two altitudes.** Screen 08's modal offers six
+  tenant-facing options; screen 20's admin queue tags reports with shorter
+  phrases. The stored `reason` is the admin tag, and `REPORT_REASON_OPTIONS` in
+  `src/lib/constants.ts` carries the modal's label and blurb. Two reasons the
+  data model did not list — "House Already Taken" and "Offensive Content" —
+  were added because screen 08 offers them.
+- **Severity is derived from the reason, never chosen by the reporter.** A
+  demanded viewing fee is always CRITICAL. See `severityForReason()`.
+- **Contact is a `wa.me` deep link with a prefilled message** that names the
+  listing and states the zero-fee policy, so the first message in the thread is
+  already on the record. `src/lib/whatsapp.ts` owns the link building.
+- **Modals are built on the native `<dialog>`**, so Escape, focus trapping, and
+  page inertness come from the platform rather than hand-rolled handlers.
+- **The heart is optimistic** (`useOptimistic`) and reconciles against the
+  server's answer; a signed-out visitor is routed to sign in instead.
+- **A listing that is not PUBLISHED 404s for tenants** even with a direct link.
+  Its owner and admins still see it, with a banner saying why.
+- **Views are recorded from the client on mount**, so prefetches and bots that
+  never render do not inflate the number the owner sees on screen 19.
+- **Owner response time and rate are derived** from enquiry replies rather than
+  stored. Ratings and reviews stay out of scope, so screen 13's star rating and
+  Tenant Reviews tab are not built.
+- **Screen 06's map is a schematic, not a map.** No mapping library is approved
+  and the demo must work offline, so the location renders as a grid with a
+  labelled marker plus the approximate-location disclaimer.
+- **Screen 09's compare mode and per-card ⋮ menu were not built** — comparison
+  is not in the build plan and needs UI state the phase does not call for.
+- **`GET /dev/as/<email>?next=<path>` signs in as a seeded account** and
+  redirects. Dev-only, 404s in production. It exists so signed-in pages open
+  from a plain link, which is handy when driving the demo.

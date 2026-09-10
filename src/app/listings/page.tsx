@@ -6,6 +6,7 @@ import { TopBarSearch } from "@/components/layout/TopBar";
 import { FilterSidebar } from "@/components/listing/FilterSidebar";
 import { ListingCard } from "@/components/listing/ListingCard";
 import { Pagination } from "@/components/listing/Pagination";
+import { SaveButton } from "@/components/listing/SaveButton";
 import { SortSelect } from "@/components/listing/SortSelect";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -14,6 +15,8 @@ import { TrustNotice } from "@/components/ui/TrustNotice";
 import { ESTATES } from "@/lib/constants";
 import { formatCount, formatKes } from "@/lib/format";
 import { countListingsByHouseType, findListings } from "@/lib/queries/listings";
+import { getSavedListingIds } from "@/lib/queries/notifications";
+import { getCurrentUser } from "@/lib/auth";
 import { db } from "@/lib/db";
 import {
   SORT_OPTIONS,
@@ -35,9 +38,11 @@ export default async function ListingsPage({
 }) {
   const filters = parseListingFilters(await searchParams);
 
-  const [page, typeCounts] = await Promise.all([
+  const user = await getCurrentUser();
+  const [page, typeCounts, savedIds] = await Promise.all([
     findListings(filters),
     countListingsByHouseType(filters),
+    user ? getSavedListingIds(user.id) : Promise.resolve(new Set<string>()),
   ]);
 
   const chips = activeFilterChips(filters);
@@ -118,7 +123,17 @@ export default async function ListingsPage({
               <>
                 <div className="grid gap-space-lg sm:grid-cols-2 xl:grid-cols-3">
                   {page.listings.map((listing) => (
-                    <ListingCard key={listing.id} listing={listing} />
+                    <ListingCard
+                      key={listing.id}
+                      listing={listing}
+                      saveSlot={
+                        <SaveButton
+                          listingId={listing.id}
+                          saved={savedIds.has(listing.id)}
+                          signedIn={Boolean(user)}
+                        />
+                      }
+                    />
                   ))}
                 </div>
 
