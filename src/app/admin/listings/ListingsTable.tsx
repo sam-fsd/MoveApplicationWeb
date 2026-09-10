@@ -7,6 +7,7 @@ import { BadgeCheck, EyeOff, Send, Undo2, X } from "lucide-react";
 
 import { bulkModerate } from "@/app/admin/actions";
 import { Button } from "@/components/ui/Button";
+import { ActionForm } from "@/components/ui/Toast";
 import { Pill } from "@/components/ui/Pill";
 import { ListingStatusPill } from "@/components/ui/StatusPill";
 import { formatKes } from "@/lib/format";
@@ -211,15 +212,31 @@ function BulkButton({
   icon: React.ReactNode;
   children: React.ReactNode;
 }) {
+  const verb = {
+    PUBLISHED: "published",
+    PENDING_REVIEW: "returned to review",
+    REJECTED: "unpublished",
+    RENTED_OUT: "marked rented out",
+  }[status];
+
   return (
-    <form action={bulkModerate.bind(null, status)}>
-      {ids.map((id) => (
-        <input key={id} type="hidden" name="listingIds" value={id} />
-      ))}
+    <ActionForm
+      action={async () => {
+        const data = new FormData();
+        for (const id of ids) data.append("listingIds", id);
+        await bulkModerate(status, data);
+      }}
+      success={`${ids.length} listing${ids.length === 1 ? "" : "s"} ${verb}.`}
+      confirm={
+        status === "REJECTED"
+          ? `Unpublish ${ids.length} listing${ids.length === 1 ? "" : "s"}? They will disappear from tenant search.`
+          : undefined
+      }
+    >
       <Button type="submit" size="sm" variant={variant}>
         {icon}
         {children}
       </Button>
-    </form>
+    </ActionForm>
   );
 }

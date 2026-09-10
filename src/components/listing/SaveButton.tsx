@@ -4,6 +4,7 @@ import { useOptimistic, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { Heart } from "lucide-react";
 import { toggleSaveListing } from "@/app/listings/[id]/actions";
+import { useToast } from "@/components/ui/Toast";
 import { cn } from "@/lib/cn";
 
 /**
@@ -25,6 +26,7 @@ export function SaveButton({
   className?: string;
 }) {
   const router = useRouter();
+  const toast = useToast();
   const [pending, startTransition] = useTransition();
   const [optimistic, setOptimistic] = useOptimistic(saved);
 
@@ -37,7 +39,12 @@ export function SaveButton({
       setOptimistic(!optimistic);
       const result = await toggleSaveListing(listingId);
       // The server is the authority; a failure snaps the heart back.
-      if (!result.ok) router.refresh();
+      if (!result.ok) {
+        toast(result.error ?? "That did not go through.", "error");
+        router.refresh();
+        return;
+      }
+      toast(result.saved ? "Saved to your homes." : "Removed from saved homes.");
     });
   }
 

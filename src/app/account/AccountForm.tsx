@@ -3,6 +3,7 @@
 import { useActionState, useState } from "react";
 import { Check, CheckCircle2, Save, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { useResultToast } from "@/components/ui/Toast";
 import { FieldHint, Input, Label } from "@/components/ui/Input";
 import { Pill } from "@/components/ui/Pill";
 import { ESTATES, HOUSE_TYPES } from "@/lib/constants";
@@ -27,6 +28,8 @@ export function AccountForm({ initial }: { initial: AccountFormData }) {
     updateTenantProfile,
     { ok: false },
   );
+
+  useResultToast(state);
 
   const [estates, setEstates] = useState<string[]>(initial.estates);
   const [budgetMin, setBudgetMin] = useState(initial.budgetMin ?? 15000);

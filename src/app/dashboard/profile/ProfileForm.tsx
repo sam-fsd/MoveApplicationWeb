@@ -5,6 +5,7 @@ import { BadgeCheck, Check, MessageSquare, Phone, Save, ShieldCheck } from "luci
 
 import { Avatar } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
+import { useResultToast } from "@/components/ui/Toast";
 import { FieldHint, Input, Label } from "@/components/ui/Input";
 import { Pill } from "@/components/ui/Pill";
 import { ESTATES } from "@/lib/constants";
@@ -43,6 +44,8 @@ export function ProfileForm({ initial }: { initial: ProfileFormData }) {
     updateOwnerProfile,
     { ok: false },
   );
+
+  useResultToast(state);
 
   const [businessName, setBusinessName] = useState(initial.businessName);
   const [about, setAbout] = useState(initial.about);

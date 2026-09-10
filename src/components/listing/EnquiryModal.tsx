@@ -6,6 +6,7 @@ import { CheckCircle2, MessageSquare, Send } from "lucide-react";
 import { sendEnquiry, type ActionResult } from "@/app/listings/[id]/actions";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
+import { useResultToast } from "@/components/ui/Toast";
 import { TrustNotice } from "@/components/ui/TrustNotice";
 
 /**
@@ -30,6 +31,7 @@ export function EnquiryModal({
   const [state, formAction, pending] = useActionState<ActionResult, FormData>(sendEnquiry, {
     ok: false,
   });
+  useResultToast(state);
   const [message, setMessage] = useState(defaultMessage);
 
   return (

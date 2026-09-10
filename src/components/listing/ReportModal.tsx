@@ -6,6 +6,7 @@ import { CheckCircle2, Flag } from "lucide-react";
 import { submitReport, type ActionResult } from "@/app/listings/[id]/actions";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
+import { useResultToast } from "@/components/ui/Toast";
 import { Pill } from "@/components/ui/Pill";
 import { REPORT_DETAILS_MAX, REPORT_REASON_OPTIONS } from "@/lib/constants";
 import { cn } from "@/lib/cn";
@@ -32,6 +33,7 @@ export function ReportModal({
   const [state, formAction, pending] = useActionState<ActionResult, FormData>(submitReport, {
     ok: false,
   });
+  useResultToast(state);
   const [details, setDetails] = useState("");
 
   const submitted = state.ok && state.reference;

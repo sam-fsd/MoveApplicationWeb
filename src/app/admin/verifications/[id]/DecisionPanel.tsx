@@ -5,6 +5,7 @@ import { BadgeCheck, Info, XCircle } from "lucide-react";
 
 import { approveVerification, rejectVerification } from "@/app/admin/actions";
 import { Button } from "@/components/ui/Button";
+import { useResultToast } from "@/components/ui/Toast";
 import { Pill } from "@/components/ui/Pill";
 import type { ActionResult } from "@/app/listings/[id]/actions";
 
@@ -41,6 +42,9 @@ export function DecisionPanel({
     { ok: false },
   );
   const [notes, setNotes] = useState(existingNotes ?? "");
+
+  useResultToast(approveState);
+  useResultToast(rejectState);
 
   const decided = state === "APPROVED" || state === "REJECTED";
 

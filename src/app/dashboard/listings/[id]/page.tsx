@@ -18,6 +18,7 @@ import { EnquiryList } from "@/components/owner/EnquiryList";
 import { OwnerShell } from "@/components/owner/OwnerShell";
 import { ViewsChart } from "@/components/owner/ViewsChart";
 import { Button } from "@/components/ui/Button";
+import { ActionForm } from "@/components/ui/Toast";
 import { Pill } from "@/components/ui/Pill";
 import { StatCard } from "@/components/ui/StatCard";
 import { ListingStatusPill } from "@/components/ui/StatusPill";
@@ -114,19 +115,26 @@ export default async function ManageListingPage({
             )}
 
             {listing.status === "RENTED_OUT" ? (
-              <form action={setListingStatus.bind(null, listing.id, "PENDING_REVIEW")}>
+              <ActionForm
+                action={setListingStatus.bind(null, listing.id, "PENDING_REVIEW")}
+                success="Sent back for review. It goes live once an admin approves it."
+              >
                 <Button type="submit">
                   <Undo2 />
                   Put back on the market
                 </Button>
-              </form>
+              </ActionForm>
             ) : (
-              <form action={setListingStatus.bind(null, listing.id, "RENTED_OUT")}>
+              <ActionForm
+                action={setListingStatus.bind(null, listing.id, "RENTED_OUT")}
+                success="Marked as rented. Tenants no longer see it in search."
+                confirm="Mark this unit as rented out? It will disappear from tenant search."
+              >
                 <Button type="submit" variant="secondary">
                   <Pencil />
                   Mark as rented
                 </Button>
-              </form>
+              </ActionForm>
             )}
           </div>
         </header>

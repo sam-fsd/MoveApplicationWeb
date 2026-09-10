@@ -3,6 +3,7 @@
 import { useActionState, useState } from "react";
 import { BellPlus, BellRing, Plus, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { ActionForm, useResultToast } from "@/components/ui/Toast";
 import { Modal } from "@/components/ui/Modal";
 import { Pill } from "@/components/ui/Pill";
 import { ESTATES, HOUSE_TYPES } from "@/lib/constants";
@@ -30,6 +31,8 @@ export function PriceAlerts({ alerts }: { alerts: AlertRow[] }) {
   const [state, formAction, pending] = useActionState<ActionResult, FormData>(createPriceAlert, {
     ok: false,
   });
+
+  useResultToast(state);
 
   return (
     <section className="rounded-xl border border-border bg-surface p-space-lg">
@@ -98,7 +101,10 @@ export function PriceAlerts({ alerts }: { alerts: AlertRow[] }) {
                 <span className="hidden text-body-sm text-muted sm:block">
                   {alert.active ? "WhatsApp & email" : "Paused"}
                 </span>
-                <form action={togglePriceAlert.bind(null, alert.id)}>
+                <ActionForm
+                  action={togglePriceAlert.bind(null, alert.id)}
+                  success={alert.active ? "Alert paused." : "Alert resumed."}
+                >
                   <button
                     type="submit"
                     role="switch"
@@ -117,8 +123,12 @@ export function PriceAlerts({ alerts }: { alerts: AlertRow[] }) {
                       aria-hidden
                     />
                   </button>
-                </form>
-                <form action={deletePriceAlert.bind(null, alert.id)}>
+                </ActionForm>
+                <ActionForm
+                  action={deletePriceAlert.bind(null, alert.id)}
+                  success="Alert deleted."
+                  confirm={`Delete the alert “${alert.label}”?`}
+                >
                   <button
                     type="submit"
                     className="rounded-lg p-space-2xs text-muted transition-colors hover:bg-danger-bg hover:text-danger"
@@ -126,7 +136,7 @@ export function PriceAlerts({ alerts }: { alerts: AlertRow[] }) {
                   >
                     <Trash2 className="size-4" aria-hidden />
                   </button>
-                </form>
+                </ActionForm>
               </span>
             </li>
           ))}

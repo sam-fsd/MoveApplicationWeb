@@ -279,3 +279,23 @@ Appended as they are taken, so they survive into the next session.
 - **Screen 22's document viewer shows metadata, not documents.** Real OCR and
   ID verification are explicitly out of scope, and the seeded files are
   placeholders; the page says so rather than implying otherwise.
+
+### Phase 6
+
+- **Toasts come from one provider** in the root layout. Actions that return an
+  `ActionResult` fire through `useResultToast`; actions returning void are
+  wrapped in `<ActionForm>`, which runs them in a transition and toasts the
+  outcome. Destructive ones (unpublish, take down, mark rented, delete alert)
+  take a `confirm` string.
+- **`useResultToast` keys its effect on the result's values, not the object** —
+  keying on the object fires a second toast on every re-render.
+- **Skeletons live in `loading.tsx` per route segment** and mirror the real
+  layout's shape, so the page does not jump when data lands.
+- **Responsive verified at 390px and 768px** across the landing page, listings,
+  register, owner dashboard, admin overview, admin listings, and reports. Wide
+  tables scroll inside their own container; the sidebar becomes a horizontal
+  nav strip below `lg`.
+- **`docs/DEMO_SCRIPT.md` is the presentation path** — twelve minutes through
+  all three roles, building to the moment an admin approves an owner and that
+  owner can suddenly publish. It includes the `/dev/as/<email>` jump links and a
+  recovery section.

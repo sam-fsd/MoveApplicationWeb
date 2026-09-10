@@ -8,6 +8,7 @@ import { CheckCircle2, ExternalLink, EyeOff, Search, ShieldAlert, ThumbsDown, X 
 import { moderateReport, type ReportAction } from "@/app/admin/actions";
 import { Avatar } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
+import { ActionForm } from "@/components/ui/Toast";
 import { Pill } from "@/components/ui/Pill";
 import { ReportStatusPill, SeverityPill } from "@/components/ui/StatusPill";
 import { formatKes, formatRelative } from "@/lib/format";
@@ -197,20 +198,20 @@ export function ReportDrawer({ report, onClose }: { report: ReportDetail; onClos
       </div>
 
       <footer className="grid gap-space-xs border-t border-border p-space-md">
-        <ActionForm id={report.id} action="TAKE_DOWN" resolution={resolution} variant="danger" icon={<EyeOff />}>
+        <ModerationButton id={report.id} action="TAKE_DOWN" resolution={resolution} variant="danger" icon={<EyeOff />}>
           Uphold &amp; take the listing down
-        </ActionForm>
+        </ModerationButton>
 
         <div className="grid grid-cols-3 gap-space-xs">
-          <ActionForm id={report.id} action="UNDER_REVIEW" resolution={resolution} variant="secondary" icon={<Search />}>
+          <ModerationButton id={report.id} action="UNDER_REVIEW" resolution={resolution} variant="secondary" icon={<Search />}>
             Investigate
-          </ActionForm>
-          <ActionForm id={report.id} action="RESOLVE" resolution={resolution} variant="whatsapp" icon={<CheckCircle2 />}>
+          </ModerationButton>
+          <ModerationButton id={report.id} action="RESOLVE" resolution={resolution} variant="whatsapp" icon={<CheckCircle2 />}>
             Resolve
-          </ActionForm>
-          <ActionForm id={report.id} action="DISMISS" resolution={resolution} variant="ghost" icon={<ThumbsDown />}>
+          </ModerationButton>
+          <ModerationButton id={report.id} action="DISMISS" resolution={resolution} variant="ghost" icon={<ThumbsDown />}>
             Dismiss
-          </ActionForm>
+          </ModerationButton>
         </div>
 
         <p className="pt-space-2xs text-center text-caption text-muted">
@@ -222,7 +223,17 @@ export function ReportDrawer({ report, onClose }: { report: ReportDetail; onClos
   );
 }
 
-function ActionForm({
+const ACTION_COPY: Record<ReportAction, { success: string; confirm?: string }> = {
+  TAKE_DOWN: {
+    success: "Report upheld. The listing is down and both sides have been notified.",
+    confirm: "Take this listing down? It will disappear from tenant search immediately.",
+  },
+  UNDER_REVIEW: { success: "Escalated to the ops desk." },
+  RESOLVE: { success: "Report resolved. The tenant has been told the outcome." },
+  DISMISS: { success: "Report dismissed. The tenant has been told why." },
+};
+
+function ModerationButton({
   id,
   action,
   resolution,
@@ -237,13 +248,22 @@ function ActionForm({
   icon: React.ReactNode;
   children: React.ReactNode;
 }) {
+  const copy = ACTION_COPY[action];
+
   return (
-    <form action={moderateReport.bind(null, id, action)}>
-      <input type="hidden" name="resolution" value={resolution} />
+    <ActionForm
+      action={async () => {
+        const data = new FormData();
+        data.set("resolution", resolution);
+        await moderateReport(id, action, data);
+      }}
+      success={copy.success}
+      confirm={copy.confirm}
+    >
       <Button type="submit" size="sm" variant={variant} className="w-full">
         {icon}
         {children}
       </Button>
-    </form>
+    </ActionForm>
   );
 }
